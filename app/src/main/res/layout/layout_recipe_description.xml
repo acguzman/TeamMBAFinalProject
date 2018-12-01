@@ -10,8 +10,7 @@
         android:layout_width="150dp"
         android:layout_height="100dp"
         android:layout_below="@id/textView"
-        android:padding="5dp"
-        android:src="@mipmap/chickenparm" />
+        android:padding="5dp" />
 
     <TextView
         android:id="@+id/textView"
@@ -46,7 +45,6 @@
         android:id="@+id/imageView3"
         android:layout_width="150dp"
         android:layout_height="20dp"
-        android:src="@mipmap/three_stars"
         android:layout_toRightOf="@id/imageView"
         android:layout_below="@id/textView2"
         />

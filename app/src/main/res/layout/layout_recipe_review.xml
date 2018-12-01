@@ -27,7 +27,6 @@
         android:id="@+id/imageViewReview1"
         android:layout_width="150dp"
         android:layout_height="20dp"
-        android:src="@mipmap/three_stars"
         android:layout_alignParentLeft="true"
         android:layout_below="@id/textViewReview2"
         />
@@ -60,7 +59,6 @@
         android:id="@+id/imageViewReview2"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@mipmap/chickenparm"
         android:layout_alignParentLeft="true"
         android:layout_below="@id/textViewReview5"
         />
