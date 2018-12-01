@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:id="@+id/review_Layout"
+    android:padding="30dp">
+
+    <TextView
+        android:id="@+id/textViewReview1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:text="Reviewer: J Doe" />
+
+    <TextView
+        android:id="@+id/textViewReview2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Overall Rating:"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/textViewReview1"
+        />
+
+    <ImageView
+        android:id="@+id/imageViewReview1"
+        android:layout_width="150dp"
+        android:layout_height="20dp"
+        android:src="@mipmap/three_stars"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/textViewReview2"
+        />
+
+    <TextView
+        android:id="@+id/textViewReview3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Review:"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/imageViewReview1"
+        />
+    <TextView
+        android:id="@+id/textViewReview4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="I loved it! The app really helped walk me through the steps and the timers were really handy!"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/textViewReview3"
+        />
+    <TextView
+        android:id="@+id/textViewReview5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User Photo:"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/textViewReview4"
+        />
+    <ImageView
+        android:id="@+id/imageViewReview2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@mipmap/chickenparm"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/textViewReview5"
+        />
+</RelativeLayout>
