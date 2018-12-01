@@ -28,6 +28,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Add to Recipies"
+        android:background="@color/colorPrimaryDark"
+        android:padding="10dp"
         android:layout_toRightOf="@id/imageView"
         android:layout_below="@id/textView"/>
 
