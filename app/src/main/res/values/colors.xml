@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#fff2cc</color>
     <color name="colorPrimaryDark">#ffd966</color>
-    <color name="colorAccent">#141001</color>
+    <color name="colorAccent">#f67d7d7d</color>
     <color name="holo_light_primary_dark">#f8f8f3</color>
     <color name="background_holo_light">#f3f3f3</color>
 </resources>
