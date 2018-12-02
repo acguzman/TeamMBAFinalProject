@@ -9,9 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/HappyCookingTheme">
-        <activity android:name=".MainActivity"
-            android:theme="@style/HappyCookingTheme"
-            android:background="@android:color/white">
+        <activity
+            android:name=".MainActivity"
+            android:background="@android:color/white"
+            android:theme="@style/HappyCookingTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,7 +20,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".recipe_recycler" />
-        <activity android:name=".BottomNav"></activity>
+        <activity android:name=".BottomNav" />
+        <activity
+            android:name=".Register"
+            android:label="@string/title_activity_register"
+            android:theme="@style/HappyCookingTheme" />
     </application>
 
 </manifest>

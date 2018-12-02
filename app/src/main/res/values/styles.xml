@@ -6,17 +6,21 @@
 
     </style>
 
-       <style name="HappyCookingTheme" parent="Theme.AppCompat.Light.NoActionBar" >
-           <item name="android:colorBackground">@color/background_holo_light</item>
-           <item name="android:colorAccent">@color/colorPrimaryDark</item>
-           <item name="android:colorPrimaryDark">@color/colorPrimary</item>
-           <item name="android:colorPrimary">@color/colorPrimaryDark</item>
-           <item name="android:navigationBarColor">@color/colorPrimaryDark</item>
-           <item name="android:statusBarColor">@color/colorPrimaryDark</item>
-           <item name="android:colorForeground">@color/background_holo_light</item>
-           <item name="android:background">@color/background_holo_light</item>
-           <item name="android:textColorPrimary">@android:color/black</item>
+    <style name="HappyCookingTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:colorBackground">@color/background_holo_light</item>
+        <item name="android:colorAccent">@color/colorPrimaryDark</item>
+        <item name="android:colorPrimaryDark">@color/colorPrimary</item>
+        <item name="android:colorPrimary">@color/colorPrimaryDark</item>
+        <item name="android:navigationBarColor">@color/colorPrimaryDark</item>
+        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
+        <item name="android:colorForeground">@color/background_holo_light</item>
+        <item name="android:background">@color/background_holo_light</item>
+        <item name="android:textColorPrimary">@android:color/black</item>
 
-       </style>
+    </style>
 
-   </resources>
+    <style name="HappyCookingTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="HappyCookingTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+</resources>
