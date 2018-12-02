@@ -1,14 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ProfileFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Profile" />
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textViewPastRecipes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="7dp"
+            android:layout_marginLeft="7dp"
+            android:layout_marginBottom="241dp"
+            android:text="My Past Recipes"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="425dp"
+            android:text="Meal Preferences"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/textViewProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="53dp"
+            android:layout_marginLeft="53dp"
+            android:layout_marginTop="46dp"
+            android:text="Profile"
+            android:textSize="30sp" />
+
+        <CheckBox
+            android:id="@+id/checkBoxVegProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="36dp"
+            android:layout_marginLeft="36dp"
+            android:layout_marginTop="175dp"
+            android:clickable="true"
+            android:text="Vegetarian" />
+
+        <CheckBox
+            android:id="@+id/checkBoxVeganProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="152dp"
+            android:layout_marginLeft="152dp"
+            android:layout_marginTop="175dp"
+            android:clickable="true"
+            android:text="Vegan" />
+
+        <CheckBox
+            android:id="@+id/checkBoxGlutenProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="242dp"
+            android:layout_marginLeft="242dp"
+            android:layout_marginTop="175dp"
+            android:clickable="true"
+            android:text="Gluten Free" />
+
+        <CheckBox
+            android:id="@+id/checkBoxDairyProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="98dp"
+            android:layout_marginLeft="98dp"
+            android:layout_marginTop="230dp"
+            android:clickable="true"
+            android:text="Dairy Free" />
+
+        <CheckBox
+            android:id="@+id/checkBoxNutProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="209dp"
+            android:layout_marginLeft="209dp"
+            android:layout_marginTop="230dp"
+            android:clickable="true"
+            android:text="Nut Free" />
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="88dp"
+            android:layout_height="82dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="35dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginBottom="116dp"
+            android:src="@drawable/ic_avocado_fettucine" />
+
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="88dp"
+            android:layout_height="82dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="144dp"
+            android:layout_marginLeft="144dp"
+            android:layout_marginBottom="116dp"
+            android:src="@drawable/ic_avocado_fettucine" />
+
+        <ImageButton
+            android:id="@+id/imageButton3"
+            android:layout_width="88dp"
+            android:layout_height="82dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="257dp"
+            android:layout_marginLeft="257dp"
+            android:layout_marginBottom="116dp"
+            android:src="@drawable/ic_avocado_fettucine" />
+
+        <Button
+            android:id="@+id/buttonUpdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="147dp"
+            android:layout_marginRight="147dp"
+            android:layout_marginBottom="37dp"
+            android:background="@color/colorPrimaryDark"
+            android:text="Update"
+            android:textSize="24sp" />
+
+    </RelativeLayout>
 
 </FrameLayout>
