@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:layout_width="match_parent" android:layout_height="wrap_content"
+android:id="@+id/parent_layout" android:padding="20dp">
+
+<ImageView
+    android:id="@+id/imageCookingIcon"
+    android:layout_width="55dp"
+    android:layout_height="60dp"
+    app:srcCompat="@drawable/ic_cooking_item" />
+
+<TextView
+    android:id="@+id/textViewRecipeName"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:layout_marginStart="14dp"
+    android:layout_marginLeft="14dp"
+    android:layout_marginTop="15dp"
+    android:layout_marginEnd="14dp"
+    android:layout_marginRight="14dp"
+    android:layout_toEndOf="@+id/imageCookingIcon"
+    android:text="Avocado Fetuccine"
+    android:textSize="28sp"
+    android:layout_toRightOf="@+id/imageCookingIcon" />
+
+
+<TextView
+    android:id="@+id/textViewCongrats"
+    android:layout_width="250dp"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/textViewRecipeName"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="30dp"
+    android:text="Congratulations!! You're a chef!"
+    android:textColor="@color/colorPrimaryDark"
+    android:textSize="30sp"
+    android:textStyle="bold" />
+
+
+<TextView
+    android:id="@+id/textViewShareFeedback"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/textViewCongrats"
+    android:layout_alignParentStart="true"
+    android:layout_alignParentLeft="true"
+    android:layout_marginTop="30dp"
+    android:text="Share your feedback on this recipe:"
+    android:textSize="21sp" />
+
+<RatingBar
+    android:id="@+id/ratingBarEntry"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/textViewShareFeedback"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="15dp"
+    android:isIndicator="false"
+    android:numStars="@android:integer/config_mediumAnimTime"
+    android:visibility="visible" />
+
+<EditText
+    android:id="@+id/editTextCommentEntry"
+    android:layout_width="400dp"
+    android:layout_height="75dp"
+    android:layout_below="@+id/ratingBarEntry"
+    android:layout_marginTop="15dp"
+    android:ems="10"
+    android:shadowColor="@color/colorPrimary"
+    android:hint="Enter your feedback here..."
+    android:inputType="textPersonName"
+    android:background="@color/colorPrimary"/>
+
+<ImageButton
+    android:id="@+id/imageButtonUploadPhoto"
+    android:layout_width="88dp"
+    android:layout_height="61dp"
+    android:layout_below="@id/editTextCommentEntry"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="15dp"
+    app:srcCompat="@drawable/ic_upload_photo_item" />
+
+<Button
+    android:id="@+id/buttonSubmitReview"
+    android:layout_width="149dp"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/imageButtonUploadPhoto"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="20dp"
+    android:background="@color/colorPrimaryDark"
+    android:text="Submit Review" />
+
+</RelativeLayout>
