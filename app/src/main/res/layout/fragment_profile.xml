@@ -125,7 +125,7 @@
             android:layout_marginStart="35dp"
             android:layout_marginLeft="35dp"
             android:layout_marginBottom="116dp"
-            android:src="@drawable/ic_avocado_fettucine" />
+            android:src="@drawable/avocado_fettucine_complete" />
 
         <ImageButton
             android:id="@+id/imageButton2"
@@ -137,7 +137,7 @@
             android:layout_marginStart="144dp"
             android:layout_marginLeft="144dp"
             android:layout_marginBottom="116dp"
-            android:src="@drawable/ic_avocado_fettucine" />
+            android:src="@drawable/avocado_fettucine_complete" />
 
         <ImageButton
             android:id="@+id/imageButton3"
@@ -149,7 +149,7 @@
             android:layout_marginStart="257dp"
             android:layout_marginLeft="257dp"
             android:layout_marginBottom="116dp"
-            android:src="@drawable/ic_avocado_fettucine" />
+            android:src="@drawable/avocado_fettucine_complete" />
 
         <Button
             android:id="@+id/buttonUpdate"

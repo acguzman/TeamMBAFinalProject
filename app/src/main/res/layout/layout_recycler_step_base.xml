@@ -1,12 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".RecipeStepBaseActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:id="@+id/parent_layout" android:padding="20dp">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerStepBase"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+    <ImageView
+        android:id="@+id/imageCookingIcon"
+        android:layout_width="55dp"
+        android:layout_height="60dp"
+        app:srcCompat="@drawable/ic_cooking_item" />
+
+    <TextView
+        android:id="@+id/textViewRecipeName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="14dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginRight="14dp"
+        android:layout_toRightOf="@+id/imageCookingIcon"
+        android:text="Avocado Fetuccine"
+        android:textSize="28dp" />
+
+    <ProgressBar
+        android:id="@+id/progressBarStepBase"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="344dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageCookingIcon"
+        android:layout_marginTop="10dp"
+        android:progressDrawable="@color/colorPrimaryDark"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/textViewCongrats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/progressBarStepBase"
+        android:layout_marginTop="10dp"
+        android:text="Step 1: Combine all of the ingredients, except fettucine, in a food processor. Process until smooth and creamy."
+        android:textSize="20sp" />
+
+    <ImageView
+        android:id="@+id/imageStepPhoto"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_below="@+id/textViewCongrats"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        app:srcCompat="@drawable/avocado_fettucine_complete" />
+
+    <TextView
+        android:id="@+id/textViewIngredientLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ingredients Required:"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_below="@id/imageStepPhoto"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:id="@+id/textViewIngredientList"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewIngredientLabel"
+        android:layout_marginTop="5dp"
+        android:text="2 avocados, pitted
+1 T nutritional yeast
+1 T extra virgin olive oil
+1 T fresh lemon juice
+1 clove garlic, minced
+1 tsp salt
+1/4 tsp freshly ground black pepper"
+        android:textSize="20sp" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButtonChat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="255dp"
+        android:clickable="true"
+        app:backgroundTint="@color/colorPrimary"
+        app:srcCompat="@drawable/ic_chat_item" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButtonTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="300dp"
+        android:clickable="true"
+        app:backgroundTint="@color/colorPrimary"
+        app:srcCompat="@drawable/ic_timer_item" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButtonNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="210dp"
+        android:clickable="true"
+        app:backgroundTint="@color/colorPrimaryDark"
+        app:srcCompat="@drawable/ic_next_item" />
+
 </RelativeLayout>

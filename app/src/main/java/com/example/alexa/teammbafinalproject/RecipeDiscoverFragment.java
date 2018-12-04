@@ -88,12 +88,12 @@ public class RecipeDiscoverFragment extends Fragment {
 
         //Get info to populate from the Firebase database
         List<String> newRecipeList = new ArrayList<String>();
-        newRecipeList.add("Recipe 01");// Dummy variables
-        newRecipeList.add("Recipe 02");// Dummy variables
-        newRecipeList.add("Recipe 03");// Dummy variables
-        newRecipeList.add("Recipe 04");// Dummy variables
-        newRecipeList.add("Recipe 05");// Dummy variables
-        newRecipeList.add("Recipe 06");// Dummy variables
+        newRecipeList.add("com.example.alexa.teammbafinalproject.Recipe 01");// Dummy variables
+        newRecipeList.add("com.example.alexa.teammbafinalproject.Recipe 02");// Dummy variables
+        newRecipeList.add("com.example.alexa.teammbafinalproject.Recipe 03");// Dummy variables
+        newRecipeList.add("com.example.alexa.teammbafinalproject.Recipe 04");// Dummy variables
+        newRecipeList.add("com.example.alexa.teammbafinalproject.Recipe 05");// Dummy variables
+        newRecipeList.add("com.example.alexa.teammbafinalproject.Recipe 06");// Dummy variables
 
         //
         int noOfNewRecipes = newRecipeList.size();

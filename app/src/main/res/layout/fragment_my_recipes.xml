@@ -30,7 +30,8 @@
             android:layout_marginStart="40dp"
             android:layout_marginLeft="40dp"
             android:layout_marginTop="81dp"
-            android:src="@drawable/ic_avocado_fettucine" />
+            android:scaleType="fitXY"
+            android:src="@drawable/avocado_fettucine_complete" />
 
         <ImageButton
             android:id="@+id/imageButtonKoreanChx"
@@ -41,7 +42,8 @@
             android:layout_centerVertical="true"
             android:layout_marginStart="42dp"
             android:layout_marginLeft="42dp"
-            android:src="@drawable/ic_korean_chx" />
+            android:scaleType="fitXY"
+            android:src="@drawable/korean_spicy_chicken_complete" />
 
         <ImageButton
             android:id="@+id/imageButtonMushroom"
@@ -51,7 +53,8 @@
             android:layout_alignParentBottom="true"
             android:layout_marginStart="6dp"
             android:layout_marginBottom="72dp"
-            android:src="@drawable/ic_mushroom_frittata" />
+            android:scaleType="fitXY"
+            android:src="@drawable/mushroom_frittata_complete" />
 
         <Button
             android:id="@+id/buttonGetCooking1"
