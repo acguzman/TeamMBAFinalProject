@@ -9,7 +9,13 @@ public class Review {
     String comment;
     String userID;
     Date reviewDate;
+    //Picture?
 
-
-
+    public Review(String recipeID, int stars, String comment, String userID, Date reviewDate) {
+        this.recipeID = recipeID;
+        this.stars = stars;
+        this.comment = comment;
+        this.userID = userID;
+        this.reviewDate = reviewDate;
+    }
 }
