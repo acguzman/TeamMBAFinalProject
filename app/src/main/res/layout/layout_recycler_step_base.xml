@@ -84,8 +84,8 @@
         android:layout_marginLeft="300dp"
         android:layout_marginTop="255dp"
         android:clickable="true"
-        app:backgroundTint="@color/colorPrimary"
-        app:srcCompat="@drawable/ic_chat_item" />
+        app:backgroundTint="@color/colorPrimary" />
+    <!-- // TODO:AAYUSH app:srcCompat="@drawable/ic_chat_item" -->
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/floatingActionButtonTimer"
@@ -95,7 +95,8 @@
         android:layout_marginTop="300dp"
         android:clickable="true"
         app:backgroundTint="@color/colorPrimary"
-        app:srcCompat="@drawable/ic_timer_item" />
+    />
+    <!-- // TODO:AAYUSH app:srcCompat="@drawable/ic_timer_item" /-->
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/floatingActionButtonNext"
@@ -105,6 +106,7 @@
         android:layout_marginTop="210dp"
         android:clickable="true"
         app:backgroundTint="@color/colorPrimaryDark"
-        app:srcCompat="@drawable/ic_next_item" />
+        />
+    <!-- //TODO app:srcCompat="@drawable/ic_next_item" -->
 
 </RelativeLayout>
