@@ -46,17 +46,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         if (v==buttonRegister){
 
-            mAuth.createUserWithEmailAndPassword(editTextUsername.getText().toString(), editTextPassword.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
-                    if(task.isSuccessful()) {
+            Intent intentRegister = new Intent (this, Register.class);
 
-                        Toast.makeText(MainActivity.this, "Welcome New User", Toast.LENGTH_SHORT).show();
-                    }else {
-                        Toast.makeText(MainActivity.this, "Registration Unsuccessful", Toast.LENGTH_SHORT).show();
-                    }
-                }
-            });
+            startActivity(intentRegister);
+
+
 
         }else if(v==buttonLogin){
 
