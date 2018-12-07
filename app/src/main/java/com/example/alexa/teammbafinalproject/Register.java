@@ -56,7 +56,7 @@ public class Register extends Activity implements View.OnClickListener {
 
         if (v==buttonRegisterNew){
 
-            Intent intentNewUser = new Intent (this, MyRecipesFragment.class);
+            final Intent intentNewUser = new Intent (this, MyRecipesFragment.class);
 
             mAuth.createUserWithEmailAndPassword(editTextUsernameNew.getText().toString(), editTextPasswordNew.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
@@ -64,6 +64,7 @@ public class Register extends Activity implements View.OnClickListener {
                     if(task.isSuccessful()){
                         Toast.makeText(Register.this, "Welcome New User", Toast.LENGTH_SHORT).show();
 
+                        startActivity(intentNewUser);
 
                     }else {
                         Toast.makeText(Register.this, "Registration Unsuccessful", Toast.LENGTH_SHORT).show();
