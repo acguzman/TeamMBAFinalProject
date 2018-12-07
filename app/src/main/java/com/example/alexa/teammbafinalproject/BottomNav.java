@@ -32,7 +32,7 @@ public class BottomNav extends AppCompatActivity implements BottomNavigationView
         discoverFragment = new DiscoverFragment();
         profileFragment1 = new ProfileFragment1();
 
-
+        mainNav.setOnNavigationItemSelectedListener(this);
 
     }
 
