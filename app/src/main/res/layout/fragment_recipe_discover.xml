@@ -54,7 +54,9 @@
                         android:layout_height="55dp"
                         android:layout_alignParentBottom="true"
                         android:layout_marginBottom="24dp"
-                        android:padding="10dp"
+                        android:background="@android:color/white"
+                        android:padding="5dp"
+                        android:textSize="18sp"
                         android:text="Avocado Fettucine"
                         android:textStyle="bold" />
 
@@ -83,7 +85,9 @@
                         android:layout_height="55dp"
                         android:layout_alignParentBottom="true"
                         android:layout_marginBottom="24dp"
-                        android:padding="10dp"
+                        android:background="@android:color/white"
+                        android:padding="5dp"
+                        android:textSize="18sp"
                         android:text="Korean Spicy Chicken"
                         android:textStyle="bold" />
                 </RelativeLayout>
@@ -111,7 +115,9 @@
                         android:layout_height="55dp"
                         android:layout_alignParentBottom="true"
                         android:layout_marginBottom="24dp"
-                        android:padding="10dp"
+                        android:background="@android:color/white"
+                        android:padding="5dp"
+                        android:textSize="18sp"
                         android:text="Mushroom Frittata"
                         android:textStyle="bold" />
                 </RelativeLayout>
@@ -139,7 +145,9 @@
                         android:layout_height="55dp"
                         android:layout_alignParentBottom="true"
                         android:layout_marginBottom="24dp"
-                        android:padding="10dp"
+                        android:background="@android:color/white"
+                        android:padding="5dp"
+                        android:textSize="18sp"
                         android:text="Avocado Fettucine"
                         android:textStyle="bold" />
                 </RelativeLayout>
@@ -167,7 +175,9 @@
                         android:layout_height="55dp"
                         android:layout_alignParentBottom="true"
                         android:layout_marginBottom="24dp"
-                        android:padding="10dp"
+                        android:background="@android:color/white"
+                        android:padding="5dp"
+                        android:textSize="18sp"
                         android:text="Korean Spicy Chicken"
                         android:textStyle="bold" />
                 </RelativeLayout>
@@ -195,7 +205,9 @@
                         android:layout_height="55dp"
                         android:layout_alignParentBottom="true"
                         android:layout_marginBottom="24dp"
-                        android:padding="10dp"
+                        android:background="@android:color/white"
+                        android:padding="5dp"
+                        android:textSize="18sp"
                         android:text="Mushroom Frittata"
                         android:textStyle="bold" />
                 </RelativeLayout>
@@ -223,7 +235,9 @@
                         android:layout_height="55dp"
                         android:layout_alignParentBottom="true"
                         android:layout_marginBottom="24dp"
-                        android:padding="10dp"
+                        android:background="@android:color/white"
+                        android:padding="5dp"
+                        android:textSize="18sp"
                         android:text="Avocado Fettucine"
                         android:textStyle="bold" />
                 </RelativeLayout>
@@ -277,6 +291,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:layout_weight="1"
+                        android:scaleType="centerCrop"
                         android:src="@drawable/avocado_fettucine_complete" />
 
                     <TextView
@@ -284,9 +299,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentBottom="true"
-                        android:padding="10dp"
+                        android:background="@android:color/white"
+                        android:padding="5dp"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
                         android:text="Avocado Fettucine"
-                        android:textStyle="bold" />
+                        />
                 </RelativeLayout>
             </android.support.v7.widget.CardView>
 
@@ -304,6 +322,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:layout_weight="1"
+                        android:scaleType="centerCrop"
                         android:src="@drawable/korean_spicy_chicken_complete" />
 
                     <TextView
@@ -311,9 +330,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentBottom="true"
-                        android:padding="10dp"
+                        android:background="@android:color/white"
+                        android:padding="5dp"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
                         android:text="Korean Spicy Chicken"
-                        android:textStyle="bold" />
+                        />
                 </RelativeLayout>
             </android.support.v7.widget.CardView>
 
@@ -331,6 +353,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:layout_weight="1"
+                        android:scaleType="centerCrop"
                         android:src="@drawable/mushroom_frittata_complete" />
 
                     <TextView
@@ -338,7 +361,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentBottom="true"
-                        android:padding="10dp"
+                        android:background="@android:color/white"
+                        android:padding="5dp"
+                        android:textSize="18sp"
                         android:text="Mushroom Frittata"
                         android:textStyle="bold" />
                 </RelativeLayout>
@@ -358,6 +383,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:layout_weight="1"
+                        android:scaleType="centerCrop"
                         android:src="@drawable/avocado_fettucine_complete" />
 
                     <TextView
@@ -365,7 +391,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentBottom="true"
-                        android:padding="10dp"
+                        android:background="@android:color/white"
+                        android:padding="5dp"
+                        android:textSize="18sp"
                         android:text="Avocado Fettucine"
                         android:textStyle="bold" />
                 </RelativeLayout>
@@ -385,6 +413,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:layout_weight="1"
+                        android:scaleType="centerCrop"
                         android:src="@drawable/korean_spicy_chicken_complete" />
 
                     <TextView
@@ -392,7 +421,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentBottom="true"
-                        android:padding="10dp"
+                        android:background="@android:color/white"
+                        android:padding="5dp"
+                        android:textSize="18sp"
                         android:text="Korean Spicy Chicken"
                         android:textStyle="bold" />
                 </RelativeLayout>
@@ -412,6 +443,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:layout_weight="1"
+                        android:scaleType="centerCrop"
                         android:src="@drawable/mushroom_frittata_complete" />
 
                     <TextView
@@ -419,7 +451,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentBottom="true"
-                        android:padding="10dp"
+                        android:background="@android:color/white"
+                        android:padding="5dp"
+                        android:textSize="18sp"
                         android:text="Mushroom Frittata"
                         android:textStyle="bold" />
                 </RelativeLayout>
@@ -439,6 +473,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:layout_weight="1"
+                        android:scaleType="centerCrop"
                         android:src="@drawable/avocado_fettucine_complete" />
 
                     <TextView
@@ -446,7 +481,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentBottom="true"
-                        android:padding="10dp"
+                        android:background="@android:color/white"
+                        android:padding="5dp"
+                        android:textSize="18sp"
                         android:text="Avocado Fettucine"
                         android:textStyle="bold" />
                 </RelativeLayout>
