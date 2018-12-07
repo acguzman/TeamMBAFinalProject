@@ -56,7 +56,7 @@ public class Register extends Activity implements View.OnClickListener {
 
         if (v==buttonRegisterNew){
 
-            Intent intentNewUser = new Intent (this, RecipeDiscoverFragment.class);
+            Intent intentNewUser = new Intent (this, MyRecipesFragment.class);
 
             mAuth.createUserWithEmailAndPassword(editTextUsernameNew.getText().toString(), editTextPasswordNew.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
@@ -71,7 +71,7 @@ public class Register extends Activity implements View.OnClickListener {
 
                 }
             });
-        }
+        }else if (v==checkBoxVegan);
 
     }
 }
