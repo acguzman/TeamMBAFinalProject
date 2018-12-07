@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "490129875191",
+    "firebase_url": "https://teammbafinalproject-424fe.firebaseio.com",
+    "project_id": "teammbafinalproject-424fe",
+    "storage_bucket": "teammbafinalproject-424fe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:490129875191:android:45f24f34743229b4",
+        "android_client_info": {
+          "package_name": "com.example.alexa.teammbafinalproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "490129875191-a1imi7u36c3s3onivb3rgel3qgf4renq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.alexa.teammbafinalproject",
+            "certificate_hash": "498c2d414d931e762adba1578c52fb4736373e89"
+          }
+        },
+        {
+          "client_id": "490129875191-f3dum493cvqm3ipgie6hl157vofrhfpq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjd5aQFnQCv7O3gtTjvNxQTjS5oU1Wc4M"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "490129875191-f3dum493cvqm3ipgie6hl157vofrhfpq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
