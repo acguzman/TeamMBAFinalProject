@@ -6,14 +6,14 @@
     android:id="@+id/parent_Layout" android:padding="30dp">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imageViewDescription"
         android:layout_width="150dp"
         android:layout_height="100dp"
-        android:layout_below="@id/textViewUpdate"
+        android:layout_below="@id/textViewDescriptionTitle"
         android:padding="5dp" />
 
     <TextView
-        android:id="@+id/textViewUpdate"
+        android:id="@+id/textViewDescriptionTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -23,68 +23,68 @@
         android:textSize="25sp" />
 
     <Button
-        android:id="@+id/buttonadd"
+        android:id="@+id/buttonDescriptionAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Add to Recipies"
         android:background="@color/colorPrimaryDark"
         android:padding="10dp"
-        android:layout_toRightOf="@id/imageView"
-        android:layout_below="@id/textViewUpdate"/>
+        android:layout_toRightOf="@id/imageViewDescription"
+        android:layout_below="@id/textViewDescriptionTitle"/>
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textViewDescriptionRating"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Overall Rating:"
-        android:layout_toRightOf="@id/imageView"
-        android:layout_below="@id/buttonadd"
+        android:layout_toRightOf="@id/imageViewDescription"
+        android:layout_below="@id/buttonDescriptionAdd"
         />
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="150dp"
         android:layout_height="20dp"
-        android:layout_toRightOf="@id/imageView"
-        android:layout_below="@id/textView2"
+        android:layout_toRightOf="@id/imageViewDescription"
+        android:layout_below="@id/textViewDescriptionRating"
         />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/textViewDescriptionDescriptionTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/imageView"
+        android:layout_below="@id/imageViewDescription"
         android:layout_alignParentLeft="true"
         android:text="Description:"
         android:textSize="20sp"/>
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/textViewDescriptionDescriptionText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textView3"
+        android:layout_below="@id/textViewDescriptionDescriptionTitle"
         android:layout_alignParentLeft="true"
         android:text="This is the greatest chicken...in the WORLD!"
         android:padding="5dp"/>
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/textViewDescriptionIngredientsTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textView4"
+        android:layout_below="@id/textViewDescriptionDescriptionText"
         android:layout_alignParentLeft="true"
         android:text="Ingredients:"
         android:textSize="20sp"/>
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/textViewDescriptionIngredientsText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textView5"
+        android:layout_below="@id/textViewDescriptionIngredientsTitle"
         android:layout_alignParentLeft="true"
         android:text="- First Ingredient\n- Second Ingredient" />
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/textViewReviewsTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textView6"
+        android:layout_below="@id/textViewDescriptionIngredientsText"
         android:layout_alignParentLeft="true"
         android:text="Reviews:"
         android:textSize="20sp"
