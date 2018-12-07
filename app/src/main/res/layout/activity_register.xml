@@ -9,23 +9,12 @@
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:theme="@style/HappyCookingTheme.AppBarOverlay">
 
     </android.support.design.widget.AppBarLayout>
 
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_gravity="bottom|end"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="19dp"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
 
     <TextView
         android:id="@+id/textView10"
@@ -99,17 +88,6 @@
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword" />
-
-    <Button
-        android:id="@+id/buttonRegisterNew"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/fab"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="-22dp"
-        android:background="@color/colorPrimaryDark"
-        android:text="Register"
-        android:textSize="24sp" />
 
     <CheckBox
         android:id="@+id/checkBoxVeg"
@@ -194,6 +172,17 @@
         android:layout_marginBottom="213dp"
         android:text="Meal Preferences"
         android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/buttonRegisterNew"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="25dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="Register"
+        android:textSize="18sp" />
 
 
 </RelativeLayout>
