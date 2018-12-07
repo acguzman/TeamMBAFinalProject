@@ -54,7 +54,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         }else if(v==buttonLogin){
 
-            final Intent intentDiscover = new Intent(this, RecipeDiscoverFragment.class);
+            final Intent intentRecipes = new Intent(this, MyRecipesFragment.class);
 
             mAuth.signInWithEmailAndPassword(editTextUsername.getText().toString(), editTextPassword.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
@@ -63,7 +63,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                         FirebaseUser user = mAuth.getCurrentUser();
                         Toast.makeText(MainActivity.this, "Login Successful " + user.getEmail(), Toast.LENGTH_SHORT).show();
 
-                        startActivity(intentDiscover);
+                        startActivity(intentRecipes);
 
                     }else {
                         Toast.makeText(MainActivity.this, "Login Unsuccessful", Toast.LENGTH_SHORT).show();
