@@ -84,7 +84,7 @@
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/editTextEmailUpdate"
+            android:id="@+id/editTextUsernameUpdate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -95,8 +95,8 @@
             android:layout_marginRight="85dp"
             android:background="@color/colorPrimary"
             android:ems="10"
-            android:hint="Email"
-            android:inputType="textEmailAddress" />
+            android:hint="Username"
+            android:inputType="textPersonName" />
 
         <TextView
             android:id="@+id/textViewUpdate"
