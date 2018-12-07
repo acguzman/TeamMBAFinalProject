@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
 import java.util.ArrayList;
@@ -21,11 +22,16 @@ import java.util.List;
  * to handle interaction events. factory method to
  * create an instance of this fragment.
  */
-public class RecipeDiscoverFragment extends Fragment {
+public class RecipeDiscoverFragment extends Fragment implements View.OnClickListener {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
+    public ImageButton imageButton01;
+
+    //Temp Code
+    public List<String> recipeIds = new ArrayList<String>() {{add("111"); add("222"); add("333");}};
 
     LinearLayout linearLayoutNewRecipes, linearLayoutOldRecipes;
 
@@ -46,6 +52,9 @@ public class RecipeDiscoverFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+        imageButton01 = getView().findViewById(R.id.imageButton01);
+        imageButton01.setOnClickListener(this);
     }
 
     @Override
@@ -53,6 +62,23 @@ public class RecipeDiscoverFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_recipe_discover, container, false);
+    }
+
+    /**
+     * Called when a view has been clicked.
+     *
+     * @param v The view that was clicked.
+     */
+    @Override
+    public void onClick(View v) {
+
+        if(v.getClass() == Button.class) {
+            v.getId();
+
+            String temIdToPass = recipeIds.get(1);
+            // Code to transition to the Recipe Description Page
+
+        }
     }
 
 //    @Override
