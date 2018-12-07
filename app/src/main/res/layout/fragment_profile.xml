@@ -137,7 +137,7 @@
             android:layout_marginStart="144dp"
             android:layout_marginLeft="144dp"
             android:layout_marginBottom="116dp"
-            android:src="@drawable/avocado_fettucine_complete" />
+            android:src="@drawable/korean_spicy_chicken_complete" />
 
         <ImageButton
             android:id="@+id/imageButton3"
@@ -149,7 +149,7 @@
             android:layout_marginStart="257dp"
             android:layout_marginLeft="257dp"
             android:layout_marginBottom="116dp"
-            android:src="@drawable/avocado_fettucine_complete" />
+            android:src="@drawable/mushroom_frittata_complete" />
 
         <Button
             android:id="@+id/buttonUpdate"

@@ -10,9 +10,14 @@ public class Recipe {
 
     public String recipeID;
 
+    public String recipeName;
+
+    public String recipeDescription;
+
     public Image picture; //https://docs.oracle.com/javase/tutorial/2d/images/loadimage.html
 
     public boolean isVegetarian;
+    public boolean isVegan;
     public boolean isDairyFree;
     public boolean isGlutenFree;
     public boolean isNutFree;

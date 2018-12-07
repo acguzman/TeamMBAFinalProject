@@ -15,9 +15,8 @@ public class BottomNav extends AppCompatActivity implements BottomNavigationView
     private BottomNavigationView mainNav;
     private FrameLayout mainFrame;
 
-    private HomeFragment1 homeFragment1;
-    private GroceryListFragment1 groceryListFragment1;
     private GetCookingFragment getCookingFragment;
+    private DiscoverFragment discoverFragment;
     private ProfileFragment1 profileFragment1;
 
 
@@ -29,26 +28,23 @@ public class BottomNav extends AppCompatActivity implements BottomNavigationView
         mainNav = findViewById(R.id.main_nav);
         mainFrame = (FrameLayout) findViewById(R.id.main_frame);
 
-        homeFragment1 = new HomeFragment1();
-        groceryListFragment1 = new GroceryListFragment1();
         getCookingFragment = new GetCookingFragment();
+        discoverFragment = new DiscoverFragment();
         profileFragment1 = new ProfileFragment1();
 
+        setFragment(getCookingFragment);
+        mainNav.setOnNavigationItemSelectedListener(this);
 
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()){
-            case R.id.home_nav_item:
-                setFragment(homeFragment1);
-                return true;
-            case R.id.groceries_nav_item:
-                setFragment(groceryListFragment1);
-                return true;
-            // i created cooking fragment after unchecking two columns
-                case R.id.cooking_nav_item:
+            case R.id.cooking_nav_item:
                 setFragment(getCookingFragment);
+                return true;
+            case R.id.discover_nav_item:
+                setFragment(discoverFragment);
                 return true;
             case R.id.profile_nav_item:
                 setFragment(profileFragment1);
@@ -62,8 +58,6 @@ public class BottomNav extends AppCompatActivity implements BottomNavigationView
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.main_frame, fragment);
         fragmentTransaction.commit();
-
-
 
     }
 }

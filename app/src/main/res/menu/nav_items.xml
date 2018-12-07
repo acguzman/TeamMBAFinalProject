@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item
-        android:id="@+id/home_nav_item"
-        android:icon="@drawable/ic_home_item"
-        android:title="Home" />
-    <item
-        android:id="@+id/groceries_nav_item"
-        android:icon="@drawable/ic_groceries_item"
-        android:title="Grocery List" />
     <item
         android:id="@+id/cooking_nav_item"
         android:icon="@drawable/ic_cooking_item"
         android:title="Get Cooking" />
+    <item
+        android:id="@+id/discover_nav_item"
+        android:icon="@drawable/ic_discover_item"
+        android:title="Discover Recipes" />
     <item
         android:id="@+id/profile_nav_item"
         android:icon="@drawable/ic_profile_item"

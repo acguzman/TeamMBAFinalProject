@@ -25,7 +25,8 @@
             android:name=".Register"
             android:label="@string/title_activity_register"
             android:theme="@style/HappyCookingTheme" />
-        <activity android:name=".RecipeStepBaseActivity"></activity>
+        <activity android:name=".RecipeStepBase" />
+        <activity android:name=".AddRecipestoDatabase"></activity>
     </application>
 
 </manifest>
