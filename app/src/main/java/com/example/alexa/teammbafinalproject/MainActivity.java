@@ -20,6 +20,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     Button buttonLogin, buttonRegister;
     EditText editTextUsername, editTextPassword;
     private FirebaseAuth mAuth;
+    Intent intentRecipes;
 
 
     @Override
@@ -54,7 +55,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         }else if(v==buttonLogin){
 
-            final Intent intentRecipes = new Intent(this, MyRecipesFragment.class);
+            intentRecipes = new Intent(this, BottomNav.class);
 
             mAuth.signInWithEmailAndPassword(editTextUsername.getText().toString(), editTextPassword.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override

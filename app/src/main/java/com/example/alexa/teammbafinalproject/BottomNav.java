@@ -2,7 +2,7 @@ package com.example.alexa.teammbafinalproject;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.internal.BottomNavigationItemView;
+
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -12,7 +12,7 @@ import android.widget.FrameLayout;
 
 public class BottomNav extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
-    private BottomNavigationItemView mainNav;
+    private BottomNavigationView mainNav;
     private FrameLayout mainFrame;
 
     private HomeFragment1 homeFragment1;
@@ -26,7 +26,7 @@ public class BottomNav extends AppCompatActivity implements BottomNavigationView
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bottom_nav);
-        mainNav = (BottomNavigationItemView) findViewById(R.id.main_nav);
+        mainNav = findViewById(R.id.main_nav);
         mainFrame = (FrameLayout) findViewById(R.id.main_frame);
 
         homeFragment1 = new HomeFragment1();
