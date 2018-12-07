@@ -46,7 +46,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:src="@drawable/ic_cooking_item" />
+                        android:src="@drawable/avocado_fettucine_complete" />
 
                     <TextView
                         android:id="@+id/textView01"
@@ -75,7 +75,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:src="@drawable/ic_cooking_item" />
+                        android:src="@drawable/korean_spicy_chicken_complete" />
 
                     <TextView
                         android:id="@+id/textView02"
@@ -103,7 +103,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:src="@drawable/ic_cooking_item" />
+                        android:src="@drawable/mushroom_frittata_complete" />
 
                     <TextView
                         android:id="@+id/textView03"
@@ -131,7 +131,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:src="@drawable/ic_cooking_item" />
+                        android:src="@drawable/avocado_fettucine_complete" />
 
                     <TextView
                         android:id="@+id/textView04"
@@ -159,7 +159,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:src="@drawable/ic_cooking_item" />
+                        android:src="@drawable/korean_spicy_chicken_complete" />
 
                     <TextView
                         android:id="@+id/textView05"
@@ -187,7 +187,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:src="@drawable/ic_cooking_item" />
+                        android:src="@drawable/mushroom_frittata_complete" />
 
                     <TextView
                         android:id="@+id/textView06"
@@ -215,7 +215,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:src="@drawable/ic_cooking_item" />
+                        android:src="@drawable/avocado_fettucine_complete" />
 
                     <TextView
                         android:id="@+id/textView07"
@@ -277,7 +277,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:layout_weight="1"
-                        android:src="@drawable/ic_cooking_item" />
+                        android:src="@drawable/avocado_fettucine_complete" />
 
                     <TextView
                         android:id="@+id/textView11"
@@ -304,7 +304,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:layout_weight="1"
-                        android:src="@drawable/ic_cooking_item" />
+                        android:src="@drawable/korean_spicy_chicken_complete" />
 
                     <TextView
                         android:id="@+id/textView12"
@@ -331,7 +331,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:layout_weight="1"
-                        android:src="@drawable/ic_cooking_item" />
+                        android:src="@drawable/mushroom_frittata_complete" />
 
                     <TextView
                         android:id="@+id/textView13"
@@ -358,7 +358,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:layout_weight="1"
-                        android:src="@drawable/ic_cooking_item" />
+                        android:src="@drawable/avocado_fettucine_complete" />
 
                     <TextView
                         android:id="@+id/textView14"
@@ -385,7 +385,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:layout_weight="1"
-                        android:src="@drawable/ic_cooking_item" />
+                        android:src="@drawable/korean_spicy_chicken_complete" />
 
                     <TextView
                         android:id="@+id/textView15"
@@ -412,7 +412,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:layout_weight="1"
-                        android:src="@drawable/ic_cooking_item" />
+                        android:src="@drawable/mushroom_frittata_complete" />
 
                     <TextView
                         android:id="@+id/textView16"
@@ -439,7 +439,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:layout_weight="1"
-                        android:src="@drawable/ic_cooking_item" />
+                        android:src="@drawable/avocado_fettucine_complete" />
 
                     <TextView
                         android:id="@+id/textView17"
