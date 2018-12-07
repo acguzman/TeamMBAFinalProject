@@ -15,7 +15,9 @@
             android:layout_width="150dp"
             android:layout_height="100dp"
             android:layout_below="@id/textViewDescriptionTitle"
-            android:padding="5dp" />
+            android:padding="5dp"
+            android:src="@mipmap/chickenparm"
+            />
 
         <TextView
             android:id="@+id/textViewDescriptionTitle"
@@ -29,13 +31,22 @@
 
         <Button
             android:id="@+id/buttonDescriptionAdd"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="Add to Recipies"
             android:background="@color/colorPrimaryDark"
             android:padding="10dp"
             android:layout_toRightOf="@id/imageViewDescription"
             android:layout_below="@id/textViewDescriptionTitle"/>
+        <Button
+            android:id="@+id/buttonDescriptionCook"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Get cooking!"
+            android:background="@color/colorPrimaryDark"
+            android:padding="10dp"
+            android:layout_toRightOf="@id/imageViewDescription"
+            android:layout_below="@id/buttonDescriptionAdd"/>
 
         <TextView
             android:id="@+id/textViewDescriptionRating"
@@ -51,7 +62,9 @@
             android:layout_width="150dp"
             android:layout_height="20dp"
             android:layout_below="@id/textViewDescriptionRating"
-            android:layout_alignParentLeft="true" />
+            android:layout_alignParentLeft="true"
+            android:src="@mipmap/three_stars"
+            />
 
         <TextView
             android:id="@+id/textViewDescriptionDescriptionTitle"
