@@ -1,11 +1,23 @@
 package com.example.alexa.teammbafinalproject;
 
 import android.app.Activity;
+import android.content.res.Resources;
+import android.graphics.Picture;
+import android.graphics.drawable.Drawable;
+import android.media.Image;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import android.os.Environment;
 import android.os.Parcel;
 import android.provider.MediaStore;
@@ -20,15 +32,16 @@ import android.widget.ImageView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.UUID;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.List;
-
 import static android.support.constraint.Constraints.TAG;
 
-public class AddRecipestoDatabase extends Activity implements View.OnClickListener {
+
+public class AddRecipestoDatabase extends Activity implements View.OnClickListener{
 
     EditText editTextRecipeName, editTextRecipeDescriptionEntry;
     EditText editTextStepName1Entry, editTextStepIngredient1Entry;
@@ -175,6 +188,42 @@ public class AddRecipestoDatabase extends Activity implements View.OnClickListen
                     tempStepIDs, tempStepNames, tempStepImages,
                     null, null, null);
             myRef.push().setValue(newRecipe);
+        }
+    }
+
+    //@Override
+    public void onClick_ALTERNATIVE(View v) {
+
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+        final DatabaseReference myRef = database.getReference("Recipe");
+        Resources res = getResources();
+//hard coded right now
+        Drawable drawable = res.getDrawable(R.drawable.avocado_fettucine_complete);
+
+        if(v == buttonSaveRecipeEntry){
+
+            String createRecipeID = UUID.randomUUID().toString();
+            String createRecipe = editTextRecipeName.getText().toString();
+            String createRecipeDescription = editTextRecipeDescriptionEmpty.getText().toString();
+            //hard coded picture for now
+            // Drawable createRecipeCompletePicture = res.getDrawable(R.drawable.avocado_fettucine_complete);
+            String createIngredientSummary = editTextIngredientSummary.getText().toString();
+            String createStep1Name = editTextStepName1Entry.getText().toString();
+            String createStep2Name = editTextStepName2Entry.getText().toString();
+            String createStep3Name = editTextStepName3Entry.getText().toString();
+            //Step Pictures
+            String createStep1Ingredient = editTextStepIngredient1Entry.getText().toString();
+            String createStep2Ingredient = editTextStepIngredient2Entry.getText().toString();
+            String createStep3Ingredient = editTextStepIngredient3Entry.getText().toString();
+
+            //Recipe newRecipe = new Recipe(createRecipeID,createRecipe,createRecipeDescription,createIngredientSummary,createStep1Name, createStep2Name, createStep3Name,createStep1Ingredient,createStep2Ingredient,createStep3Ingredient);
+
+            //myRef.push().setValue(newRecipe)
+
+
+            //if(CheckBox.recipeCompletePicture){
+            // CheckBox createCheckBoxVegEntry = xxx.iftrue;
+
         }
     }
 }
