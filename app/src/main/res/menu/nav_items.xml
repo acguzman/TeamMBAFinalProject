@@ -8,7 +8,7 @@
         android:title="Get Cooking" />
     <item
         android:id="@+id/discover_nav_item"
-        android:icon="@drawable/ic_discover_item"
+        android:icon="@drawable/ic_home_item"
         android:title="Discover Recipes" />
     <item
         android:id="@+id/profile_nav_item"

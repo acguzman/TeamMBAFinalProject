@@ -18,8 +18,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.*;
 
 public class Register extends Activity implements View.OnClickListener {
 
@@ -27,7 +27,7 @@ public class Register extends Activity implements View.OnClickListener {
    EditText editTextName, editTextEmail, editTextUsernameNew, editTextPasswordNew;
    CheckBox checkBoxVeg, checkBoxVegan, checkBoxGluten, checkBoxNut, checkBoxDairy;
    private FirebaseAuth mAuth;
-
+   DatabaseReference myRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,14 +51,13 @@ public class Register extends Activity implements View.OnClickListener {
 
         mAuth = FirebaseAuth.getInstance();
 
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        myRef = database.getReference("com.example.alexa.teammbafinalproject.User");
+
     }
 
     @Override
     public void onClick(View v) {
-
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        final DatabaseReference myRef = database.getReference("com.example.alexa.teammbafinalproject.User");
-
 
         if (v==buttonRegisterNew){
 

@@ -13,223 +13,223 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" />
+            android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/editTextRecipeName"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:hint="Recipe Name"
+                android:inputType="textPersonName" />
+
+            <CheckBox
+                android:id="@+id/checkBoxVegEntry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/editTextRecipeName"
+                android:layout_marginTop="10dp"
+                android:text="Vegetarian" />
+
+            <CheckBox
+                android:id="@+id/checkBoxVeganEntry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/checkBoxVegEntry"
+                android:layout_below="@+id/editTextRecipeName"
+                android:layout_marginTop="10dp"
+                android:text="Vegan"/>
+
+            <CheckBox
+                android:id="@+id/checkBoxDairyFreeEntry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/checkBoxVeganEntry"
+                android:layout_below="@+id/editTextRecipeName"
+                android:layout_marginTop="10dp"
+                android:text="Dairy Free" />
+
+            <CheckBox
+                android:id="@+id/checkBoxGlutenFreeEntry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/checkBoxDairyFreeEntry"
+                android:layout_below="@+id/editTextRecipeName"
+                android:layout_marginTop="10dp"
+                android:text="Gluten Free" />
+
+            <CheckBox
+                android:id="@+id/checkBoxNutFreeEntry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/checkBoxVegEntry"
+                android:text="Nut Free"/>
+
+            <EditText
+                android:id="@+id/editTextRecipeDescriptionEntry"
+                android:layout_width="290dp"
+                android:layout_height="80dp"
+                android:layout_below="@id/checkBoxNutFreeEntry"
+                android:hint="Recipe Description"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/editTextIngredientSummary"
+                android:layout_width="350dp"
+                android:layout_height="100dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/editTextRecipeDescriptionEntry"
+                android:hint="List Ingredients" />
+
+            <TextView
+                android:id="@+id/textViewStepLabelEntry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editTextIngredientSummary"
+                android:text="Steps"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editTextStepName1Entry"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textViewStepLabelEntry"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/textViewStep1Entry"
+                android:hint="Enter Step 1 Name/Description"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:id="@+id/textViewStep1Entry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textViewStepLabelEntry"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:text="1"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editTextStepIngredient1Entry"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/editTextStepName1Entry"
+                android:layout_alignStart="@+id/editTextStepName1Entry"
+                android:ems="10"
+                android:hint="Enter Step 2 Ingredient List"
+                android:inputType="textPersonName"
+                android:layout_alignLeft="@+id/editTextStepName1Entry" />
+
+            <EditText
+                android:id="@+id/editTextStepName2Entry"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editTextStepIngredient1Entry"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/textViewStep1Entry"
+                android:hint="Enter Step 2 Name/Description"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:id="@+id/textViewStep2Entry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editTextStepIngredient1Entry"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:text="2"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editTextStepIngredient2Entry"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/editTextStepName2Entry"
+                android:layout_alignStart="@+id/editTextStepName2Entry"
+                android:ems="10"
+                android:hint="Enter Step 2 Ingredient List"
+                android:inputType="textPersonName"
+                android:layout_alignLeft="@+id/editTextStepName2Entry" />
+
+            <EditText
+                android:id="@+id/editTextStepName3Entry"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editTextStepIngredient2Entry"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/textViewStep1Entry"
+                android:hint="Enter Step 3 Name/Description"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:id="@+id/textViewStep3Entry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editTextStepIngredient2Entry"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:text="3"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editTextStepIngredient3Entry"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/editTextStepName3Entry"
+                android:layout_alignStart="@+id/editTextStepName3Entry"
+                android:ems="10"
+                android:hint="Enter Step 3 Ingredient List"
+                android:inputType="textPersonName"
+                android:layout_alignLeft="@+id/editTextStepName3Entry" />
+
+            <Button
+                android:id="@+id/buttonSaveRecipeEntry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimaryDark"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/editTextStepIngredient3Entry"
+                android:text="Save Recipe" />
+
+            <ImageView
+                android:id="@+id/imageViewRecipeCompleteImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/editTextRecipeDescriptionEntry"
+                android:layout_above="@id/editTextIngredientSummary"
+                android:layout_marginLeft="30dp"
+                android:src="@drawable/ic_upload_photo_item" />
+
+            <ImageView
+                android:id="@+id/imageViewStep1Image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/editTextStepName1Entry"
+                android:layout_below="@id/editTextStepName1Entry"
+                android:layout_marginLeft="30dp"
+                android:src="@drawable/ic_upload_photo_item" />
+
+            <ImageView
+                android:id="@+id/imageViewStep2Image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/editTextStepName2Entry"
+                android:layout_below="@id/editTextStepName2Entry"
+                android:layout_marginLeft="30dp"
+                android:src="@drawable/ic_upload_photo_item" />
+
+            <ImageView
+                android:id="@+id/imageViewStep3Image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/editTextStepName3Entry"
+                android:layout_below="@id/editTextStepName3Entry"
+                android:layout_marginLeft="30dp"
+                android:src="@drawable/ic_upload_photo_item" />
+        </LinearLayout>
     </ScrollView>
-
-    <EditText
-        android:id="@+id/editTextRecipeName"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:hint="Recipe Name"
-        android:inputType="textPersonName" />
-
-    <CheckBox
-        android:id="@+id/checkBoxVegEntry"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/editTextRecipeName"
-        android:layout_marginTop="10dp"
-        android:text="Vegetarian" />
-
-    <CheckBox
-        android:id="@+id/checkBoxVeganEntry"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/checkBoxVegEntry"
-        android:layout_below="@+id/editTextRecipeName"
-        android:layout_marginTop="10dp"
-        android:text="Vegan"/>
-
-    <CheckBox
-        android:id="@+id/checkBoxDairyFreeEntry"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/checkBoxVeganEntry"
-        android:layout_below="@+id/editTextRecipeName"
-        android:layout_marginTop="10dp"
-        android:text="Dairy Free" />
-
-    <CheckBox
-        android:id="@+id/checkBoxGlutenFreeEntry"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/checkBoxDairyFreeEntry"
-        android:layout_below="@+id/editTextRecipeName"
-        android:layout_marginTop="10dp"
-        android:text="Gluten Free" />
-
-    <CheckBox
-        android:id="@+id/checkBoxNutFreeEntry"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/checkBoxVegEntry"
-        android:text="Nut Free"/>
-
-    <EditText
-        android:id="@+id/editTextRecipeDescriptionEntry"
-        android:layout_width="290dp"
-        android:layout_height="80dp"
-        android:layout_below="@id/checkBoxNutFreeEntry"
-        android:hint="Recipe Description"
-        android:inputType="textPersonName" />
-
-    <EditText
-        android:id="@+id/editTextIngredientSummary"
-        android:layout_width="350dp"
-        android:layout_height="100dp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/editTextRecipeDescriptionEntry"
-        android:hint="List Ingredients" />
-
-    <TextView
-        android:id="@+id/textViewStepLabelEntry"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/editTextIngredientSummary"
-        android:text="Steps"
-        android:textSize="18sp"
-        android:textStyle="bold" />
-
-    <EditText
-        android:id="@+id/editTextStepName1Entry"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textViewStepLabelEntry"
-        android:layout_marginLeft="20dp"
-        android:layout_toRightOf="@+id/textViewStep1Entry"
-        android:hint="Enter Step 1 Name/Description"
-        android:inputType="textPersonName" />
-
-    <TextView
-        android:id="@+id/textViewStep1Entry"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textViewStepLabelEntry"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        android:text="1"
-        android:textSize="18sp"
-        android:textStyle="bold" />
-
-    <EditText
-        android:id="@+id/editTextStepIngredient1Entry"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/editTextStepName1Entry"
-        android:layout_alignStart="@+id/editTextStepName1Entry"
-        android:ems="10"
-        android:hint="Enter Step 2 Ingredient List"
-        android:inputType="textPersonName"
-        android:layout_alignLeft="@+id/editTextStepName1Entry" />
-
-    <EditText
-        android:id="@+id/editTextStepName2Entry"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/editTextStepIngredient1Entry"
-        android:layout_marginLeft="20dp"
-        android:layout_toRightOf="@+id/textViewStep1Entry"
-        android:hint="Enter Step 2 Name/Description"
-        android:inputType="textPersonName" />
-
-    <TextView
-        android:id="@+id/textViewStep2Entry"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/editTextStepIngredient1Entry"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        android:text="2"
-        android:textSize="18sp"
-        android:textStyle="bold" />
-
-    <EditText
-        android:id="@+id/editTextStepIngredient2Entry"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/editTextStepName2Entry"
-        android:layout_alignStart="@+id/editTextStepName2Entry"
-        android:ems="10"
-        android:hint="Enter Step 2 Ingredient List"
-        android:inputType="textPersonName"
-        android:layout_alignLeft="@+id/editTextStepName2Entry" />
-
-    <EditText
-        android:id="@+id/editTextStepName3Entry"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/editTextStepIngredient2Entry"
-        android:layout_marginLeft="20dp"
-        android:layout_toRightOf="@+id/textViewStep1Entry"
-        android:hint="Enter Step 3 Name/Description"
-        android:inputType="textPersonName" />
-
-    <TextView
-        android:id="@+id/textViewStep3Entry"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/editTextStepIngredient2Entry"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        android:text="3"
-        android:textSize="18sp"
-        android:textStyle="bold" />
-
-    <EditText
-        android:id="@+id/editTextStepIngredient3Entry"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/editTextStepName3Entry"
-        android:layout_alignStart="@+id/editTextStepName3Entry"
-        android:ems="10"
-        android:hint="Enter Step 3 Ingredient List"
-        android:inputType="textPersonName"
-        android:layout_alignLeft="@+id/editTextStepName3Entry" />
-
-    <Button
-        android:id="@+id/buttonSaveRecipeEntry"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/editTextStepIngredient3Entry"
-        android:text="Save Recipe" />
-
-    <ImageView
-        android:id="@+id/imageViewRecipeCompleteImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/editTextRecipeDescriptionEntry"
-        android:layout_above="@id/editTextIngredientSummary"
-        android:layout_marginLeft="30dp"
-        android:src="@drawable/ic_upload_photo_item" />
-
-    <ImageView
-        android:id="@+id/imageViewStep1Image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/editTextStepName1Entry"
-        android:layout_below="@id/editTextStepName1Entry"
-        android:layout_marginLeft="30dp"
-        android:src="@drawable/ic_upload_photo_item" />
-
-    <ImageView
-        android:id="@+id/imageViewStep2Image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/editTextStepName2Entry"
-        android:layout_below="@id/editTextStepName2Entry"
-        android:layout_marginLeft="30dp"
-        android:src="@drawable/ic_upload_photo_item" />
-
-    <ImageView
-        android:id="@+id/imageViewStep3Image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/editTextStepName3Entry"
-        android:layout_below="@id/editTextStepName3Entry"
-        android:layout_marginLeft="30dp"
-        android:src="@drawable/ic_upload_photo_item" />
-
 </RelativeLayout>
