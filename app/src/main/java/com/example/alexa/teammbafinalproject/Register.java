@@ -27,7 +27,7 @@ public class Register extends Activity implements View.OnClickListener {
    EditText editTextName, editTextEmail, editTextUsernameNew, editTextPasswordNew;
    CheckBox checkBoxVeg, checkBoxVegan, checkBoxGluten, checkBoxNut, checkBoxDairy;
    private FirebaseAuth mAuth;
-   DatabaseReference myRef;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,29 +51,29 @@ public class Register extends Activity implements View.OnClickListener {
 
         mAuth = FirebaseAuth.getInstance();
 
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        myRef = database.getReference("com.example.alexa.teammbafinalproject.User");
 
     }
 
     @Override
     public void onClick(View v) {
 
+       FirebaseDatabase database = FirebaseDatabase.getInstance();
+       final DatabaseReference myRef = database.getReference("Users");
+
         if (v==buttonRegisterNew){
 
-            final Intent intentNewUser = new Intent (this, BottomNav.class);
+           final Intent intentNewUser = new Intent (this, BottomNav.class);
 
             mAuth.createUserWithEmailAndPassword(editTextEmail.getText().toString(), editTextPasswordNew.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful()){
-                        Toast.makeText(Register.this, "Welcome New com.example.alexa.teammbafinalproject.User", Toast.LENGTH_SHORT).show();
-                        User newuser = new User (editTextUsernameNew.getText().toString(),
-                                editTextName.getText().toString(),checkBoxVeg.isChecked(), checkBoxVegan.isChecked(), checkBoxGluten.isChecked(), checkBoxDairy.isChecked(), checkBoxNut.isChecked());
+                        Toast.makeText(Register.this, "Welcome New User", Toast.LENGTH_SHORT).show();
+                       User newuser = new User (editTextUsernameNew.getText().toString(), editTextName.getText().toString(), checkBoxVeg.isChecked(), checkBoxVegan.isChecked(), checkBoxGluten.isChecked(), checkBoxDairy.isChecked(), checkBoxNut.isChecked());
 
-                        myRef.push().setValue(newuser);
+                      myRef.push().setValue(newuser);
 
-                        startActivity(intentNewUser);
+                       startActivity(intentNewUser);
 
                     }else {
                         Toast.makeText(Register.this, "Registration Unsuccessful", Toast.LENGTH_SHORT).show();
