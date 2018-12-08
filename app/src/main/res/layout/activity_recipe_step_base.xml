@@ -85,8 +85,8 @@
         android:layout_marginTop="255dp"
         android:clickable="true"
         app:backgroundTint="@color/colorPrimary"
-        android:src="@drawable/ic_chat_item"/>
-    <!-- // TODO:AAYUSH app:srcCompat="@drawable/ic_chat_item" -->
+        />
+    <!-- // TODO:AAYUSH android:src="@drawable/ic_chat_item" app:srcCompat="@drawable/ic_chat_item" -->
 
     <!-- // TODO:AAYUSH app:srcCompat="@drawable/ic_timer_item" /-->
 
@@ -97,8 +97,9 @@
         android:layout_marginLeft="300dp"
         android:layout_marginTop="210dp"
         android:clickable="true"
-        android:src="@drawable/ic_next_item"
+
         app:backgroundTint="@color/colorPrimaryDark" />
-    <!-- //TODO app:srcCompat="@drawable/ic_next_item" -->
+    <!-- //TODO android:src="@drawable/ic_next_item"
+    app:srcCompat="@drawable/ic_next_item" -->
 
 </RelativeLayout>

@@ -14,13 +14,38 @@ public class Recipe {
 
     public String recipeDescription;
 
-    public Image picture; //https://docs.oracle.com/javase/tutorial/2d/images/loadimage.html
+    public Bitmap picture; //https://docs.oracle.com/javase/tutorial/2d/images/loadimage.html
 
     public boolean isVegetarian;
     public boolean isVegan;
     public boolean isDairyFree;
     public boolean isGlutenFree;
     public boolean isNutFree;
+
+    public Recipe(String recipeID, String recipeName, String recipeDescription, Bitmap picture,
+                  boolean isVegetarian, boolean isVegan, boolean isDairyFree, boolean
+                          isGlutenFree, boolean isNutFree, List<String> stepID, List<String>
+                          stepName, List<Bitmap> stepImage, List<List<Ingredient>>
+                          stepIngredients, List<List<String>> stepIngredientMeasurementAmount,
+                  List<List<String>> stepIngredientPreparationType) {
+        this.recipeID = recipeID;
+        this.recipeName = recipeName;
+        this.recipeDescription = recipeDescription;
+        this.picture = picture;
+        this.isVegetarian = isVegetarian;
+        this.isVegan = isVegan;
+        this.isDairyFree = isDairyFree;
+        this.isGlutenFree = isGlutenFree;
+        this.isNutFree = isNutFree;
+        this.stepID = stepID;
+        this.stepName = stepName;
+        this.stepImage = stepImage;
+        this.stepIngredients = stepIngredients;
+        this.stepIngredientMeasurementAmount = stepIngredientMeasurementAmount;
+        this.stepIngredientPreparationType = stepIngredientPreparationType;
+    }
+
+    public Recipe() {}
 
     /** The sample ingredients should look like the following example:
      * 2 Avocados, pitted
@@ -41,7 +66,7 @@ public class Recipe {
     public List<String> stepName;
 
     //Image associated with each step
-    public List<Image> stepImage;
+    public List<Bitmap> stepImage;
 
     /**
      * A list of ingredients associated with each step.
