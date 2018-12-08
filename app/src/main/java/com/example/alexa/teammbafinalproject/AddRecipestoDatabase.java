@@ -204,10 +204,10 @@ public class AddRecipestoDatabase extends Activity implements View.OnClickListen
 
             String createRecipeID = UUID.randomUUID().toString();
             String createRecipe = editTextRecipeName.getText().toString();
-            String createRecipeDescription = editTextRecipeDescriptionEmpty.getText().toString();
+//            String createRecipeDescription = editTextRecipeDescriptionEmpty.getText().toString();
             //hard coded picture for now
             // Drawable createRecipeCompletePicture = res.getDrawable(R.drawable.avocado_fettucine_complete);
-            String createIngredientSummary = editTextIngredientSummary.getText().toString();
+//            String createIngredientSummary = editTextIngredientSummary.getText().toString();
             String createStep1Name = editTextStepName1Entry.getText().toString();
             String createStep2Name = editTextStepName2Entry.getText().toString();
             String createStep3Name = editTextStepName3Entry.getText().toString();
