@@ -18,6 +18,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Register extends Activity implements View.OnClickListener {
 
@@ -54,15 +56,23 @@ public class Register extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
 
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        final DatabaseReference myRef = database.getReference("com.example.alexa.teammbafinalproject.User");
+
+
         if (v==buttonRegisterNew){
 
-            final Intent intentNewUser = new Intent (this, MyRecipesFragment.class);
+            final Intent intentNewUser = new Intent (this, BottomNav.class);
 
-            mAuth.createUserWithEmailAndPassword(editTextUsernameNew.getText().toString(), editTextPasswordNew.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            mAuth.createUserWithEmailAndPassword(editTextEmail.getText().toString(), editTextPasswordNew.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful()){
-                        Toast.makeText(Register.this, "Welcome New User", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Register.this, "Welcome New com.example.alexa.teammbafinalproject.User", Toast.LENGTH_SHORT).show();
+                        User newuser = new User (editTextUsernameNew.getText().toString(),
+                                editTextName.getText().toString(),checkBoxVeg.isChecked(), checkBoxVegan.isChecked(), checkBoxGluten.isChecked(), checkBoxDairy.isChecked(), checkBoxNut.isChecked());
+
+                        myRef.push().setValue(newuser);
 
                         startActivity(intentNewUser);
 
@@ -72,7 +82,7 @@ public class Register extends Activity implements View.OnClickListener {
 
                 }
             });
-        }else if (v==checkBoxVegan);
+        }
 
     }
 }
