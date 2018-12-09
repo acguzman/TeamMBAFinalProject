@@ -16,7 +16,7 @@ public class BottomNav extends AppCompatActivity implements BottomNavigationView
     private FrameLayout mainFrame;
 
     private GetCookingFragment getCookingFragment;
-    private DiscoverFragment discoverFragment;
+    private RecipeDiscoverFragment discoverFragment;
     private ProfileFragment1 profileFragment1;
 
 
@@ -29,7 +29,7 @@ public class BottomNav extends AppCompatActivity implements BottomNavigationView
         mainFrame = (FrameLayout) findViewById(R.id.main_frame);
 
         getCookingFragment = new GetCookingFragment();
-        discoverFragment = new DiscoverFragment();
+        discoverFragment = new RecipeDiscoverFragment();
         profileFragment1 = new ProfileFragment1();
 
         setFragment(getCookingFragment);
