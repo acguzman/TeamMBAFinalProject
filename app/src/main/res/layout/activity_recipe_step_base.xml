@@ -11,6 +11,29 @@
         android:layout_marginLeft="300dp"
         android:layout_marginTop="210dp"
         android:clickable="true"
+        android:visibility="visible"
+        app:backgroundTint="@color/colorPrimaryDark"
+        app:srcCompat="@drawable/ic_next_item" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButtonNext2"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="210dp"
+        android:clickable="true"
+        android:visibility="invisible"
+        app:backgroundTint="@color/colorPrimaryDark"
+        app:srcCompat="@drawable/ic_next_item" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButtonNext3"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="210dp"
+        android:clickable="true"
+        android:visibility="invisible"
         app:backgroundTint="@color/colorPrimaryDark"
         app:srcCompat="@drawable/ic_next_item" />
 

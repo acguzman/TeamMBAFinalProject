@@ -45,7 +45,7 @@ import static android.support.constraint.Constraints.TAG;
 
 public class AddRecipestoDatabase extends Activity implements View.OnClickListener {
 
-    EditText editTextRecipeName, editTextRecipeDescriptionEntry;
+    EditText editTextRecipeName, editTextRecipeDescriptionEntry, editTextIngredientSummary;
     EditText editTextStepName1Entry, editTextStepIngredient1Entry;
     EditText editTextStepName2Entry, editTextStepIngredient2Entry;
     EditText editTextStepName3Entry, editTextStepIngredient3Entry;
@@ -69,6 +69,7 @@ public class AddRecipestoDatabase extends Activity implements View.OnClickListen
 
         editTextRecipeName = findViewById(R.id.editTextRecipeName);
         editTextRecipeDescriptionEntry = findViewById(R.id.editTextRecipeDescriptionEntry);
+        editTextIngredientSummary = findViewById(R.id.editTextIngredientSummary);
         editTextStepName1Entry = findViewById(R.id.editTextStepName1Entry);
         editTextStepName2Entry = findViewById(R.id.editTextStepName2Entry);
         editTextStepName3Entry = findViewById(R.id.editTextStepName3Entry);
@@ -233,39 +234,42 @@ public class AddRecipestoDatabase extends Activity implements View.OnClickListen
     //@Override
     public void onClick_ALTERNATIVE(View v) {
 
-        final FirebaseDatabase database = FirebaseDatabase.getInstance();
-        final DatabaseReference myRef = database.getReference("Recipe");
-        Resources res = getResources();
-//hard coded right now
-        Drawable drawable = res.getDrawable(R.drawable.avocado_fettucine_complete);
-
         if (v == buttonSaveRecipeEntry) {
-
-            String createRecipeID = UUID.randomUUID().toString();
-            String createRecipe = editTextRecipeName.getText().toString();
-//            String createRecipeDescription = editTextRecipeDescriptionEmpty.getText().toString();
-            //hard coded picture for now
-            // Drawable createRecipeCompletePicture = res.getDrawable(R.drawable
-            // .avocado_fettucine_complete);
-//            String createIngredientSummary = editTextIngredientSummary.getText().toString();
-            String createStep1Name = editTextStepName1Entry.getText().toString();
-            String createStep2Name = editTextStepName2Entry.getText().toString();
-            String createStep3Name = editTextStepName3Entry.getText().toString();
-            //Step Pictures
-            String createStep1Ingredient = editTextStepIngredient1Entry.getText().toString();
-            String createStep2Ingredient = editTextStepIngredient2Entry.getText().toString();
-            String createStep3Ingredient = editTextStepIngredient3Entry.getText().toString();
-
-            //Recipe newRecipe = new Recipe(createRecipeID,createRecipe,createRecipeDescription,
-            // createIngredientSummary,createStep1Name, createStep2Name, createStep3Name,
-            // createStep1Ingredient,createStep2Ingredient,createStep3Ingredient);
-
-            //myRef.push().setValue(newRecipe)
+            fdb = FirebaseDatabase.getInstance();
+            DatabaseReference myRef = fdb.getReference("Recipe");
 
 
-            //if(CheckBox.recipeCompletePicture){
-            // CheckBox createCheckBoxVegEntry = xxx.iftrue;
+            List<String> tempStepIDs = new ArrayList<String>() {{
+                add("1");
+                add("2");
+                add("3");
+            }};
+            List<String> tempStepNames = new ArrayList<String>() {
+                {
+                    add(editTextStepName1Entry.getText().toString());
+                    add(editTextStepName2Entry.getText().toString());
+                    add(editTextStepName3Entry.getText().toString());
+//                    add(editTextStepName4Entry.getText().toString());
+                }
+            };
 
+            List<String> tempStepIngredients = new ArrayList<String>() {
+                {
+                    add(editTextStepIngredient1Entry.getText().toString());
+                    add(editTextStepIngredient2Entry.getText().toString());
+                    add(editTextStepIngredient3Entry.getText().toString());
+                }
+            };
+
+
+//            Recipe newRecipe = new Recipe(UUID.randomUUID().toString(), editTextRecipeName.getText().toString(),
+//                    editTextRecipeDescriptionEntry.getText().toString(), editTextIngredientSummary.getText().toString(),
+//                    null, checkBoxVegEntry.isChecked(), checkBoxVeganEntry.isChecked(),
+//                    checkBoxDairyFreeEntry.isChecked(), checkBoxGlutenFreeEntry.isChecked(),
+//                    checkBoxNutFreeEntry.isChecked(), tempStepIDs, tempStepNames, null,
+//                    tempStepIngredients);
+
+//                myRef.push().setValue(newRecipe);
+                }
         }
     }
-}
