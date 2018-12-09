@@ -15,13 +15,22 @@
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
+            <TextView
+                android:id="@+id/textViewAdminLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Admin: Add a New Recipe"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
             <EditText
                 android:id="@+id/editTextRecipeName"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:hint="Recipe Name"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:text="test" />
 
             <CheckBox
                 android:id="@+id/checkBoxVegEntry"
@@ -62,16 +71,16 @@
                 android:id="@+id/checkBoxNutFreeEntry"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/checkBoxVegEntry"
+                android:layout_below="@+id/checkBoxGlutenFreeEntry"
+                android:layout_marginTop="10dp"
                 android:text="Nut Free"/>
 
             <EditText
                 android:id="@+id/editTextRecipeDescriptionEntry"
-                android:layout_width="290dp"
+                android:layout_width="350dp"
                 android:layout_height="80dp"
                 android:layout_below="@id/checkBoxNutFreeEntry"
-                android:hint="Recipe Description"
-                android:inputType="textPersonName" />
+                android:hint="Recipe Description" />
 
             <EditText
                 android:id="@+id/editTextIngredientSummary"
@@ -90,6 +99,17 @@
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
+            <TextView
+                android:id="@+id/textViewStep1Entry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textViewStepLabelEntry"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="1"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
             <EditText
                 android:id="@+id/editTextStepName1Entry"
                 android:layout_width="250dp"
@@ -100,27 +120,27 @@
                 android:hint="Enter Step 1 Name/Description"
                 android:inputType="textPersonName" />
 
-            <TextView
-                android:id="@+id/textViewStep1Entry"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/textViewStepLabelEntry"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:text="1"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
             <EditText
                 android:id="@+id/editTextStepIngredient1Entry"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/editTextStepName1Entry"
                 android:layout_alignStart="@+id/editTextStepName1Entry"
+                android:layout_alignLeft="@+id/editTextStepName1Entry"
+                android:layout_marginLeft="20dp"
                 android:ems="10"
-                android:hint="Enter Step 2 Ingredient List"
-                android:inputType="textPersonName"
-                android:layout_alignLeft="@+id/editTextStepName1Entry" />
+                android:hint="Enter Step 1 Ingredient List" />
+
+            <TextView
+                android:id="@+id/textViewStep2Entry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editTextStepIngredient1Entry"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="2"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/editTextStepName2Entry"
@@ -129,19 +149,7 @@
                 android:layout_below="@id/editTextStepIngredient1Entry"
                 android:layout_marginLeft="20dp"
                 android:layout_toRightOf="@+id/textViewStep1Entry"
-                android:hint="Enter Step 2 Name/Description"
-                android:inputType="textPersonName" />
-
-            <TextView
-                android:id="@+id/textViewStep2Entry"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/editTextStepIngredient1Entry"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:text="2"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:hint="Enter Step 2 Name/Description" />
 
             <EditText
                 android:id="@+id/editTextStepIngredient2Entry"
@@ -150,9 +158,20 @@
                 android:layout_below="@+id/editTextStepName2Entry"
                 android:layout_alignStart="@+id/editTextStepName2Entry"
                 android:ems="10"
+                android:layout_marginLeft="20dp"
                 android:hint="Enter Step 2 Ingredient List"
-                android:inputType="textPersonName"
                 android:layout_alignLeft="@+id/editTextStepName2Entry" />
+
+            <TextView
+                android:id="@+id/textViewStep3Entry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editTextStepIngredient2Entry"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="3"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/editTextStepName3Entry"
@@ -161,19 +180,7 @@
                 android:layout_below="@id/editTextStepIngredient2Entry"
                 android:layout_marginLeft="20dp"
                 android:layout_toRightOf="@+id/textViewStep1Entry"
-                android:hint="Enter Step 3 Name/Description"
-                android:inputType="textPersonName" />
-
-            <TextView
-                android:id="@+id/textViewStep3Entry"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/editTextStepIngredient2Entry"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:text="3"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:hint="Enter Step 3 Name/Description" />
 
             <EditText
                 android:id="@+id/editTextStepIngredient3Entry"
@@ -183,7 +190,7 @@
                 android:layout_alignStart="@+id/editTextStepName3Entry"
                 android:ems="10"
                 android:hint="Enter Step 3 Ingredient List"
-                android:inputType="textPersonName"
+                android:layout_marginLeft="20dp"
                 android:layout_alignLeft="@+id/editTextStepName3Entry" />
 
             <Button

@@ -38,7 +38,7 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/textViewCongrats"
+                    android:id="@+id/textViewStepName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/progressBarStepBase"
@@ -90,13 +90,13 @@
                     android:id="@+id/imageStepPhoto"
                     android:layout_width="160dp"
                     android:layout_height="160dp"
-                    android:layout_below="@+id/textViewCongrats"
+                    android:layout_below="@+id/textViewStepName"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="10dp"
                     app:srcCompat="@drawable/avocado_fettucine_complete" />
 
                 <TextView
-                    android:id="@+id/textViewIngredientList"
+                    android:id="@+id/textViewStepIngredientList"
                     android:layout_width="340dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/textViewIngredientLabel"

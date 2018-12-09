@@ -29,6 +29,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -45,7 +46,7 @@ import static android.support.constraint.Constraints.TAG;
 
 public class AddRecipestoDatabase extends Activity implements View.OnClickListener {
 
-    EditText editTextRecipeName, editTextRecipeDescriptionEntry;
+    EditText editTextRecipeName, editTextRecipeDescriptionEntry, editTextIngredientSummary;
     EditText editTextStepName1Entry, editTextStepIngredient1Entry;
     EditText editTextStepName2Entry, editTextStepIngredient2Entry;
     EditText editTextStepName3Entry, editTextStepIngredient3Entry;
@@ -69,6 +70,7 @@ public class AddRecipestoDatabase extends Activity implements View.OnClickListen
 
         editTextRecipeName = findViewById(R.id.editTextRecipeName);
         editTextRecipeDescriptionEntry = findViewById(R.id.editTextRecipeDescriptionEntry);
+        editTextIngredientSummary = findViewById(R.id.editTextIngredientSummary);
         editTextStepName1Entry = findViewById(R.id.editTextStepName1Entry);
         editTextStepName2Entry = findViewById(R.id.editTextStepName2Entry);
         editTextStepName3Entry = findViewById(R.id.editTextStepName3Entry);
@@ -85,7 +87,7 @@ public class AddRecipestoDatabase extends Activity implements View.OnClickListen
         buttonSaveRecipeEntry = findViewById(R.id.buttonSaveRecipeEntry);
         buttonSaveRecipeEntry.setOnClickListener(this);
 
-        autoPopulate();
+/*        autoPopulate();
     }
 
     private void autoPopulate() {
@@ -96,7 +98,8 @@ public class AddRecipestoDatabase extends Activity implements View.OnClickListen
         checkBoxDairyFreeEntry.setChecked(true);
         checkBoxGlutenFreeEntry.setChecked(false);
         checkBoxNutFreeEntry.setChecked(true);
-
+    }
+/*
         editTextRecipeDescriptionEntry.setText("A quick and easy three step pasta recipe that's " +
                 "perfect to whip up for a weekday dinner or a really busy weekend.\n" +
                 "Prep Time: 5 min\n" +
@@ -120,12 +123,13 @@ public class AddRecipestoDatabase extends Activity implements View.OnClickListen
         editTextStepIngredient3Entry.setText(",,,");
     }
 
-    /**
+
      * Called when a view has been clicked.
      *
      * @param v The view that was clicked.
      */
-    @Override
+    }
+@Override
     public void onClick(View v) {
 
 
@@ -133,7 +137,7 @@ public class AddRecipestoDatabase extends Activity implements View.OnClickListen
             fdb = FirebaseDatabase.getInstance();
             DatabaseReference myRef = fdb.getReference("Recipe");
 
-            BitmapFactory.Options bmapOptions = new BitmapFactory.Options();
+/*            BitmapFactory.Options bmapOptions = new BitmapFactory.Options();
             bmapOptions.inPreferredConfig = Bitmap.Config.ARGB_8888;
             //FileInputStream a = new FileInputStream();
 
@@ -141,7 +145,7 @@ public class AddRecipestoDatabase extends Activity implements View.OnClickListen
                     .DIRECTORY_DOWNLOADS).toString() + "/AvocadoFettucineComplete.jpg");
             Log.e(TAG, "onClick: AAYUSH " + temp.getAbsolutePath(), null);
             Bitmap tempImage = BitmapFactory.decodeFile(temp.getAbsolutePath(), bmapOptions);
-
+*/
             List<String> tempStepIDs = new ArrayList<String>() {{
                 add("1");
                 add("2");
@@ -155,7 +159,7 @@ public class AddRecipestoDatabase extends Activity implements View.OnClickListen
 //                    add(editTextStepName4Entry.getText().toString());
                 }
             };
-
+/*
             List<Bitmap> tempStepImages = new ArrayList<Bitmap>();//{{add("1"); add("2"); add("3");
             Bitmap image1 = BitmapFactory.decodeFile(Environment.getExternalStoragePublicDirectory(Environment
                     .DIRECTORY_DOWNLOADS).toString() + "/AvocadoFettucineStep1.jpg", bmapOptions);
@@ -166,7 +170,7 @@ public class AddRecipestoDatabase extends Activity implements View.OnClickListen
             Bitmap image3 = BitmapFactory.decodeFile(Environment.getExternalStoragePublicDirectory(Environment
                     .DIRECTORY_DOWNLOADS).toString() + "/AvocadoFettucineStep3.jpg", bmapOptions);
             tempStepImages.add(image3);
-
+*/
 //            ByteArrayOutputStream baos = new ByteArrayOutputStream();
 //            image1.compress(Bitmap.CompressFormat.JPEG, 100 , baos);
 //            byte[] b = baos.toByteArray();
@@ -178,16 +182,14 @@ public class AddRecipestoDatabase extends Activity implements View.OnClickListen
                     "Pie\\Recipes\\Avocado Fettucine\\AvocadoFettucineStep1.jpg")));*/
             // }};
 
-            List<List<Ingredient>> stepIngredientList = new ArrayList<List<Ingredient>>();
-            List<List<String>> stepIngredientAmountList = new ArrayList<List<String>>();
-            List<List<String>> stepIngredientPreparationList = new ArrayList<List<String>>();
-
-            ArrayList<String> giveInputs = new ArrayList<String>();
-            giveInputs.add(editTextStepIngredient1Entry.getText().toString());
-            giveInputs.add(editTextStepIngredient2Entry.getText().toString());
-            giveInputs.add(editTextStepIngredient3Entry.getText().toString());
-
-            try {
+            List<String> tempStepIngredients = new ArrayList<String>() {
+                {
+                    add(editTextStepIngredient1Entry.getText().toString());
+                    add(editTextStepIngredient2Entry.getText().toString());
+                    add(editTextStepIngredient3Entry.getText().toString());
+                }
+            };
+/*            try {
                 int numberOfSteps = 3;
                 for (int j = 0; j < numberOfSteps; j++) {
                     ArrayList<Ingredient> innerIngredientList = new ArrayList<Ingredient>();
@@ -212,23 +214,24 @@ public class AddRecipestoDatabase extends Activity implements View.OnClickListen
                     stepIngredientAmountList.add(innerIngredientAmountList);
                     stepIngredientPreparationList.add(innerIngredientPreparationList);
                 }
-
-                Recipe newRecipe = new Recipe(UUID.randomUUID().toString(),
-                        editTextRecipeName.getText().toString(), editTextRecipeDescriptionEntry
-                        .getText().toString(),
-                        tempImage,
-                        checkBoxVegEntry.isChecked(), checkBoxVeganEntry.isChecked(),
-                        checkBoxDairyFreeEntry.isChecked(),
-                        checkBoxGlutenFreeEntry.isChecked(), checkBoxNutFreeEntry.isChecked(),
-                        tempStepIDs, tempStepNames, tempStepImages,
-                        stepIngredientList, stepIngredientAmountList, stepIngredientPreparationList);
+*/
+                Recipe newRecipe = new Recipe(UUID.randomUUID().toString(), editTextRecipeName.getText().toString(),
+                        editTextRecipeDescriptionEntry.getText().toString(), editTextIngredientSummary.getText().toString(),
+                        null, checkBoxVegEntry.isChecked(), checkBoxVeganEntry.isChecked(),
+                        checkBoxDairyFreeEntry.isChecked(), checkBoxGlutenFreeEntry.isChecked(),
+                        checkBoxNutFreeEntry.isChecked(), tempStepIDs, tempStepNames, null,
+                        tempStepIngredients);
 
                 myRef.push().setValue(newRecipe);
-            } catch (Throwable e) {
-                Log.e(TAG, "AAYUSH: ", e);
+
+            Toast.makeText(this, "New Recipe Added.", Toast.LENGTH_SHORT).show();
+
             }
+//            catch (Throwable e) {
+//                Log.e(TAG, "AAYUSH: ", e);
+//            }
         }
-    }
+
 
     //@Override
     public void onClick_ALTERNATIVE(View v) {
@@ -241,6 +244,7 @@ public class AddRecipestoDatabase extends Activity implements View.OnClickListen
 
         if (v == buttonSaveRecipeEntry) {
 
+            String createIntredientSummary = editTextIngredientSummary.getText().toString();
             String createRecipeID = UUID.randomUUID().toString();
             String createRecipe = editTextRecipeName.getText().toString();
 //            String createRecipeDescription = editTextRecipeDescriptionEmpty.getText().toString();

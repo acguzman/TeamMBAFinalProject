@@ -14,6 +14,8 @@ public class Recipe {
 
     public String recipeDescription;
 
+    public String recipeIngredientSummary;
+
     public Bitmap picture; //https://docs.oracle.com/javase/tutorial/2d/images/loadimage.html
 
     public boolean isVegetarian;
@@ -22,15 +24,15 @@ public class Recipe {
     public boolean isGlutenFree;
     public boolean isNutFree;
 
-    public Recipe(String recipeID, String recipeName, String recipeDescription, Bitmap picture,
+    public Recipe(String recipeID, String recipeName, String recipeDescription, String recipeIngredientSummary, Bitmap picture,
                   boolean isVegetarian, boolean isVegan, boolean isDairyFree, boolean
                           isGlutenFree, boolean isNutFree, List<String> stepID, List<String>
-                          stepName, List<Bitmap> stepImage, List<List<Ingredient>>
-                          stepIngredients, List<List<String>> stepIngredientMeasurementAmount,
-                  List<List<String>> stepIngredientPreparationType) {
+                          stepName, List<Bitmap> stepImage, List<String>
+                          stepIngredients) {
         this.recipeID = recipeID;
         this.recipeName = recipeName;
         this.recipeDescription = recipeDescription;
+        this.recipeIngredientSummary = recipeIngredientSummary;
         this.picture = picture;
         this.isVegetarian = isVegetarian;
         this.isVegan = isVegan;
@@ -41,8 +43,7 @@ public class Recipe {
         this.stepName = stepName;
         this.stepImage = stepImage;
         this.stepIngredients = stepIngredients;
-        this.stepIngredientMeasurementAmount = stepIngredientMeasurementAmount;
-        this.stepIngredientPreparationType = stepIngredientPreparationType;
+
     }
 
     public Recipe() {}
@@ -57,7 +58,6 @@ public class Recipe {
      * ¼ Teaspoon Freshly ground black pepper
      * ¾ Pound Fettucine
      */
-    public String ingredientSummary;
 
     // Unique ID for each step
     public List<String> stepID;
@@ -73,7 +73,8 @@ public class Recipe {
      * i.e. Steps 1 might have 5 ingredients associated with it
      * So the outer list's first element would be a list of 5 elements.
      */
-    public List<List<Ingredient>> stepIngredients;
+
+    public List<String> stepIngredients;
 
     /**
      * A list of ingredients associated with each step.
@@ -81,15 +82,7 @@ public class Recipe {
      * So the outer list's first element would be the amount for
      * each of the 5 ingredients.
      */
-    public List<List<String>> stepIngredientMeasurementAmount;
 
-    /**
-     * A list of ingredients associated with each step.
-     * i.e. Steps 1 might have 5 ingredients associated with it
-     * So the outer list's first element would be the preparation
-     * type for each of the 5 ingredients.
-     */
-    public List<List<String>> stepIngredientPreparationType;
 
     ////Functions
 

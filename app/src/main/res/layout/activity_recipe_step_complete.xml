@@ -27,7 +27,7 @@
 
 
     <TextView
-        android:id="@+id/textViewCongrats"
+        android:id="@+id/textViewStepName"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/textViewRecipeName"
@@ -43,7 +43,7 @@
         android:id="@+id/textViewShareFeedback"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textViewCongrats"
+        android:layout_below="@+id/textViewStepName"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_marginTop="30dp"
