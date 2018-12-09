@@ -54,10 +54,12 @@
             android:layout_marginStart="6dp"
             android:layout_marginBottom="72dp"
             android:scaleType="fitXY"
-            android:src="@drawable/mushroom_frittata_complete" />
+            android:src="@drawable/mushroom_frittata_complete"
+            android:layout_alignLeft="@+id/imageButtonAvocado"
+            android:layout_marginLeft="6dp" />
 
         <Button
-            android:id="@+id/buttonGetCooking1"
+            android:id="@+id/buttonGetCookingAvocadoFettucine"
             android:layout_width="106dp"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -70,25 +72,29 @@
             android:text="Get Cooking" />
 
         <Button
-            android:id="@+id/buttonGetCooking2"
+            android:id="@+id/buttonGetCookingKoreanSpicyChx"
             android:layout_width="111dp"
             android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/buttonGetCooking1"
+            android:layout_alignEnd="@+id/buttonGetCookingAvocadoFettucine"
             android:layout_centerVertical="true"
             android:layout_marginEnd="0dp"
             android:background="@color/colorPrimaryDark"
-            android:text="Get Cooking" />
+            android:text="Get Cooking"
+            android:layout_marginRight="0dp"
+            android:layout_alignRight="@+id/buttonGetCookingAvocadoFettucine" />
 
         <Button
-            android:id="@+id/buttonGetCooking3"
+            android:id="@+id/buttonGetCookingMushroomFrittata"
             android:layout_width="109dp"
             android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/buttonGetCooking1"
+            android:layout_alignEnd="@+id/buttonGetCookingAvocadoFettucine"
             android:layout_alignParentBottom="true"
             android:layout_marginEnd="0dp"
             android:layout_marginBottom="108dp"
             android:background="@color/colorPrimaryDark"
-            android:text="Get Cooking" />
+            android:text="Get Cooking"
+            android:layout_marginRight="0dp"
+            android:layout_alignRight="@+id/buttonGetCookingAvocadoFettucine" />
     </RelativeLayout>
 
 </FrameLayout>
