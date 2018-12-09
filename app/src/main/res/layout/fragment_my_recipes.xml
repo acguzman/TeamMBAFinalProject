@@ -57,7 +57,7 @@
             android:src="@drawable/mushroom_frittata_complete" />
 
         <Button
-            android:id="@+id/buttonGetCooking1"
+            android:id="@+id/buttonGetCookingAvocadoFettucine"
             android:layout_width="106dp"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -73,7 +73,7 @@
             android:id="@+id/buttonGetCooking2"
             android:layout_width="111dp"
             android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/buttonGetCooking1"
+            android:layout_alignEnd="@+id/buttonGetCookingAvocadoFettucine"
             android:layout_centerVertical="true"
             android:layout_marginEnd="0dp"
             android:background="@color/colorPrimaryDark"
@@ -83,7 +83,7 @@
             android:id="@+id/buttonGetCooking3"
             android:layout_width="109dp"
             android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/buttonGetCooking1"
+            android:layout_alignEnd="@+id/buttonGetCookingAvocadoFettucine"
             android:layout_alignParentBottom="true"
             android:layout_marginEnd="0dp"
             android:layout_marginBottom="108dp"
