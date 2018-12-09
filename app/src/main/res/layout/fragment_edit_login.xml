@@ -64,7 +64,7 @@
             android:layout_alignParentBottom="true"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginBottom="283dp"
+            android:layout_marginBottom="260dp"
             android:text="Change Password:"
             android:textSize="24sp" />
 
@@ -75,7 +75,7 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="140dp"
+            android:layout_marginTop="117dp"
             android:layout_marginEnd="85dp"
             android:layout_marginRight="85dp"
             android:background="@color/colorPrimary"
@@ -90,12 +90,12 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="192dp"
+            android:layout_marginTop="169dp"
             android:layout_marginEnd="85dp"
             android:layout_marginRight="85dp"
             android:background="@color/colorPrimary"
             android:ems="10"
-            android:hint="Username"
+            android:hint="Change Username"
             android:inputType="textPersonName" />
 
         <TextView
@@ -110,6 +110,29 @@
             android:layout_marginTop="46dp"
             android:text="Update Login Info"
             android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/buttonPasswordUpdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="119dp"
+            android:layout_marginRight="119dp"
+            android:layout_marginBottom="27dp"
+            android:background="@color/colorPrimaryDark"
+            android:text="Update Password" />
+
+        <Button
+            android:id="@+id/buttonLoginUpdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="216dp"
+            android:background="@color/colorPrimaryDark"
+            android:text="Update Username" />
 
     </RelativeLayout>
 

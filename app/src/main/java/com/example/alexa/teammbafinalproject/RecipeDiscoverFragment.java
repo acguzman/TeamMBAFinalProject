@@ -3,8 +3,12 @@ package com.example.alexa.teammbafinalproject;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -52,17 +56,20 @@ public class RecipeDiscoverFragment extends Fragment implements View.OnClickList
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-
-        imageButton01 = getView().findViewById(R.id.imageButton01);
-        imageButton01.setOnClickListener(this);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        View view = inflater.inflate(R.layout.fragment_recipe_discover, container, false);
+        imageButton01 = view.findViewById(R.id.imageButton01);
+        imageButton01.setOnClickListener(this);
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_recipe_discover, container, false);
+        return view;
     }
+
 
     /**
      * Called when a view has been clicked.
@@ -72,11 +79,20 @@ public class RecipeDiscoverFragment extends Fragment implements View.OnClickList
     @Override
     public void onClick(View v) {
 
-        if(v.getClass() == Button.class) {
+        if(true) {
             v.getId();
 
             String temIdToPass = recipeIds.get(1);
             // Code to transition to the Recipe Description Page
+
+//            BottomNavigationView mainNav = getView().findViewById(R.id.main_nav);
+            FragmentManager curr = getFragmentManager();
+            FragmentTransaction fragmentTransaction = curr.beginTransaction();
+//            RecipieDescriptionFragment rdf = new RecipieDescriptionFragment();
+//            fragmentTransaction.replace(R.id.main_frame, rdf );
+            fragmentTransaction.replace(R.id.main_frame, new RecipieDescriptionFragment());
+//            fragmentTransaction.show(rdf );
+            fragmentTransaction.commit();
 
         }
     }
