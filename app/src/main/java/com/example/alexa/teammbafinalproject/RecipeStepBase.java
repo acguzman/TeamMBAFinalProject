@@ -6,10 +6,8 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class RecipeStepBase extends Activity implements View.OnClickListener {
 
@@ -39,8 +37,6 @@ public class RecipeStepBase extends Activity implements View.OnClickListener {
         floatingActionButtonChat.setOnClickListener(this);
 
         autoPopulate();
-
-        //Toast.makeText(this, textViewRecipeName.getText().toString(), Toast.LENGTH_LONG).show();
     }
 
     private void autoPopulate() {
@@ -61,7 +57,6 @@ public class RecipeStepBase extends Activity implements View.OnClickListener {
     public void onClick(View v) {
         if (v == floatingActionButtonChat) {
 
-            //not ready for this yet
             Intent intentLiveChat = new Intent(this, ChatActivity.class);
             startActivity(intentLiveChat);
 
