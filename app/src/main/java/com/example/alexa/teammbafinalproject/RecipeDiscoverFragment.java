@@ -1,20 +1,32 @@
 package com.example.alexa.teammbafinalproject;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +47,11 @@ public class RecipeDiscoverFragment extends Fragment implements View.OnClickList
     public ImageButton imageButton01;
 
     //Temp Code
-    public List<String> recipeIds = new ArrayList<String>() {{add("111"); add("222"); add("333");}};
+    public List<String> recipeIds = new ArrayList<String>() {{
+        add("111");
+        add("222");
+        add("333");
+    }};
 
     LinearLayout linearLayoutNewRecipes, linearLayoutOldRecipes;
 
@@ -62,11 +78,61 @@ public class RecipeDiscoverFragment extends Fragment implements View.OnClickList
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_recipe_discover, container, false);
         imageButton01 = view.findViewById(R.id.imageButton01);
         imageButton01.setOnClickListener(this);
 
-        // Inflate the layout for this fragment
+//        FirebaseAuth fAuth = FirebaseAuth.getInstance();
+//        String currEmail = fAuth.getCurrentUser().getEmail();
+//        fdb.orderByChild("name").equalTo(currEmail).
+
+        FirebaseDatabase myFdb = FirebaseDatabase.getInstance();
+        DatabaseReference fdb = myFdb.getReference("Recipe");
+        fdb.orderByChild("recipeID").limitToFirst(10).addChildEventListener(new ChildEventListener() {
+
+
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                /*LinearLayout LinearLayoutOldRecipes = getView().findViewById(R.id.LinearLayoutOldRecipes);
+                // Get the application context
+                Context mContext = getView().getContext();
+
+                ArrayList<Recipe> newRecipes = new ArrayList<Recipe>();
+                for (DataSnapshot childDataSnapShot : dataSnapshot.getChildren()) {
+                    newRecipes.add(childDataSnapShot.getValue(Recipe.class));
+                    CardView newCard = new CardView(mContext);
+                    RelativeLayout relLayout = new RelativeLayout(mContext);
+                    ImageButton newImageButton = new ImageButton(mContext);
+                    TextView newTextView = new TextView(mContext);
+                    relLayout.addView(newImageButton);
+                    relLayout.addView(newTextView);
+                    newCard.addView(relLayout);
+                }*/
+
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
         return view;
     }
 
@@ -79,7 +145,7 @@ public class RecipeDiscoverFragment extends Fragment implements View.OnClickList
     @Override
     public void onClick(View v) {
 
-        if(true) {
+        if (true) {
             v.getId();
 
             String temIdToPass = recipeIds.get(1);
@@ -94,6 +160,10 @@ public class RecipeDiscoverFragment extends Fragment implements View.OnClickList
 //            fragmentTransaction.show(rdf );
             fragmentTransaction.commit();
 
+        } else { //TODO delete once done testing
+            Context mContext = getView().getContext();
+            Intent intentRecipes = new Intent(mContext, MainActivity.class);
+            startActivity(intentRecipes);
         }
     }
 

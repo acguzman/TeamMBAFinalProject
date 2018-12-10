@@ -47,6 +47,14 @@
           }
         },
         {
+          "client_id": "490129875191-i97qikpkj44mqr5qp7qul4kglsgci7ad.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.alexa.teammbafinalproject",
+            "certificate_hash": "81580a9a240222455481f001facff3dbbf9a18ac"
+          }
+        },
+        {
           "client_id": "490129875191-f3dum493cvqm3ipgie6hl157vofrhfpq.apps.googleusercontent.com",
           "client_type": 3
         }

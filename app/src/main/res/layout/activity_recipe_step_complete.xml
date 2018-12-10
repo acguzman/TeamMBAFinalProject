@@ -71,7 +71,6 @@
         android:ems="10"
         android:shadowColor="@color/colorPrimary"
         android:hint="Enter your feedback here..."
-        android:inputType="textPersonName"
         android:background="@color/colorPrimary"/>
 
     <ImageButton
@@ -81,7 +80,7 @@
         android:layout_below="@id/editTextCommentEntry"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
-        app:srcCompat="@drawable/ic_upload_photo_item" />
+        android:src="@drawable/ic_upload_photo_item" />
 
     <Button
         android:id="@+id/buttonSubmitReview"

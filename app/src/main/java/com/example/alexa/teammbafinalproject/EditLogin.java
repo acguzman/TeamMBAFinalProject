@@ -44,20 +44,22 @@ public class EditLogin extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        View view = inflater.inflate(R.layout.fragment_edit_login, container, false);
+
         mAuth = FirebaseAuth.getInstance();
-        editTextNameUpdate = getView().findViewById(R.id.editTextNameUpdate);
-        editTextPasswordConfirm = getView().findViewById(R.id.editTextPasswordConfirm);
-        editTextPasswordOld = getView().findViewById(R.id.editTextPasswordOld);
-        editTextUsernameUpdate = getView().findViewById(R.id.editTextUsernameUpdate);
-        editTextPasswordUpdate = getView().findViewById(R.id.editTextPasswordUpdate);
-        buttonLoginUpdate = getView().findViewById(R.id.buttonLoginUpdate);
-        buttonPasswordUpdate = getView().findViewById(R.id.buttonPasswordUpdate);
+        editTextNameUpdate = view.findViewById(R.id.editTextNameUpdate);
+        editTextPasswordConfirm = view.findViewById(R.id.editTextPasswordConfirm);
+        editTextPasswordOld = view.findViewById(R.id.editTextPasswordOld);
+        editTextUsernameUpdate = view.findViewById(R.id.editTextUsernameUpdate);
+        editTextPasswordUpdate = view.findViewById(R.id.editTextPasswordUpdate);
+        buttonLoginUpdate = view.findViewById(R.id.buttonLoginUpdate);
+        buttonPasswordUpdate = view.findViewById(R.id.buttonPasswordUpdate);
 
         buttonPasswordUpdate.setOnClickListener(this);
         buttonLoginUpdate.setOnClickListener(this);
 
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_edit_login, container, false);
+        return view;
 
 
         //

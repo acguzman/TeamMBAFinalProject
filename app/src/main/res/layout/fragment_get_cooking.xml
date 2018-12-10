@@ -28,7 +28,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_marginStart="40dp"
-            android:layout_marginLeft="40dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginTop="81dp"
             android:scaleType="fitXY"
             android:src="@drawable/avocado_fettucine_complete" />
@@ -39,9 +39,9 @@
             android:layout_height="120dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="42dp"
-            android:layout_marginLeft="42dp"
+            android:layout_marginStart="43dp"
+            android:layout_marginLeft="43dp"
+            android:layout_marginTop="230dp"
             android:scaleType="fitXY"
             android:src="@drawable/korean_spicy_chicken_complete" />
 
@@ -52,7 +52,7 @@
             android:layout_alignStart="@+id/imageButtonAvocado"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="6dp"
-            android:layout_marginBottom="72dp"
+            android:layout_marginBottom="25dp"
             android:scaleType="fitXY"
             android:src="@drawable/mushroom_frittata_complete"
             android:layout_alignLeft="@+id/imageButtonAvocado"
@@ -65,9 +65,9 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="111dp"
-            android:layout_marginEnd="57dp"
-            android:layout_marginRight="57dp"
+            android:layout_marginTop="115dp"
+            android:layout_marginEnd="53dp"
+            android:layout_marginRight="53dp"
             android:background="@color/colorPrimaryDark"
             android:text="Get Cooking" />
 
@@ -76,25 +76,55 @@
             android:layout_width="111dp"
             android:layout_height="wrap_content"
             android:layout_alignEnd="@+id/buttonGetCookingAvocadoFettucine"
-            android:layout_centerVertical="true"
+            android:layout_alignRight="@+id/buttonGetCookingAvocadoFettucine"
+            android:layout_alignParentBottom="true"
             android:layout_marginEnd="0dp"
-            android:background="@color/colorPrimaryDark"
-            android:text="Get Cooking"
             android:layout_marginRight="0dp"
-            android:layout_alignRight="@+id/buttonGetCookingAvocadoFettucine" />
+            android:layout_marginBottom="223dp"
+            android:background="@color/colorPrimaryDark"
+            android:text="Get Cooking" />
 
         <Button
             android:id="@+id/buttonGetCookingMushroomFrittata"
             android:layout_width="109dp"
             android:layout_height="wrap_content"
             android:layout_alignEnd="@+id/buttonGetCookingAvocadoFettucine"
+            android:layout_alignRight="@+id/buttonGetCookingAvocadoFettucine"
             android:layout_alignParentBottom="true"
-            android:layout_marginEnd="0dp"
-            android:layout_marginBottom="108dp"
+            android:layout_marginEnd="-4dp"
+            android:layout_marginRight="-4dp"
+            android:layout_marginBottom="60dp"
             android:background="@color/colorPrimaryDark"
-            android:text="Get Cooking"
-            android:layout_marginRight="0dp"
-            android:layout_alignRight="@+id/buttonGetCookingAvocadoFettucine" />
+            android:text="Get Cooking" />
+
+        <TextView
+            android:id="@+id/textViewRecipeAvocadoLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textViewMyRecipe"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="45dp"
+            android:text="Avocado Fettuccine"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textViewRecipeKoreanChxLabel"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="38dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="215dp"
+            android:text="Korean Spicy Chicken"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textViewRecipeMushroomLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/imageButtonMushroom"
+            android:layout_alignStart="@+id/textViewRecipeAvocadoLabel"
+            android:text="Mushroom Frittata"
+            android:textStyle="bold"
+            android:layout_alignLeft="@+id/textViewRecipeAvocadoLabel" />
     </RelativeLayout>
 
 </FrameLayout>

@@ -35,7 +35,7 @@
         android:clickable="true"
         android:visibility="invisible"
         app:backgroundTint="@color/colorPrimaryDark"
-        app:srcCompat="@drawable/ic_next_item" />
+        android:src="@drawable/ic_next_item" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/floatingActionButtonChat"
@@ -43,9 +43,11 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="300dp"
         android:layout_marginTop="255dp"
+        android:adjustViewBounds="true"
         android:clickable="true"
+        android:src="@drawable/ic_chat_item"
         app:backgroundTint="@color/colorPrimary"
-        app:srcCompat="@drawable/ic_chat_item" />
+        app:useCompatPadding="false" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -73,7 +75,8 @@
                     android:id="@+id/imageCookingIcon"
                     android:layout_width="55dp"
                     android:layout_height="60dp"
-                    app:srcCompat="@drawable/ic_cooking_item" />
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/ic_cooking_item" />
 
                 <ProgressBar
                     android:id="@+id/progressBarStepBase"
@@ -106,7 +109,7 @@
                     android:layout_below="@id/imageStepPhoto"
                     android:layout_marginTop="10dp"
                     android:text="Ingredients Required:"
-                    android:textSize="24sp"
+                    android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <ImageView
@@ -116,7 +119,8 @@
                     android:layout_below="@+id/textViewStepName"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="10dp"
-                    app:srcCompat="@drawable/avocado_fettucine_complete" />
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/avocado_fettucine_complete" />
 
                 <TextView
                     android:id="@+id/textViewStepIngredientList"
