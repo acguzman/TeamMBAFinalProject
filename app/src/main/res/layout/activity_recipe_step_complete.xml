@@ -71,7 +71,6 @@
         android:ems="10"
         android:shadowColor="@color/colorPrimary"
         android:hint="Enter your feedback here..."
-        android:inputType="textPersonName"
         android:background="@color/colorPrimary"/>
 
     <ImageButton

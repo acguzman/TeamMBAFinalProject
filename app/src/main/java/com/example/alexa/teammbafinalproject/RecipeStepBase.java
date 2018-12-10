@@ -1,5 +1,6 @@
 package com.example.alexa.teammbafinalproject;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
@@ -8,13 +9,14 @@ import android.support.design.widget.FloatingActionButton;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class RecipeStepBase extends Activity implements View.OnClickListener {
 
-    FloatingActionButton floatingActionButtonNext, floatingActionButtonNext2,
-            floatingActionButtonNext3, floatingActionButtonChat;
+    Button buttonNext, buttonNext2,
+            buttonNext3, buttonChat;
     TextView textViewRecipeName, textViewStepName, textViewStepIngredientList;
     EditText editTextRecipeName;
     Drawable imageStepPhoto;
@@ -24,17 +26,19 @@ public class RecipeStepBase extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe_step_base);
 
-        floatingActionButtonChat = findViewById(R.id.floatingActionButtonChat);
-        floatingActionButtonNext = findViewById(R.id.floatingActionButtonNext);
-        floatingActionButtonNext2 = findViewById(R.id.floatingActionButtonNext2);
-        floatingActionButtonNext3 = findViewById(R.id.floatingActionButtonNext3);
+        buttonChat= findViewById(R.id.buttonChat);
+        buttonNext= findViewById(R.id.buttonNext);
+        buttonNext2= findViewById(R.id.buttonNext2);
+        buttonNext3= findViewById(R.id.buttonNext3);
         textViewRecipeName = (TextView) findViewById(R.id.textViewRecipeName);
         textViewStepName = (TextView) findViewById(R.id.textViewStepName);
         textViewStepIngredientList = (TextView) findViewById(R.id.textViewStepIngredientList);
         editTextRecipeName = (EditText) findViewById(R.id.editTextRecipeName);
 
-        floatingActionButtonNext.setOnClickListener(this);
-        floatingActionButtonChat.setOnClickListener(this);
+        buttonNext.setOnClickListener(this);
+        buttonNext2.setOnClickListener(this);
+        buttonNext3.setOnClickListener(this);
+        buttonChat.setOnClickListener(this);
 
         autoPopulate();
 
@@ -57,32 +61,32 @@ public class RecipeStepBase extends Activity implements View.OnClickListener {
     }
 
     //   @Override
+    //@SuppressLint("RestrictedApi")
+   @Override
     public void onClick(View v) {
-        if (v == floatingActionButtonChat) {
+        if (v == buttonChat) {
 
             //not ready for this yet
 
-        } else if (v == floatingActionButtonNext) {
+        } else if (v == buttonNext) {
             textViewRecipeName.setText("Avocado Fettuccine");
             textViewStepName.setText("Step 2: Prepare pasta according to package directions, in a" +
                     " saucepan. Drain; Add avocado mixture to pasta pan.");
             textViewStepIngredientList.setText("3/4 Pound Fettuccine");
 
-            floatingActionButtonNext2.setVisibility(View.VISIBLE);
-            floatingActionButtonNext.setVisibility(View.INVISIBLE);
+            buttonNext2.setVisibility(View.VISIBLE);
+            buttonNext.setVisibility(View.INVISIBLE);
 
-        } else if (v == floatingActionButtonNext2) {
+        } else if (v == buttonNext2) {
 
             textViewRecipeName.setText("Avocado Fettuccine");
-            textViewStepName.setText("Step 3: Prepare pasta according to package directions, in a" +
-                    " saucepan. Drain; Add avocado mixture to pasta pan.");
-            textViewStepIngredientList.setText("Toss pasta gently until sauce is evenly " +
-                    "incorporated into the fettuccine.");
+            textViewStepName.setText("Step 3: Toss pasta gently until sauce is evenly incorporated into the fettuccine.");
+            textViewStepIngredientList.setText("");
 
-            floatingActionButtonNext3.setVisibility(View.VISIBLE);
-            floatingActionButtonNext2.setVisibility(View.INVISIBLE);
+            buttonNext3.setVisibility(View.VISIBLE);
+            buttonNext2.setVisibility(View.INVISIBLE);
 
-        } else if (v == floatingActionButtonNext3) {
+        } else if (v == buttonNext3) {
 
             Intent intentRecipeStepComplete = new Intent(this, RecipeStepComplete.class);
             startActivity(intentRecipeStepComplete);
