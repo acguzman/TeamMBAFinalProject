@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class RecipeStepBase extends Activity implements View.OnClickListener {
@@ -15,7 +16,7 @@ public class RecipeStepBase extends Activity implements View.OnClickListener {
             floatingActionButtonNext3, floatingActionButtonChat;
     TextView textViewRecipeName, textViewStepName, textViewStepIngredientList;
     EditText editTextRecipeName;
-    Drawable imageStepPhoto;
+    ImageView imageStepPhoto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +31,7 @@ public class RecipeStepBase extends Activity implements View.OnClickListener {
         textViewStepName = (TextView) findViewById(R.id.textViewStepName);
         textViewStepIngredientList = (TextView) findViewById(R.id.textViewStepIngredientList);
         editTextRecipeName = (EditText) findViewById(R.id.editTextRecipeName);
+        imageStepPhoto = (ImageView) findViewById(R.id.imageStepPhoto);
 
         floatingActionButtonNext.setOnClickListener(this);
         floatingActionButtonNext2.setOnClickListener(this);
@@ -50,6 +52,7 @@ public class RecipeStepBase extends Activity implements View.OnClickListener {
                 "1 Clove Garlic, minced" + "\n" + "1 Teaspoon Salt" + "\n" + "¼ Teaspoon Freshly " +
                 "ground black pepper"
         );
+        imageStepPhoto.setImageResource(R.drawable.avocado_fettucine_step1);
 
     }
 
@@ -65,6 +68,7 @@ public class RecipeStepBase extends Activity implements View.OnClickListener {
             textViewStepName.setText("Step 2: Prepare pasta according to package directions, in a" +
                     " saucepan. Drain; Add avocado mixture to pasta pan.");
             textViewStepIngredientList.setText("3/4 Pound Fettuccine");
+            imageStepPhoto.setImageResource(R.drawable.avocado_fettucine_step2);
 
             floatingActionButtonNext2.show();
             floatingActionButtonNext.hide();
@@ -73,17 +77,15 @@ public class RecipeStepBase extends Activity implements View.OnClickListener {
         } else if (v == floatingActionButtonNext2) {
 
             textViewRecipeName.setText("Avocado Fettuccine");
-            textViewStepName.setText("Step 3: Prepare pasta according to package directions, in a" +
-                    " saucepan. Drain; Add avocado mixture to pasta pan.");
-            textViewStepIngredientList.setText("Toss pasta gently until sauce is evenly " +
-                    "incorporated into the fettuccine.");
+            textViewStepName.setText("Step 3: Toss pasta gently until sauce is evenly incorporated into the fettuccine.");
+            textViewStepIngredientList.setText("");
+            imageStepPhoto.setImageResource(R.drawable.avocado_fettucine_step3);
 
             floatingActionButtonNext3.show();
             floatingActionButtonNext2.hide();
             floatingActionButtonNext.hide();
 
         } else if (v == floatingActionButtonNext3) {
-
             floatingActionButtonNext.show();
             floatingActionButtonNext2.hide();
             floatingActionButtonNext3.hide();

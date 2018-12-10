@@ -109,7 +109,7 @@
                     android:layout_below="@id/imageStepPhoto"
                     android:layout_marginTop="10dp"
                     android:text="Ingredients Required:"
-                    android:textSize="24sp"
+                    android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <ImageView

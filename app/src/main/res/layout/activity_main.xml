@@ -11,12 +11,9 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
+        android:layout_marginTop="60dp"
         android:layout_marginStart="53dp"
         android:layout_marginLeft="53dp"
-        android:layout_marginTop="46dp"
         android:text="Login"
         android:textSize="30sp" />
 
@@ -44,25 +41,27 @@
         android:id="@+id/buttonRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/textView6"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="461dp"
+        android:layout_marginTop="495dp"
         android:layout_marginEnd="48dp"
         android:background="@color/colorPrimaryDark"
         android:text="Register"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginRight="48dp" />
 
     <Button
         android:id="@+id/buttonLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/buttonRegister"
+        android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="12dp"
         android:layout_marginTop="274dp"
         android:background="@color/colorPrimaryDark"
         android:text="Login"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:layout_marginLeft="12dp" />
 
     <EditText
         android:id="@+id/editTextUsername"
@@ -90,5 +89,20 @@
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/buttonNotReal"
+        android:layout_width="500dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="Happy Cooking"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="0dp" />
 
 </RelativeLayout>
