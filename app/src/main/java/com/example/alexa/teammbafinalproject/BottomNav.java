@@ -1,5 +1,6 @@
 package com.example.alexa.teammbafinalproject;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 
@@ -7,6 +8,8 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 
@@ -58,6 +61,38 @@ public class BottomNav extends AppCompatActivity implements BottomNavigationView
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.main_frame, fragment);
         fragmentTransaction.commit();
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater optionMenuInflater = getMenuInflater();
+        optionMenuInflater.inflate(R.menu.mainmenu,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.getcooking_menu_item:
+                setFragment(getCookingFragment);
+                return true;
+            case R.id.discover_menu_item:
+                setFragment(discoverFragment);
+                return true;
+            case R.id.profile_menu_item:
+                setFragment(profileFragment1);
+                return true;
+            case R.id.logout_menu_item:
+                Intent logoutintent = new Intent(BottomNav.this, MainActivity.class);
+                startActivity(logoutintent);
+                return true;
+                //how to add this to logout button? Can not see menu in the emulator
+
+            default:
+                return false;
+        }
+
 
     }
 }

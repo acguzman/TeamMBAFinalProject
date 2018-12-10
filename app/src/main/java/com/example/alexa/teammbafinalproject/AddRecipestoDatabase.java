@@ -272,4 +272,6 @@ public class AddRecipestoDatabase extends Activity implements View.OnClickListen
 //                myRef.push().setValue(newRecipe);
                 }
         }
+
+
     }

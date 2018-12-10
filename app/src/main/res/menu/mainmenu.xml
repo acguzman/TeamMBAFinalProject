@@ -3,6 +3,15 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/menuItemLogOut"
+        android:id="@+id/getcooking_menu_item"
+        android:title="Get Cooking" />
+    <item
+        android:id="@+id/discover_menu_item"
+        android:title="Discover Recipes" />
+    <item
+        android:id="@+id/profile_menu_item"
+        android:title="My Profile" />
+    <item
+        android:id="@+id/logout_menu_item"
         android:title="Log Out" />
 </menu>
