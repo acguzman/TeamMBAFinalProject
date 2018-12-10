@@ -90,19 +90,4 @@
         android:hint="Password"
         android:inputType="textPassword" />
 
-    <Button
-        android:id="@+id/buttonNotReal"
-        android:layout_width="500dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="0dp"
-        android:background="@color/colorPrimaryDark"
-        android:text="Happy Cooking"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="0dp" />
-
 </RelativeLayout>
