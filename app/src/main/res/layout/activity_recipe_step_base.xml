@@ -35,7 +35,7 @@
         android:clickable="true"
         android:visibility="invisible"
         app:backgroundTint="@color/colorPrimaryDark"
-        app:srcCompat="@drawable/ic_next_item" />
+        android:src="@drawable/ic_next_item" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/floatingActionButtonChat"
@@ -43,9 +43,11 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="300dp"
         android:layout_marginTop="255dp"
+        android:adjustViewBounds="true"
         android:clickable="true"
+        android:src="@drawable/ic_chat_item"
         app:backgroundTint="@color/colorPrimary"
-        app:srcCompat="@drawable/ic_chat_item" />
+        app:useCompatPadding="false" />
 
     <ScrollView
         android:layout_width="match_parent"

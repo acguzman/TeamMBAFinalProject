@@ -34,11 +34,12 @@ public class RecipeStepBase extends Activity implements View.OnClickListener {
         editTextRecipeName = (EditText) findViewById(R.id.editTextRecipeName);
 
         floatingActionButtonNext.setOnClickListener(this);
+        floatingActionButtonNext2.setOnClickListener(this);
+        floatingActionButtonNext3.setOnClickListener(this);
         floatingActionButtonChat.setOnClickListener(this);
 
         autoPopulate();
 
-        Toast.makeText(this, "TEST", Toast.LENGTH_LONG).show();
         //Toast.makeText(this, textViewRecipeName.getText().toString(), Toast.LENGTH_LONG).show();
     }
 
@@ -61,6 +62,8 @@ public class RecipeStepBase extends Activity implements View.OnClickListener {
         if (v == floatingActionButtonChat) {
 
             //not ready for this yet
+            Intent intentLiveChat = new Intent(this, ChatActivity.class);
+            startActivity(intentLiveChat);
 
         } else if (v == floatingActionButtonNext) {
             textViewRecipeName.setText("Avocado Fettuccine");
@@ -68,8 +71,9 @@ public class RecipeStepBase extends Activity implements View.OnClickListener {
                     " saucepan. Drain; Add avocado mixture to pasta pan.");
             textViewStepIngredientList.setText("3/4 Pound Fettuccine");
 
-            floatingActionButtonNext2.setVisibility(View.VISIBLE);
-            floatingActionButtonNext.setVisibility(View.INVISIBLE);
+            floatingActionButtonNext2.show();
+            floatingActionButtonNext.hide();
+            floatingActionButtonNext3.hide();
 
         } else if (v == floatingActionButtonNext2) {
 
@@ -79,10 +83,15 @@ public class RecipeStepBase extends Activity implements View.OnClickListener {
             textViewStepIngredientList.setText("Toss pasta gently until sauce is evenly " +
                     "incorporated into the fettuccine.");
 
-            floatingActionButtonNext3.setVisibility(View.VISIBLE);
-            floatingActionButtonNext2.setVisibility(View.INVISIBLE);
+            floatingActionButtonNext3.show();
+            floatingActionButtonNext2.hide();
+            floatingActionButtonNext.hide();
 
         } else if (v == floatingActionButtonNext3) {
+
+            floatingActionButtonNext.show();
+            floatingActionButtonNext2.hide();
+            floatingActionButtonNext3.hide();
 
             Intent intentRecipeStepComplete = new Intent(this, RecipeStepComplete.class);
             startActivity(intentRecipeStepComplete);

@@ -152,7 +152,7 @@
             android:src="@drawable/avocado_fettucine_complete" />
 
         <Button
-            android:id="@+id/buttonUpdate"
+            android:id="@+id/buttonUpdateProfile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"

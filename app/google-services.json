@@ -23,6 +23,38 @@
           }
         },
         {
+          "client_id": "490129875191-uk793mm1tqhc4r25daq3hrjh7e6qgkn2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.alexa.teammbafinalproject",
+            "certificate_hash": "5aa63e39778009e24f5d8cb180a0b6c789d6f72e"
+          }
+        },
+        {
+          "client_id": "490129875191-01bk96l9k7v46atlm53hpoq3qhcbasav.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.alexa.teammbafinalproject",
+            "certificate_hash": "825e348901466eac2bc4a66740fbc466b61049e0"
+          }
+        },
+        {
+          "client_id": "490129875191-jpepf63rr3d40r6jih4je7q3h3hdubdj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.alexa.teammbafinalproject",
+            "certificate_hash": "c27831f1d730e4380e001fb231f913d5255cf3b1"
+          }
+        },
+        {
+          "client_id": "490129875191-i97qikpkj44mqr5qp7qul4kglsgci7ad.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.alexa.teammbafinalproject",
+            "certificate_hash": "81580a9a240222455481f001facff3dbbf9a18ac"
+          }
+        },
+        {
           "client_id": "490129875191-f3dum493cvqm3ipgie6hl157vofrhfpq.apps.googleusercontent.com",
           "client_type": 3
         }

@@ -27,7 +27,8 @@
             android:theme="@style/HappyCookingTheme" />
         <activity android:name=".RecipeStepBase" />
         <activity android:name=".AddRecipestoDatabase" />
-        <activity android:name=".RecipeStepComplete"></activity>
+        <activity android:name=".RecipeStepComplete" />
+        <activity android:name=".ChatActivity"></activity>
     </application>
 
 </manifest>
