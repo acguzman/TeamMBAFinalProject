@@ -9,10 +9,12 @@ public class User {
     Boolean Gluten;
     Boolean Dairy;
     Boolean Nut;
+    String email;
 
-    public User(String name, String username, Boolean veg, Boolean vegan, Boolean gluten, Boolean dairy, Boolean nut) {
+    public User(String name, String username, String email, Boolean veg, Boolean vegan, Boolean gluten, Boolean dairy, Boolean nut) {
         this.name = name;
         this.username = username;
+        this.email = email;
         Veg = veg;
         Vegan = vegan;
         Gluten = gluten;

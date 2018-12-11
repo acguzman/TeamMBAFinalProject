@@ -69,7 +69,7 @@ public class Register extends Activity implements View.OnClickListener {
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful()){
                         Toast.makeText(Register.this, "Welcome New User", Toast.LENGTH_SHORT).show();
-                       User newuser = new User (editTextUsernameNew.getText().toString(), editTextName.getText().toString(), checkBoxVeg.isChecked(), checkBoxVegan.isChecked(), checkBoxGluten.isChecked(), checkBoxDairy.isChecked(), checkBoxNut.isChecked());
+                       User newuser = new User (editTextUsernameNew.getText().toString(), editTextName.getText().toString(), editTextEmail.getText().toString(),checkBoxVeg.isChecked(), checkBoxVegan.isChecked(), checkBoxGluten.isChecked(), checkBoxDairy.isChecked(), checkBoxNut.isChecked());
 
                       myRef.push().setValue(newuser);
 
