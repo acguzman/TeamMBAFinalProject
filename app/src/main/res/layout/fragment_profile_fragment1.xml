@@ -15,9 +15,12 @@
             android:id="@+id/textViewPastRecipes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/checkBoxDairyProfile"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="7dp"
+            android:layout_marginLeft="7dp"
+            android:layout_marginBottom="228dp"
             android:text="My Past Recipes"
             android:textSize="24sp" />
 
@@ -25,31 +28,38 @@
             android:id="@+id/textView12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textViewProfile"
-            android:layout_marginTop="20dp"
-            android:layout_centerHorizontal="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
+            android:layout_marginBottom="398dp"
             android:text="Meal Preferences"
-            android:textSize="20sp" />
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/textViewProfile"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="53dp"
+            android:layout_marginLeft="53dp"
+            android:layout_marginTop="46dp"
             android:text="Profile"
-            android:textSize="24sp" />
+            android:textSize="30sp" />
 
         <CheckBox
             android:id="@+id/checkBoxVegProfile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textView12"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
             android:layout_marginStart="36dp"
             android:layout_marginLeft="36dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="175dp"
             android:clickable="true"
             android:text="Vegetarian" />
 
@@ -57,10 +67,12 @@
             android:id="@+id/checkBoxVeganProfile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/checkBoxVegProfile"
-            android:layout_below="@id/textView12"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="152dp"
+            android:layout_marginLeft="152dp"
+            android:layout_marginTop="175dp"
             android:clickable="true"
             android:text="Vegan" />
 
@@ -68,10 +80,12 @@
             android:id="@+id/checkBoxGlutenProfile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/checkBoxVeganProfile"
-            android:layout_below="@id/textView12"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="242dp"
+            android:layout_marginLeft="242dp"
+            android:layout_marginTop="175dp"
             android:clickable="true"
             android:text="Gluten Free" />
 
@@ -79,9 +93,12 @@
             android:id="@+id/checkBoxDairyProfile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/checkBoxVegProfile"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="90dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="98dp"
+            android:layout_marginLeft="98dp"
+            android:layout_marginTop="230dp"
             android:clickable="true"
             android:text="Dairy Free" />
 
@@ -89,10 +106,12 @@
             android:id="@+id/checkBoxNutProfile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/checkBoxVegProfile"
-            android:layout_marginTop="10dp"
-            android:layout_toRightOf="@id/checkBoxDairyProfile"
-            android:layout_marginLeft="20dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="209dp"
+            android:layout_marginLeft="209dp"
+            android:layout_marginTop="230dp"
             android:clickable="true"
             android:text="Nut Free" />
 
@@ -100,54 +119,52 @@
             android:id="@+id/imageButton"
             android:layout_width="88dp"
             android:layout_height="82dp"
-            android:layout_below="@id/textViewPastRecipes"
-            android:layout_marginTop="15dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
             android:layout_marginStart="35dp"
             android:layout_marginLeft="35dp"
+            android:layout_marginBottom="116dp"
             android:src="@drawable/avocado_fettucine_complete" />
 
         <ImageButton
             android:id="@+id/imageButton2"
             android:layout_width="88dp"
             android:layout_height="82dp"
-            android:layout_below="@id/textViewPastRecipes"
-            android:layout_marginTop="15dp"
-            android:layout_centerHorizontal="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="144dp"
+            android:layout_marginLeft="144dp"
+            android:layout_marginBottom="116dp"
             android:src="@drawable/korean_spicy_chicken_complete" />
 
         <ImageButton
             android:id="@+id/imageButton3"
             android:layout_width="88dp"
             android:layout_height="82dp"
-            android:layout_below="@id/textViewPastRecipes"
-            android:layout_marginTop="15dp"
-            android:layout_toRightOf="@id/imageButton2"
-            android:layout_marginLeft="30dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="257dp"
+            android:layout_marginLeft="257dp"
+            android:layout_marginBottom="116dp"
             android:src="@drawable/mushroom_frittata_complete" />
 
         <Button
             android:id="@+id/buttonUpdateProfile"
-            android:layout_width="160dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/buttonUpdatePreferences"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="147dp"
+            android:layout_marginRight="147dp"
+            android:layout_marginBottom="28dp"
             android:background="@color/colorPrimaryDark"
-            android:text="Update Login Info"
-            android:textSize="20sp" />
-
-        <Button
-            android:id="@+id/buttonUpdatePreferences"
-            android:layout_width="160dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/imageButton"
-            android:layout_marginTop="20dp"
-            android:layout_centerHorizontal="true"
-            android:background="@color/colorPrimaryDark"
-            android:text="Update Preferences"
-            android:textSize="20sp" />
+            android:text="Update"
+            android:textSize="18sp" />
 
     </RelativeLayout>
-
 
 </FrameLayout>
