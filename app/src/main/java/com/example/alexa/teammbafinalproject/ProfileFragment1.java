@@ -42,7 +42,7 @@ public class ProfileFragment1 extends Fragment implements View.OnClickListener {
         View view = inflater.inflate(R.layout.fragment_profile_fragment1, container, false);
 
         buttonUpdateProfile = view.findViewById(R.id.buttonUpdateProfile);
-        textViewProfile = view.findViewById(R.id.textViewProfile);
+        textViewProfile = view.findViewById(R.id.textViewProfileFragment);
         buttonUpdateProfile.setOnClickListener(this);
 
         mAuth = FirebaseAuth.getInstance();
@@ -50,7 +50,7 @@ public class ProfileFragment1 extends Fragment implements View.OnClickListener {
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("Users");
 
-        myRef.orderByChild("email").equalTo(mAuth.getCurrentUser().toString()).addChildEventListener(new ChildEventListener() {
+        myRef.orderByChild("email").equalTo(mAuth.getCurrentUser().getEmail().toString()).addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 User profile = dataSnapshot.getValue(User.class);

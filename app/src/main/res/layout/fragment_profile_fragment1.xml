@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileFragment">
+    tools:context=".ProfileFragment1">
 
     <!-- TODO: Update blank fragment layout -->
     <RelativeLayout
@@ -25,7 +25,7 @@
             android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/textViewProfile"
+            android:id="@+id/textViewProfileFragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
