@@ -1,128 +1,148 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/descriptionframelayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RecipieDescriptionFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <RelativeLayout
-        android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:id="@+id/parent_Layout" android:padding="30dp">
 
-        <ImageView
-            android:id="@+id/imageViewDescription"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_marginTop="25dp"
-            android:layout_below="@id/textViewDescriptionTitle"
-            android:src="@drawable/avocado_fettucine_complete"
-            />
+    <TextView
+        android:id="@+id/textViewDescriptionTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:freezesText="true"
+        android:padding="5dp"
+        android:text="Recipe Description:"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/textViewDescriptionTitle"
+    <ScrollView
+        android:id="@+id/descriptionscrollview"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_below="@+id/textViewDescriptionTitle">
+
+        <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:padding="5dp"
-            android:text="Recipe Description"
-            android:textSize="20sp" />
+            android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/buttonDescriptionAdd"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:text="Add to Recipes"
-            android:background="@color/colorPrimaryDark"
-            android:padding="10dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginLeft="20dp"
-            android:layout_toRightOf="@id/imageViewDescription"
-            android:layout_below="@id/textViewDescriptionTitle"/>
-        <Button
-            android:id="@+id/buttonDescriptionCook"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:text="Get cooking!"
-            android:layout_marginLeft="20dp"
-            android:background="@color/colorPrimaryDark"
-            android:padding="10dp"
-            android:layout_toRightOf="@id/imageViewDescription"
-            android:layout_below="@id/buttonDescriptionAdd"/>
+            <ImageView
+                android:id="@+id/imageViewDescription"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="25dp"
+                android:src="@drawable/avocado_fettucine_complete" />
 
-        <TextView
-            android:id="@+id/textViewDescriptionRating"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Overall Rating:"
-            android:layout_below="@id/imageViewDescription"
-            android:layout_alignParentLeft="true"
-            />
+            <TextView
+                android:id="@+id/textViewDescriptionRecipeTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Avocado Fettuccine"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
-        <ImageView
-            android:id="@+id/imageViewDescriptionRating"
-            android:layout_width="150dp"
-            android:layout_height="20dp"
-            android:layout_below="@id/textViewDescriptionRating"
-            android:layout_alignParentLeft="true"
-            android:src="@mipmap/three_stars"
-            />
+            <Button
+                android:id="@+id/buttonDescriptionAdd"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_toRightOf="@id/imageViewDescription"
+                android:background="@color/colorPrimaryDark"
+                android:padding="10dp"
+                android:text="Add to Recipes" />
 
-        <TextView
-            android:id="@+id/textViewDescriptionDescriptionTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/imageViewDescriptionRating"
-            android:layout_alignParentLeft="true"
-            android:text="Description:"
-            android:textSize="20sp"/>
-        <TextView
-            android:id="@+id/textViewDescriptionDescriptionText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/textViewDescriptionDescriptionTitle"
-            android:layout_alignParentLeft="true"
-            android:text="A quick and easy three step pasta recipe that's perfect to whip up for a weekday dinner or a really busy weekend."
-            android:padding="5dp"/>
-        <TextView
-            android:id="@+id/textViewDescriptionIngredientsTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/textViewDescriptionDescriptionText"
-            android:layout_alignParentLeft="true"
-            android:text="Ingredients:"
-            android:textSize="20sp"/>
-        <TextView
-            android:id="@+id/textViewDescriptionIngredientsText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/textViewDescriptionIngredientsTitle"
-            android:layout_alignParentLeft="true"
-            android:text="-2 Avocados, pitted\n -1 Tablespoon Nutritional yeast\n -1 Tablespoon Extra virgin olive oil\n -1 Tablespoon Fresh lemon juice\n -1 Clove Garlic, minced\n -1 Teaspoon Salt\n -1/4 Teaspoon black pepper\n -3/4 Pound Fettuccine" />
-        <TextView
-            android:id="@+id/textViewReviewsTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/textViewDescriptionIngredientsText"
-            android:layout_alignParentLeft="true"
-            android:text="Reviews:"
-            android:textSize="20sp"
-            android:padding="5dp"/>
-        <android.support.v7.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_below="@id/textViewReviewsTitle"/>
+            <Button
+                android:id="@+id/buttonDescriptionCook"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/buttonDescriptionAdd"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/imageViewDescription"
+                android:background="@color/colorPrimaryDark"
+                android:padding="10dp"
+                android:text="Get cooking!" />
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/textViewDescriptionTitle"
-            android:text="Avocado Fettuccine"
-            android:layout_centerHorizontal="true"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            <TextView
+                android:id="@+id/textViewDescriptionRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imageViewDescription"
+                android:layout_alignParentLeft="true"
+                android:text="Overall Rating:" />
 
-    </RelativeLayout>
+            <ImageView
+                android:id="@+id/imageViewDescriptionRating"
+                android:layout_width="150dp"
+                android:layout_height="20dp"
+                android:layout_below="@id/textViewDescriptionRating"
+                android:layout_alignParentLeft="true"
+                android:src="@mipmap/three_stars" />
 
-</FrameLayout>
+            <TextView
+                android:id="@+id/textViewDescriptionDescriptionTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imageViewDescriptionRating"
+                android:layout_alignParentLeft="true"
+                android:text="Description:"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textViewDescriptionDescriptionText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textViewDescriptionDescriptionTitle"
+                android:layout_alignParentLeft="true"
+                android:padding="5dp"
+                android:text="A quick and easy three step pasta recipe that's perfect to whip up for a weekday dinner or a really busy weekend." />
+
+            <TextView
+                android:id="@+id/textViewDescriptionIngredientsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textViewDescriptionDescriptionText"
+                android:layout_alignParentLeft="true"
+                android:text="Ingredients:"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textViewDescriptionIngredientsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textViewDescriptionIngredientsTitle"
+                android:layout_alignParentLeft="true"
+                android:text="-2 Avocados, pitted\n -1 Tablespoon Nutritional yeast\n -1 Tablespoon Extra virgin olive oil\n -1 Tablespoon Fresh lemon juice\n -1 Clove Garlic, minced\n -1 Teaspoon Salt\n -1/4 Teaspoon black pepper\n -3/4 Pound Fettuccine" />
+        </RelativeLayout>
+    </ScrollView>
+
+    <View
+        android:id="@+id/dividerdescription"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_below="@+id/descriptionscrollview"
+        android:background="@color/colorAccent"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/textViewReviewsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/dividerdescription"
+        android:padding="5dp"
+        android:text="Reviews:"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_below="@id/textViewReviewsTitle"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_height="wrap_content"/>
+
+
+</RelativeLayout>
