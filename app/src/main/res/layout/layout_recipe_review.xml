@@ -18,26 +18,31 @@
         android:id="@+id/textViewReview2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Overall Rating:"
+        android:text="Review Rating:"
         android:layout_alignParentLeft="true"
         android:layout_below="@id/textViewReview1"
         />
 
-    <ImageView
-        android:id="@+id/imageViewReview1"
-        android:layout_width="150dp"
+    <RatingBar
+        android:id="@+id/ratingViewReview"
+        style="@android:style/Widget.DeviceDefault.RatingBar.Small"
+        android:layout_width="wrap_content"
         android:layout_height="20dp"
-        android:layout_alignParentLeft="true"
         android:layout_below="@id/textViewReview2"
-        />
-
+        android:layout_alignParentLeft="true"
+        android:background="@color/colorPrimaryDark"
+        android:isIndicator="true"
+        android:numStars="5"
+        android:rating="3"
+        android:stepSize="1"
+        android:visibility="visible" />
     <TextView
         android:id="@+id/textViewReview3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Review:"
         android:layout_alignParentLeft="true"
-        android:layout_below="@id/imageViewReview1"
+        android:layout_below="@id/ratingViewReview"
         />
     <TextView
         android:id="@+id/textViewReview4"
@@ -46,20 +51,5 @@
         android:text="I loved it! The app really helped walk me through the steps and the timers were really handy!"
         android:layout_alignParentLeft="true"
         android:layout_below="@id/textViewReview3"
-        />
-    <TextView
-        android:id="@+id/textViewReview5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="User Photo:"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@id/textViewReview4"
-        />
-    <ImageView
-        android:id="@+id/imageViewReview2"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@id/textViewReview5"
         />
 </RelativeLayout>
