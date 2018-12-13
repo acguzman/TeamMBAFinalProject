@@ -2,7 +2,6 @@ package com.example.alexa.teammbafinalproject;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.view.View;
@@ -28,7 +27,7 @@ public class RecipeStepBase extends Activity implements View.OnClickListener {
         floatingActionButtonNext2 = findViewById(R.id.floatingActionButtonNext2);
         floatingActionButtonNext3 = findViewById(R.id.floatingActionButtonNext3);
         textViewRecipeName = (TextView) findViewById(R.id.textViewRecipeName);
-        textViewStepName = (TextView) findViewById(R.id.textViewStepName);
+        textViewStepName = (TextView) findViewById(R.id.textViewCongrats);
         textViewStepIngredientList = (TextView) findViewById(R.id.textViewStepIngredientList);
         editTextRecipeName = (EditText) findViewById(R.id.editTextRecipeName);
         imageStepPhoto = (ImageView) findViewById(R.id.imageStepPhoto);
