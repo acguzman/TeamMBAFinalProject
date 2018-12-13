@@ -13,6 +13,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class BottomNav extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
     private BottomNavigationView mainNav;
@@ -68,6 +70,14 @@ public class BottomNav extends AppCompatActivity implements BottomNavigationView
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater optionMenuInflater = getMenuInflater();
         optionMenuInflater.inflate(R.menu.mainmenu,menu);
+
+        MenuItem addRecipe = menu.findItem(R.id.admin_add_recipe_menu_item);
+        if(FirebaseAuth.getInstance().getCurrentUser().getEmail().equalsIgnoreCase("admin@hc.com")) {
+            addRecipe.setVisible(true);
+        } else {
+            addRecipe.setVisible(false);
+        }
+
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -87,8 +97,10 @@ public class BottomNav extends AppCompatActivity implements BottomNavigationView
                 Intent logoutintent = new Intent(BottomNav.this, MainActivity.class);
                 startActivity(logoutintent);
                 return true;
-                //how to add this to logout button? Can not see menu in the emulator
-
+            // ONLY for happy cooking ADMINISTRATORS. This allows to add new recipes.
+            case R.id.admin_add_recipe_menu_item:
+                Intent intentRecipes = new Intent(this, AddRecipestoDatabase.class);
+                startActivity(intentRecipes);
             default:
                 return false;
         }

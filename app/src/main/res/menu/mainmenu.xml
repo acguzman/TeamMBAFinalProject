@@ -14,4 +14,8 @@
     <item
         android:id="@+id/logout_menu_item"
         android:title="Log Out" />
+    <item
+        android:id="@+id/admin_add_recipe_menu_item"
+        android:title="Add Recipe"
+        android:visible="false" />
 </menu>
