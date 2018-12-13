@@ -8,14 +8,14 @@ public class Review {
     int stars;
     String comment;
     String userID;
-    Date reviewDate;
+    //Date reviewDate; removing this for now, dates can get complicated - Pat
     //Picture?
 
-    public Review(String recipeID, int stars, String comment, String userID, Date reviewDate) {
+    public Review(String recipeID, int stars, String comment, String userID) {
         this.recipeID = recipeID;
         this.stars = stars;
         this.comment = comment;
         this.userID = userID;
-        this.reviewDate = reviewDate;
+        //this.reviewDate = reviewDate; Removing this for now-Pat
     }
 }

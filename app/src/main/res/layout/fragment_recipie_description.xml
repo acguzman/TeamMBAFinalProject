@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".RecipieDescriptionFragment">
 
-
     <TextView
         android:id="@+id/textViewDescriptionTitle"
         android:layout_width="wrap_content"
@@ -144,11 +143,11 @@
         android:textStyle="bold" />
 
     <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@id/textViewReviewsTitle"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_height="wrap_content"/>
-
+        android:layout_alignParentBottom="true" />
 
 </RelativeLayout>
