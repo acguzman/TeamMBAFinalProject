@@ -146,6 +146,7 @@
                         android:layout_alignParentBottom="true"
                         android:layout_marginBottom="24dp"
                         android:background="@drawable/scrim"
+                        android:gravity="center"
                         android:padding="5dp"
                         android:text="Avocado Fettucine"
                         android:textSize="18sp"
@@ -290,9 +291,11 @@
                         android:id="@+id/imageButton11"
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
+                        android:layout_centerInParent="true"
                         android:layout_weight="1"
+                        android:background="@android:color/transparent"
                         android:scaleType="centerCrop"
-                        android:background="@drawable/avocado_fettucine_complete" />
+                        android:src="@drawable/avocado_fettucine_complete" />
 
                     <TextView
                         android:id="@+id/textView11"
@@ -321,8 +324,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:layout_weight="1"
+                        android:background="@android:color/transparent"
                         android:scaleType="centerCrop"
-                        android:background="@drawable/korean_spicy_chicken_complete" />
+                        android:src="@drawable/korean_spicy_chicken_complete" />
 
                     <TextView
                         android:id="@+id/textView12"
@@ -351,8 +355,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:layout_weight="1"
+                        android:background="@android:color/transparent"
                         android:scaleType="centerCrop"
-                        android:background="@drawable/mushroom_frittata_complete" />
+                        android:src="@drawable/mushroom_frittata_complete" />
 
                     <TextView
                         android:id="@+id/textView13"
@@ -381,8 +386,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:layout_weight="1"
+                        android:background="@android:color/transparent"
                         android:scaleType="centerCrop"
-                        android:background="@drawable/avocado_fettucine_complete" />
+                        android:src="@drawable/avocado_fettucine_complete" />
 
                     <TextView
                         android:id="@+id/textView14"
@@ -411,8 +417,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:layout_weight="1"
+                        android:background="@android:color/transparent"
                         android:scaleType="centerCrop"
-                        android:background="@drawable/korean_spicy_chicken_complete" />
+                        android:src="@drawable/korean_spicy_chicken_complete" />
 
                     <TextView
                         android:id="@+id/textView15"
@@ -441,8 +448,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:layout_weight="1"
+                        android:background="@android:color/transparent"
                         android:scaleType="centerCrop"
-                        android:background="@drawable/mushroom_frittata_complete" />
+                        android:src="@drawable/mushroom_frittata_complete" />
 
                     <TextView
                         android:id="@+id/textView16"
@@ -471,8 +479,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:layout_weight="1"
+                        android:background="@android:color/transparent"
                         android:scaleType="centerCrop"
-                        android:background="@drawable/avocado_fettucine_complete" />
+                        android:src="@drawable/avocado_fettucine_complete" />
 
                     <TextView
                         android:id="@+id/textView17"
