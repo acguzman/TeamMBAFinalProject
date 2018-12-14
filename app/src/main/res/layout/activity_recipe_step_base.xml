@@ -68,7 +68,6 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/progressBarStepBase"
                     android:layout_marginTop="10dp"
-                    android:text="Step 1: Combine all of the ingredients, except fettucine, in a food processor. Process until smooth and creamy."
                     android:textSize="20sp" />
 
                 <ImageView
@@ -99,7 +98,6 @@
                     android:layout_marginEnd="14dp"
                     android:layout_marginRight="14dp"
                     android:layout_toRightOf="@+id/imageCookingIcon"
-                    android:text="Avocado Fetuccine"
                     android:textSize="28dp" />
 
                 <TextView
@@ -128,13 +126,6 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/textViewIngredientLabel"
                     android:layout_marginTop="5dp"
-                    android:text="2 avocados, pitted
-            1 T nutritional yeast
-            1 T extra virgin olive oil
-            1 T fresh lemon juice
-            1 clove garlic, minced
-            1 tsp salt
-            1/4 tsp freshly ground black pepper"
                     android:textSize="20sp" />
             </RelativeLayout>
         </LinearLayout>

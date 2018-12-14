@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -22,7 +23,6 @@ public class RecipeStepBase extends Activity implements View.OnClickListener {
     FloatingActionButton floatingActionButtonNext, floatingActionButtonNext2,
             floatingActionButtonNext3, floatingActionButtonChat;
     TextView textViewRecipeName, textViewStepName, textViewStepIngredientList;
-    EditText editTextRecipeName;
     ImageView imageStepPhoto;
 
     @Override
@@ -37,8 +37,11 @@ public class RecipeStepBase extends Activity implements View.OnClickListener {
         textViewRecipeName = (TextView) findViewById(R.id.textViewRecipeName);
         textViewStepName = (TextView) findViewById(R.id.textViewCongrats);
         textViewStepIngredientList = (TextView) findViewById(R.id.textViewStepIngredientList);
-        editTextRecipeName = (EditText) findViewById(R.id.editTextRecipeName);
         imageStepPhoto = (ImageView) findViewById(R.id.imageStepPhoto);
+
+        textViewRecipeName.setText(getIntent().getExtras().getString("passedRecipeName"));
+        //Toast.makeText(this, textViewRecipeName.getText().toString(), Toast.LENGTH_SHORT).show();
+
 
         floatingActionButtonNext.setOnClickListener(this);
         floatingActionButtonNext2.setOnClickListener(this);
@@ -52,7 +55,7 @@ public class RecipeStepBase extends Activity implements View.OnClickListener {
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference myRef = database.getReference("Recipe");
 
-        String findName = "Avocado Fettucine";
+        String findName = textViewRecipeName.getText().toString();
 
         myRef.orderByChild("recipeName").equalTo(findName).addChildEventListener(new ChildEventListener() {
 
@@ -103,7 +106,7 @@ public class RecipeStepBase extends Activity implements View.OnClickListener {
 
         } else if (v == floatingActionButtonNext) {
 
-            String findName = "Avocado Fettucine";
+            String findName = textViewRecipeName.getText().toString();
 
             myRef.orderByChild("recipeName").equalTo(findName).addChildEventListener(new ChildEventListener() {
 
@@ -145,7 +148,7 @@ public class RecipeStepBase extends Activity implements View.OnClickListener {
 
             } else if (v == floatingActionButtonNext2) {
 
-            String findName2 = "Avocado Fettucine";
+            String findName2 = textViewRecipeName.getText().toString();
 
             myRef.orderByChild("recipeName").equalTo(findName2).addChildEventListener(new ChildEventListener() {
 

@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 
 /**
@@ -17,6 +18,7 @@ public class GetCookingFragment extends Fragment implements View.OnClickListener
 
     Button buttonGetCookingAvocadoFettucine, buttonGetCookingMushroomFrittata,
             buttonGetCookingKoreanSpicyChx;
+    TextView textViewRecipeAvocadoLabel, textViewRecipeKoreanChxLabel, textViewRecipeMushroomLabel;
 
     public GetCookingFragment() {
         // Required empty public constructor
@@ -35,6 +37,10 @@ public class GetCookingFragment extends Fragment implements View.OnClickListener
         buttonGetCookingMushroomFrittata = currView.findViewById(R.id
                 .buttonGetCookingMushroomFrittata);
 
+        textViewRecipeAvocadoLabel = currView.findViewById(R.id.textViewRecipeAvocadoLabel);
+        textViewRecipeKoreanChxLabel = currView.findViewById(R.id.textViewRecipeKoreanChxLabel);
+        textViewRecipeMushroomLabel = currView.findViewById(R.id.textViewRecipeMushroomLabel);
+
         buttonGetCookingAvocadoFettucine.setOnClickListener(this);
         buttonGetCookingKoreanSpicyChx.setOnClickListener(this);
         buttonGetCookingMushroomFrittata.setOnClickListener(this);
@@ -49,6 +55,7 @@ public class GetCookingFragment extends Fragment implements View.OnClickListener
         if (v == buttonGetCookingAvocadoFettucine) {
 
             Intent intentRecipeStepBase = new Intent(getActivity(), RecipeStepBase.class);
+            intentRecipeStepBase.putExtra("passedRecipeName", textViewRecipeAvocadoLabel.getText().toString());
             startActivity(intentRecipeStepBase);
 
         } else if (v == buttonGetCookingKoreanSpicyChx) {
