@@ -11,6 +11,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -25,8 +26,9 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class RecipieDescriptionFragment extends Fragment {
+public class RecipieDescriptionFragment extends Fragment implements View.OnClickListener{
     View inflateReviewRecycler;
+    Button buttonDescriptionAdd;
 
     public RecipieDescriptionFragment() {
         // Required empty public constructor
@@ -36,11 +38,16 @@ public class RecipieDescriptionFragment extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        buttonDescriptionAdd = getView().findViewById(R.id.buttonDescriptionAdd);
+        buttonDescriptionAdd.setOnClickListener(this);
         inflateReviewRecycler = inflater.inflate(R.layout.fragment_recipie_description, container, false);
         reviews = new ArrayList<>();
         initRecyclerView();
         getContacts();
         return inflateReviewRecycler;
+
+
+
     }
     private void getContacts() {  //use contactsRef.limitToLast(10).addChildEventListnener....
         FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -69,6 +76,11 @@ public class RecipieDescriptionFragment extends Fragment {
         recyclerViewAdapter = new RecyclerViewAdapter(reviews);
         recyclerView.setAdapter(recyclerViewAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 }
 

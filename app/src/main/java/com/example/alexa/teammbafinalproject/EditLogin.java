@@ -112,12 +112,13 @@ public class EditLogin extends Fragment implements View.OnClickListener {
             String newPassword = editTextPasswordUpdate.getText().toString();
             String confirmPassword = editTextPasswordConfirm.getText().toString();
 
-            if (newPassword==confirmPassword) {
+            if (newPassword.equals(confirmPassword)) {
 
 
                 FirebaseUser currUser = mAuth.getCurrentUser();
                 currUser.updatePassword(newPassword);
                 mAuth.updateCurrentUser(currUser);
+                Toast.makeText(getActivity(),"Password updated", Toast.LENGTH_SHORT).show();
 
 
             } else {
