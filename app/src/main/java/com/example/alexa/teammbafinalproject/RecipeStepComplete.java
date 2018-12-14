@@ -1,8 +1,11 @@
 package com.example.alexa.teammbafinalproject;
 
 import android.app.Activity;
-import android.media.Rating;
+import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.util.Base64;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,9 +18,13 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.io.ByteArrayOutputStream;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.UUID;
 
-public class RecipeStepComplete extends Activity implements RatingBar.OnRatingBarChangeListener {
+public class RecipeStepComplete extends Activity  {
 
     TextView textViewRecipeName;
     EditText editTextCommentEntry;
@@ -26,6 +33,7 @@ public class RecipeStepComplete extends Activity implements RatingBar.OnRatingBa
     RatingBar ratingBarEntry;
     FirebaseDatabase fdb;
     private FirebaseAuth mAuth;
+    Bitmap bitmap;
 
 
     @Override
@@ -41,9 +49,8 @@ public class RecipeStepComplete extends Activity implements RatingBar.OnRatingBa
         buttonSubmitReview = (Button) findViewById(R.id.buttonSubmitReview);
         ratingBarEntry = (RatingBar) findViewById(R.id.ratingBarEntry);
 
-        ratingBarEntry.setOnRatingBarChangeListener((RatingBar.OnRatingBarChangeListener) this);
-
         imageButtonUploadPhoto.setOnClickListener(new View.OnClickListener(){
+
             @Override
             public void onClick(View v) {
                 imageButtonUploadPhotoClicked();
@@ -59,28 +66,48 @@ public class RecipeStepComplete extends Activity implements RatingBar.OnRatingBa
 
     }
 
+    @Override
+    protected void onActivityResult(int requestCode,int resultCode, Intent data) {
+        super.onActivityResult(requestCode,resultCode,data);
+        //switches to camera and takes picture then sets it as imageButtonUploadPhoto
+        Bitmap bitmap = (Bitmap) data.getExtras().get("data");
+        imageButtonUploadPhoto.setImageBitmap(bitmap);
+    }
 
     public void buttonSubmitReviewClicked() {
-     //   put here code to upload review information into review class
-
+     //   Upload review information into review class
+        //Currently tested and working - haven't checked to see how image will pull from firebase,
+        //          but something is loaded in there as a string value
+        float rating = ratingBarEntry.getRating();
+        Date c = Calendar.getInstance().getTime();
+        SimpleDateFormat df = new SimpleDateFormat("MM/dd/yyyy");
+        String formattedDate = df.format(c);
         fdb = FirebaseDatabase.getInstance();
         DatabaseReference myReview = fdb.getReference("Review");
-
         Review newReview = new Review(UUID.randomUUID().toString(), textViewRecipeName.getText().toString(),
-                0, editTextCommentEntry.getText().toString(),mAuth.getCurrentUser().getEmail());
+                String.valueOf(rating), editTextCommentEntry.getText().toString(),
+                mAuth.getCurrentUser().getEmail(),imageButtonUploadPhoto.toString(),formattedDate);
 
         myReview.push().setValue(newReview);
     }
 
     public void imageButtonUploadPhotoClicked() {
         //put here how to upload photo from phone
+        Intent intentUpload = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(intentUpload,0);
+
     }
 
-    @Override
-    public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-
-        //put here what happens when rating is clicked
+    public static String encodeFromString(Bitmap bitmap){
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos); //bm is the bitmap object
+        byte[] b = baos.toByteArray();
+        return Base64.encodeToString(b, Base64.DEFAULT);
     }
+
+
+
+
 
 
 }

@@ -8,7 +8,8 @@
         android:id="@+id/imageCookingIcon"
         android:layout_width="55dp"
         android:layout_height="60dp"
-        app:srcCompat="@drawable/ic_cooking_item" />
+        android:adjustViewBounds="true"
+        android:background="@drawable/ic_cooking_item" />
 
     <TextView
         android:id="@+id/textViewRecipeName"
@@ -75,8 +76,8 @@
 
     <ImageButton
         android:id="@+id/imageButtonUploadPhoto"
-        android:layout_width="88dp"
-        android:layout_height="61dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:layout_below="@id/editTextCommentEntry"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
