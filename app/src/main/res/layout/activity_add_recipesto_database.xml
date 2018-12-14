@@ -192,6 +192,130 @@
                 android:layout_marginLeft="20dp"
                 android:layout_alignLeft="@+id/editTextStepName3Entry" />
 
+            <TextView
+                android:id="@+id/textViewStep4Entry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editTextStepIngredient3Entry"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="4"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editTextStepName4Entry"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editTextStepIngredient3Entry"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/textViewStep1Entry"
+                android:hint="Enter Step 4 Name/Description" />
+
+            <EditText
+                android:id="@+id/editTextStepIngredient4Entry"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/editTextStepName4Entry"
+                android:layout_alignStart="@+id/editTextStepName4Entry"
+                android:ems="10"
+                android:hint="Enter Step 4 Ingredient List"
+                android:layout_marginLeft="20dp"
+                android:layout_alignLeft="@+id/editTextStepName4Entry" />
+
+            <TextView
+                android:id="@+id/textViewStep5Entry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editTextStepIngredient4Entry"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="5"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editTextStepName5Entry"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editTextStepIngredient4Entry"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/textViewStep1Entry"
+                android:hint="Enter Step 5 Name/Description" />
+
+            <EditText
+                android:id="@+id/editTextStepIngredient5Entry"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/editTextStepName5Entry"
+                android:layout_alignStart="@+id/editTextStepName5Entry"
+                android:ems="10"
+                android:hint="Enter Step 5 Ingredient List"
+                android:layout_marginLeft="20dp"
+                android:layout_alignLeft="@+id/editTextStepName5Entry" />
+
+            <TextView
+                android:id="@+id/textViewStep6Entry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editTextStepIngredient5Entry"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="6"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editTextStepName6Entry"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editTextStepIngredient5Entry"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/textViewStep1Entry"
+                android:hint="Enter Step 6 Name/Description" />
+
+            <EditText
+                android:id="@+id/editTextStepIngredient6Entry"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/editTextStepName6Entry"
+                android:layout_alignStart="@+id/editTextStepName6Entry"
+                android:ems="10"
+                android:hint="Enter Step 6 Ingredient List"
+                android:layout_marginLeft="20dp"
+                android:layout_alignLeft="@+id/editTextStepName6Entry" />
+
+            <TextView
+                android:id="@+id/textViewStep7Entry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editTextStepIngredient6Entry"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="7"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editTextStepName7Entry"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editTextStepIngredient6Entry"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/textViewStep1Entry"
+                android:hint="Enter Step 7 Name/Description" />
+
+            <EditText
+                android:id="@+id/editTextStepIngredient7Entry"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/editTextStepName7Entry"
+                android:layout_alignStart="@+id/editTextStepName7Entry"
+                android:ems="10"
+                android:hint="Enter Step 7 Ingredient List"
+                android:layout_marginLeft="20dp"
+                android:layout_alignLeft="@+id/editTextStepName7Entry" />
+
             <Button
                 android:id="@+id/buttonSaveRecipeEntry"
                 android:layout_width="wrap_content"

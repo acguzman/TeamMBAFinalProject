@@ -3,11 +3,19 @@ package com.example.alexa.teammbafinalproject;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class RecipeStepBase extends Activity implements View.OnClickListener {
 
@@ -41,53 +49,144 @@ public class RecipeStepBase extends Activity implements View.OnClickListener {
     }
 
     private void autoPopulate() {
-        textViewRecipeName.setText("Avocado Fettuccine");
-        textViewStepName.setText("Step 1: Combine all of the ingredients, except fettucine, in a " +
-                "food processor. Process until smooth and creamy.");
-        textViewStepIngredientList.setText("2 whole Avocados, pitted" + "\n" + "1 Tablespoon " +
-                "Nutritional yeast" + "\n" +
-                "1 Tablespoon Extra virgin olive oil" + "\n" + "1 Tablespoon Fresh lemon juice" +
-                "\n" +
-                "1 Clove Garlic, minced" + "\n" + "1 Teaspoon Salt" + "\n" + "¼ Teaspoon Freshly " +
-                "ground black pepper"
-        );
-        imageStepPhoto.setImageResource(R.drawable.avocado_fettucine_step1);
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+        final DatabaseReference myRef = database.getReference("Recipe");
 
+        String findName = "Avocado Fettucine";
+
+        myRef.orderByChild("recipeName").equalTo(findName).addChildEventListener(new ChildEventListener() {
+
+
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                Recipe findRecipe = dataSnapshot.getValue(Recipe.class);
+                textViewRecipeName.setText(findRecipe.recipeName);
+                textViewStepName.setText(findRecipe.getStepName(0));
+                textViewStepIngredientList.setText(findRecipe.getStepIngredients(0));
+                //imageStepPhoto.setImageBitmap(stepImage);
+
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
-    //   @Override
+
+    @Override
     public void onClick(View v) {
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+        final DatabaseReference myRef = database.getReference("Recipe");
+
         if (v == floatingActionButtonChat) {
 
-            Intent intentLiveChat = new Intent(this, ChatActivity.class);
-            startActivity(intentLiveChat);
+            //Intent intentLiveChat = new Intent(this, ChatActivity.class);
+            //startActivity(intentLiveChat);
+
 
         } else if (v == floatingActionButtonNext) {
-            textViewRecipeName.setText("Avocado Fettuccine");
-            textViewStepName.setText("Step 2: Prepare pasta according to package directions, in a" +
-                    " saucepan. Drain; Add avocado mixture to pasta pan.");
-            textViewStepIngredientList.setText("3/4 Pound Fettuccine");
-            imageStepPhoto.setImageResource(R.drawable.avocado_fettucine_step2);
+
+            String findName = "Avocado Fettucine";
+
+            myRef.orderByChild("recipeName").equalTo(findName).addChildEventListener(new ChildEventListener() {
+
+
+                @Override
+                public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                    Recipe findRecipe = dataSnapshot.getValue(Recipe.class);
+                    textViewRecipeName.setText(findRecipe.recipeName);
+                    textViewStepName.setText(findRecipe.getStepName(1));
+                    textViewStepIngredientList.setText(findRecipe.getStepIngredients(1));
+                    //imageStepPhoto.setImageBitmap(stepImage);
+
+                }
+
+                @Override
+                public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+                }
+
+                @Override
+                public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+
+                }
+
+                @Override
+                public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
 
             floatingActionButtonNext2.show();
             floatingActionButtonNext.hide();
             floatingActionButtonNext3.hide();
 
-        } else if (v == floatingActionButtonNext2) {
+            } else if (v == floatingActionButtonNext2) {
 
-            textViewRecipeName.setText("Avocado Fettuccine");
-            textViewStepName.setText("Step 3: Toss pasta gently until sauce is evenly incorporated into the fettuccine.");
-            textViewStepIngredientList.setText("");
-            imageStepPhoto.setImageResource(R.drawable.avocado_fettucine_step3);
+            String findName2 = "Avocado Fettucine";
+
+            myRef.orderByChild("recipeName").equalTo(findName2).addChildEventListener(new ChildEventListener() {
+
+
+                @Override
+                public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                    Recipe findRecipe = dataSnapshot.getValue(Recipe.class);
+                    textViewRecipeName.setText(findRecipe.recipeName);
+                    textViewStepName.setText(findRecipe.getStepName(2));
+                    textViewStepIngredientList.setText(findRecipe.getStepIngredients(2));
+                    //imageStepPhoto.setImageBitmap(stepImage);
+
+                }
+
+                @Override
+                public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+                }
+
+                @Override
+                public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+
+                }
+
+                @Override
+                public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
+
 
             floatingActionButtonNext3.show();
             floatingActionButtonNext2.hide();
             floatingActionButtonNext.hide();
 
         } else if (v == floatingActionButtonNext3) {
-            floatingActionButtonNext.show();
-            floatingActionButtonNext2.hide();
-            floatingActionButtonNext3.hide();
 
             Intent intentRecipeStepComplete = new Intent(this, RecipeStepComplete.class);
             startActivity(intentRecipeStepComplete);
