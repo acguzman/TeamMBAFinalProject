@@ -14,11 +14,11 @@ import java.util.ArrayList;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
     private ArrayList <Review> reviews = new ArrayList<>();
-    private Context mContext;
+    //private Context mContext;
 
-    RecyclerViewAdapter(ArrayList<Review> reviews, Context mContext) {
+    RecyclerViewAdapter(ArrayList<Review> reviews) { //, Context mContext
         this.reviews = reviews;
-        this.mContext = mContext;
+        //this.mContext = mContext;
     }
 
     @NonNull
@@ -44,7 +44,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView textViewReview1, textViewReview2, textViewReview3, textViewReview4;
         RatingBar ratingViewReview;
-        RelativeLayout review_layout;
+        RelativeLayout review_Layout;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -53,7 +53,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             textViewReview3 = itemView.findViewById(R.id.textViewReview3);
             textViewReview4 = itemView.findViewById(R.id.textViewReview4);
             ratingViewReview = itemView.findViewById(R.id.ratingViewReview);
-            review_layout = itemView.findViewById(R.id.review_Layout);
+            review_Layout = itemView.findViewById(R.id.review_Layout);
         }
     }
 }
