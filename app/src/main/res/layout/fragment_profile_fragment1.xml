@@ -34,7 +34,7 @@
             android:layout_marginStart="28dp"
             android:layout_marginLeft="28dp"
             android:layout_marginTop="101dp"
-            android:textSize="24sp" />
+            android:textSize="12sp" />
 
         <TextView
             android:id="@+id/textView12"

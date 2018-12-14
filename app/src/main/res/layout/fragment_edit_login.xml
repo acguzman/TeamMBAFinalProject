@@ -17,7 +17,7 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="323dp"
+            android:layout_marginTop="302dp"
             android:layout_marginEnd="85dp"
             android:layout_marginRight="85dp"
             android:background="@color/colorPrimary"
@@ -32,7 +32,7 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="363dp"
+            android:layout_marginTop="342dp"
             android:layout_marginEnd="85dp"
             android:layout_marginRight="85dp"
             android:background="@color/colorPrimary"
@@ -47,7 +47,7 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="407dp"
+            android:layout_marginTop="386dp"
             android:layout_marginEnd="85dp"
             android:layout_marginRight="85dp"
             android:background="@color/colorPrimary"
@@ -64,9 +64,9 @@
             android:layout_alignParentBottom="true"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginBottom="219dp"
+            android:layout_marginBottom="227dp"
             android:text="Change Password:"
-            android:textSize="24sp" />
+            android:textSize="18sp" />
 
         <EditText
             android:id="@+id/editTextNameUpdate"
@@ -75,9 +75,9 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="117dp"
-            android:layout_marginEnd="85dp"
-            android:layout_marginRight="85dp"
+            android:layout_marginTop="89dp"
+            android:layout_marginEnd="94dp"
+            android:layout_marginRight="94dp"
             android:background="@color/colorPrimary"
             android:ems="10"
             android:hint="Name"
@@ -90,9 +90,9 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="160dp"
-            android:layout_marginEnd="85dp"
-            android:layout_marginRight="85dp"
+            android:layout_marginTop="132dp"
+            android:layout_marginEnd="94dp"
+            android:layout_marginRight="94dp"
             android:background="@color/colorPrimary"
             android:ems="10"
             android:hint="Change Username"
@@ -105,11 +105,11 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="53dp"
-            android:layout_marginLeft="53dp"
-            android:layout_marginTop="46dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="23dp"
             android:text="Update Login Info"
-            android:textSize="30sp" />
+            android:textSize="24sp" />
 
         <Button
             android:id="@+id/buttonPasswordUpdate"
@@ -130,7 +130,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="202dp"
+            android:layout_marginTop="189dp"
             android:background="@color/colorPrimaryDark"
             android:text="Update Username" />
 
