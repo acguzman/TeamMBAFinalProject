@@ -37,9 +37,9 @@
                 android:id="@+id/textViewDescriptionRecipeTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Avocado Fettuccine"
                 android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                tools:text="Test Recipe Name" />
 
             <Button
                 android:id="@+id/buttonDescriptionAdd"
@@ -102,7 +102,7 @@
                 android:layout_below="@id/textViewDescriptionDescriptionTitle"
                 android:layout_alignParentLeft="true"
                 android:padding="5dp"
-                android:text="A quick and easy three step pasta recipe that's perfect to whip up for a weekday dinner or a really busy weekend." />
+                tools:text="Test recipie description." />
 
             <TextView
                 android:id="@+id/textViewDescriptionIngredientsTitle"
@@ -119,7 +119,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/textViewDescriptionIngredientsTitle"
                 android:layout_alignParentLeft="true"
-                android:text="-2 Avocados, pitted\n -1 Tablespoon Nutritional yeast\n -1 Tablespoon Extra virgin olive oil\n -1 Tablespoon Fresh lemon juice\n -1 Clove Garlic, minced\n -1 Teaspoon Salt\n -1/4 Teaspoon black pepper\n -3/4 Pound Fettuccine" />
+                tools:text="Test Ingredients" />
         </RelativeLayout>
     </ScrollView>
 
