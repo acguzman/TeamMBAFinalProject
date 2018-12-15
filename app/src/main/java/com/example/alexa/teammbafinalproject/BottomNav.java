@@ -84,14 +84,9 @@ public class BottomNav extends AppCompatActivity implements BottomNavigationView
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
-            case R.id.getcooking_menu_item:
-                setFragment(getCookingFragment);
-                return true;
-            case R.id.discover_menu_item:
-                setFragment(discoverFragment);
-                return true;
-            case R.id.profile_menu_item:
-                setFragment(profileFragment1);
+            case R.id.home_menu_item:
+                Intent homeintent = new Intent(BottomNav.this, BottomNav.class );
+                startActivity(homeintent);
                 return true;
             case R.id.logout_menu_item:
                 Intent logoutintent = new Intent(BottomNav.this, MainActivity.class);

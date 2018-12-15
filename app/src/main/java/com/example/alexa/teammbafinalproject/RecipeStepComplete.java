@@ -5,7 +5,11 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Base64;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,7 +28,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.UUID;
 
-public class RecipeStepComplete extends Activity  {
+public class RecipeStepComplete extends AppCompatActivity {
 
     TextView textViewRecipeName;
     EditText editTextCommentEntry;
@@ -106,8 +110,41 @@ public class RecipeStepComplete extends Activity  {
     }
 
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater optionMenuInflater = getMenuInflater();
+        optionMenuInflater.inflate(R.menu.mainmenu,menu);
+
+        MenuItem addRecipe = menu.findItem(R.id.admin_add_recipe_menu_item);
+        if(FirebaseAuth.getInstance().getCurrentUser().getEmail().equalsIgnoreCase("admin@hc.com")) {
+            addRecipe.setVisible(true);
+        } else {
+            addRecipe.setVisible(false);
+        }
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.home_menu_item:
+                Intent homeintent = new Intent(RecipeStepComplete.this, BottomNav.class );
+                startActivity(homeintent);
+                return true;
+            case R.id.logout_menu_item:
+                Intent logoutintent = new Intent(RecipeStepComplete.this, MainActivity.class);
+                startActivity(logoutintent);
+                return true;
+            case R.id.admin_add_recipe_menu_item:
+                Intent intentRecipes = new Intent(this, AddRecipestoDatabase.class);
+                startActivity(intentRecipes);
+                return true;
+            default:
+                return false;
+        }
 
 
-
-
+    }
 }
+
