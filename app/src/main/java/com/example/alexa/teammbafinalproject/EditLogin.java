@@ -126,4 +126,7 @@ public class EditLogin extends Fragment implements View.OnClickListener {
             }
         }
     }
+
+
+
 }
