@@ -1,17 +1,24 @@
 package com.example.alexa.teammbafinalproject;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.graphics.drawable.VectorDrawableCompat;
 import android.support.v4.app.Fragment;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.CardView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,15 +28,23 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FileDownloadTask;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+
+import static android.content.ContentValues.TAG;
 
 
 /**
@@ -43,8 +58,10 @@ public class RecipeDiscoverFragment extends Fragment implements View.OnClickList
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private List<String> recipeIDS = new ArrayList<String>();
 
     public ImageButton imageButton01;
+    ImageButton img;
 
     //Temp Code
     public List<String> recipeIds = new ArrayList<String>() {{
@@ -63,6 +80,89 @@ public class RecipeDiscoverFragment extends Fragment implements View.OnClickList
 
     public RecipeDiscoverFragment() {
         // Required empty public constructor
+        GetImages(true);
+    }
+
+    /**
+     * Gets Images dynamically from the firebase storage database
+     * @param storeLocally - If true it will execute code to store the image locally on the phone
+     *                     Else it would update the images on the app, when the user opens the app.
+     */
+    private void GetImages(boolean storeLocally) {
+        try {
+            FirebaseDatabase fdb = FirebaseDatabase.getInstance();
+
+            fdb.getReference("Recipe").addChildEventListener(new ChildEventListener() {
+                @Override
+                public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                    long count = dataSnapshot.getChildrenCount();
+                    for (DataSnapshot d: dataSnapshot.getChildren()) {
+                        recipeIDS.add(d.getKey());
+                    }
+                }
+
+                @Override
+                public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {}
+                @Override
+                public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {}
+                @Override
+                public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {}
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {}
+            });
+
+            FirebaseStorage storage = FirebaseStorage.getInstance();
+            StorageReference storageRef = storage.getReference();
+            StorageReference pathReference = storageRef.child("-LTF48csLNdqe7jBLzyT/showcase/AvocadoFettucineComplete.jpg");
+
+            if(storeLocally) {
+                File localFile = File.createTempFile("images", "jpg");
+
+                pathReference.getFile(localFile).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+
+
+                    @Override
+                    public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+                        // Local temp file has been created
+
+                        int ia=1;
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception exception) {
+                        // Handle any errors
+                        Log.e(TAG, "onFailure() returned: " + exception.getMessage(), exception);
+                    }
+                });
+            } else {
+                final long ONE_MEGABYTE = 1024 * 1024;
+                pathReference.getBytes(ONE_MEGABYTE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
+
+                    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
+                    @Override
+                    public void onSuccess(byte[] bytes) {
+                        // Data for "images/island.jpg" is returns, use this as needed
+                        Drawable src = new BitmapDrawable(getResources(),
+                                BitmapFactory.decodeByteArray(bytes, 0, bytes.length));
+                         if(img==null) {
+                             img = getView().findViewById(R.id.imageButton02);
+                             img.setBackground(src);
+                         } else {
+                             img.setBackground(src);
+                        }
+                        int ia=1;
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception exception) {
+                        // Handle any errors
+                        Log.e(TAG, "onFailure: " + exception.getMessage(), exception);
+                    }
+                });
+            }
+        } catch (Throwable e) {
+            Log.e(TAG, "GetImages: AAYUSH "+ e.getMessage(), e);
+        }
     }
 
     @Override
@@ -82,6 +182,7 @@ public class RecipeDiscoverFragment extends Fragment implements View.OnClickList
         View view = inflater.inflate(R.layout.fragment_recipe_discover, container, false);
         imageButton01 = view.findViewById(R.id.imageButton01);
         imageButton01.setOnClickListener(this);
+        img = view.findViewById(R.id.imageButton02);
 
 //        FirebaseAuth fAuth = FirebaseAuth.getInstance();
 //        String currEmail = fAuth.getCurrentUser().getEmail();
@@ -132,6 +233,8 @@ public class RecipeDiscoverFragment extends Fragment implements View.OnClickList
 
             }
         });
+
+        GetImages(false);
 
         return view;
     }
