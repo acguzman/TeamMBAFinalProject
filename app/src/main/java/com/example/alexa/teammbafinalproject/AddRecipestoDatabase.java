@@ -76,9 +76,17 @@ public class AddRecipestoDatabase extends Activity implements View.OnClickListen
         editTextStepName1Entry = findViewById(R.id.editTextStepName1Entry);
         editTextStepName2Entry = findViewById(R.id.editTextStepName2Entry);
         editTextStepName3Entry = findViewById(R.id.editTextStepName3Entry);
+        editTextStepName4Entry = findViewById(R.id.editTextStepName4Entry);
+        editTextStepName5Entry = findViewById(R.id.editTextStepName5Entry);
+        editTextStepName6Entry = findViewById(R.id.editTextStepName6Entry);
+        editTextStepName7Entry = findViewById(R.id.editTextStepName7Entry);
         editTextStepIngredient1Entry = findViewById(R.id.editTextStepIngredient1Entry);
         editTextStepIngredient2Entry = findViewById(R.id.editTextStepIngredient2Entry);
         editTextStepIngredient3Entry = findViewById(R.id.editTextStepIngredient3Entry);
+        editTextStepIngredient4Entry = findViewById(R.id.editTextStepIngredient4Entry);
+        editTextStepIngredient5Entry = findViewById(R.id.editTextStepIngredient5Entry);
+        editTextStepIngredient6Entry = findViewById(R.id.editTextStepIngredient6Entry);
+        editTextStepIngredient7Entry = findViewById(R.id.editTextStepIngredient7Entry);
 
         checkBoxVegEntry = findViewById(R.id.checkBoxVegEntry);
         checkBoxVeganEntry = findViewById(R.id.checkBoxVeganEntry);

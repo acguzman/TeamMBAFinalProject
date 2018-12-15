@@ -8,6 +8,7 @@ import java.util.List;
 
 public class Recipe {
 
+    //Will possibly be created by the push functionality of firbaseDB.
     public String recipeID;
 
     public String recipeName;
