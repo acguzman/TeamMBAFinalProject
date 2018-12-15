@@ -3,6 +3,7 @@ package com.example.alexa.teammbafinalproject;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
@@ -38,6 +39,7 @@ public class RecipeStepComplete extends AppCompatActivity {
     FirebaseDatabase fdb;
     private FirebaseAuth mAuth;
     Bitmap bitmap;
+  //  Drawable ic_uplooad_photo_item;
 
 
     @Override
@@ -52,6 +54,9 @@ public class RecipeStepComplete extends AppCompatActivity {
         imageButtonUploadPhoto = (ImageButton) findViewById(R.id.imageButtonUploadPhoto);
         buttonSubmitReview = (Button) findViewById(R.id.buttonSubmitReview);
         ratingBarEntry = (RatingBar) findViewById(R.id.ratingBarEntry);
+//        ic_uplooad_photo_item = (Drawable)
+
+        textViewRecipeName.setText(getIntent().getExtras().getString("passedRecipeName"));
 
         imageButtonUploadPhoto.setOnClickListener(new View.OnClickListener(){
 
@@ -93,6 +98,12 @@ public class RecipeStepComplete extends AppCompatActivity {
                 mAuth.getCurrentUser().getEmail(),imageButtonUploadPhoto.toString(),formattedDate);
 
         myReview.push().setValue(newReview);
+
+        Toast.makeText(this, "Thank you for your feedback!", Toast.LENGTH_SHORT).show();
+        editTextCommentEntry.setText("");
+        ratingBarEntry.setRating(0);
+    //    imageButtonUploadPhoto.getDrawable(ic_uplooad_photo_item);
+
     }
 
     public void imageButtonUploadPhotoClicked() {

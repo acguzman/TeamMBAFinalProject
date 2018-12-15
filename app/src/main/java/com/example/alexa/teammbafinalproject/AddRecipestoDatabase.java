@@ -29,6 +29,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -45,7 +46,7 @@ import static android.support.constraint.Constraints.TAG;
 
 public class AddRecipestoDatabase extends Activity implements View.OnClickListener {
 
-    EditText editTextRecipeName, editTextRecipeDescriptionEntry, editTextIngredientSummary;
+    EditText editTextRecipeName, editTextRecipeDescriptionEntry, editTextIngredientSummary, editTextNumberOfSteps;
     EditText editTextStepName1Entry, editTextStepIngredient1Entry;
     EditText editTextStepName2Entry, editTextStepIngredient2Entry;
     EditText editTextStepName3Entry, editTextStepIngredient3Entry;
@@ -73,6 +74,7 @@ public class AddRecipestoDatabase extends Activity implements View.OnClickListen
         editTextRecipeName = findViewById(R.id.editTextRecipeName);
         editTextRecipeDescriptionEntry = findViewById(R.id.editTextRecipeDescriptionEntry);
         editTextIngredientSummary = findViewById(R.id.editTextIngredientSummary);
+        editTextNumberOfSteps = findViewById(R.id.editTextNumberOfSteps);
         editTextStepName1Entry = findViewById(R.id.editTextStepName1Entry);
         editTextStepName2Entry = findViewById(R.id.editTextStepName2Entry);
         editTextStepName3Entry = findViewById(R.id.editTextStepName3Entry);
@@ -183,9 +185,11 @@ public class AddRecipestoDatabase extends Activity implements View.OnClickListen
                     editTextRecipeDescriptionEntry.getText().toString(), null, checkBoxVegEntry.isChecked(),
                     checkBoxVeganEntry.isChecked(), checkBoxDairyFreeEntry.isChecked(), checkBoxGlutenFreeEntry.isChecked(),
                     checkBoxNutFreeEntry.isChecked(), editTextIngredientSummary.getText().toString(),
-                    stepIDs, stepNames, null, stepIngredients);
+                    editTextNumberOfSteps.getText().toString(), stepIDs, stepNames, null, stepIngredients);
 
             myRecipe.push().setValue(newRecipe);
+
+            Toast.makeText(this, "Recipe Added Successfully", Toast.LENGTH_SHORT).show();
         }
         ;
 

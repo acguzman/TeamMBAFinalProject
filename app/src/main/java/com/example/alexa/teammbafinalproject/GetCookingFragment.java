@@ -59,9 +59,14 @@ public class GetCookingFragment extends Fragment implements View.OnClickListener
             startActivity(intentRecipeStepBase);
 
         } else if (v == buttonGetCookingKoreanSpicyChx) {
+            Intent intentRecipeStepBase = new Intent(getActivity(), RecipeStepBase.class);
+            intentRecipeStepBase.putExtra("passedRecipeName", textViewRecipeKoreanChxLabel.getText().toString());
+            startActivity(intentRecipeStepBase);
 
         } else if (v == buttonGetCookingMushroomFrittata) {
-
+            Intent intentRecipeStepBase = new Intent(getActivity(), RecipeStepBase.class);
+            intentRecipeStepBase.putExtra("passedRecipeName", textViewRecipeMushroomLabel.getText().toString());
+            startActivity(intentRecipeStepBase);
         }
 
     }

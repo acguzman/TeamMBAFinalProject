@@ -56,6 +56,10 @@ import static android.content.ContentValues.TAG;
 public class RecipeDiscoverFragment extends Fragment implements View.OnClickListener {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+    private StorageReference storageRef, pathReference;
+    private FirebaseStorage storage;
+
+
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     private List<String> recipeIDS = new ArrayList<String>();
@@ -168,6 +172,9 @@ public class RecipeDiscoverFragment extends Fragment implements View.OnClickList
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //thie below was mStorageRef and I changed to storageRef based on line 119
+        storageRef = FirebaseStorage.getInstance().getReference();
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);

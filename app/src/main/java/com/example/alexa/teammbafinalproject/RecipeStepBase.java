@@ -29,6 +29,7 @@ public class RecipeStepBase extends AppCompatActivity implements View.OnClickLis
             floatingActionButtonNext3, floatingActionButtonChat;
     TextView textViewRecipeName, textViewStepName, textViewStepIngredientList;
     ImageView imageStepPhoto;
+    MenuItem home_menu_item, admin_add_recipe_menu_item, logout_menu_item;
 
         @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,26 +75,14 @@ public class RecipeStepBase extends AppCompatActivity implements View.OnClickLis
                 //imageStepPhoto.setImageBitmap(stepImage);
 
             }
-
             @Override
-            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
-            }
-
+            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {            }
             @Override
-            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
-
-            }
-
+            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) { }
             @Override
-            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
-            }
-
+            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {            }
             @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
+            public void onCancelled(@NonNull DatabaseError databaseError) {            }
         });
     }
 
@@ -125,26 +114,14 @@ public class RecipeStepBase extends AppCompatActivity implements View.OnClickLis
                     //imageStepPhoto.setImageBitmap(stepImage);
 
                 }
-
                 @Override
-                public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
-                }
-
+                public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {                }
                 @Override
-                public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
-
-                }
-
+                public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {                }
                 @Override
-                public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
-                }
-
+                public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {                }
                 @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                }
+                public void onCancelled(@NonNull DatabaseError databaseError) {                }
             });
 
             floatingActionButtonNext2.show();
@@ -197,6 +174,7 @@ public class RecipeStepBase extends AppCompatActivity implements View.OnClickLis
         } else if (v == floatingActionButtonNext3) {
 
             Intent intentRecipeStepComplete = new Intent(this, RecipeStepComplete.class);
+            intentRecipeStepComplete.putExtra("passedRecipeName", textViewRecipeName.getText().toString());
             startActivity(intentRecipeStepComplete);
         }
     }

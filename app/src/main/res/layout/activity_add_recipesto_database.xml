@@ -89,6 +89,14 @@
                 android:layout_below="@+id/editTextRecipeDescriptionEntry"
                 android:hint="List Ingredients" />
 
+            <EditText
+                android:id="@+id/editTextNumberOfSteps"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/editTextIngredientSummary"
+                android:hint="Number of Steps" />
+
             <TextView
                 android:id="@+id/textViewStepLabelEntry"
                 android:layout_width="wrap_content"

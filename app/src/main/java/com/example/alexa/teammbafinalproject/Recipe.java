@@ -23,9 +23,13 @@ public class Recipe {
     public boolean isGlutenFree;
     public boolean isNutFree;
 
+    public String ingredientSummary;
+
+    public String numberOfSteps;
+
     public Recipe(String recipeID, String recipeName, String recipeDescription, Bitmap picture,
                   boolean isVegetarian, boolean isVegan, boolean isDairyFree, boolean
-                          isGlutenFree, boolean isNutFree, String ingredientSummary, List<String> stepID,
+                          isGlutenFree, boolean isNutFree, String ingredientSummary, String numberOfSteps, List<String> stepID,
                           List<String> stepName, List<Bitmap> stepImage, List<String> stepIngredients) {
 
         this.recipeID = recipeID;
@@ -38,6 +42,7 @@ public class Recipe {
         this.isGlutenFree = isGlutenFree;
         this.isNutFree = isNutFree;
         this.ingredientSummary = ingredientSummary;
+        this.numberOfSteps = numberOfSteps;
         this.stepID = stepID;
         this.stepName = stepName;
         this.stepImage = stepImage;
@@ -46,17 +51,6 @@ public class Recipe {
 
     public Recipe() {}
 
-    /** The sample ingredients should look like the following example:
-     * 2 Avocados, pitted
-     * 1 Tablespoon Nutritional yeast
-     * 1 Tablespoon Extra virgin olive oil
-     * 1 Tablespoon Fresh lemon juice
-     * 1 Clove Garlic, minced
-     * 1 Teaspoon Salt
-     * ¼ Teaspoon Freshly ground black pepper
-     * ¾ Pound Fettucine
-     */
-    public String ingredientSummary;
 
     // Unique ID for each step
     public List<String> stepID;
