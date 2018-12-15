@@ -36,6 +36,7 @@ public class RecipieDescriptionFragment extends Fragment implements View.OnClick
     private ArrayList<Review> reviews;
     private RecyclerViewAdapter recyclerViewAdapter;
 
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         buttonDescriptionAdd = getView().findViewById(R.id.buttonDescriptionAdd);
@@ -45,6 +46,7 @@ public class RecipieDescriptionFragment extends Fragment implements View.OnClick
         initRecyclerView();
         getContacts();
         return inflateReviewRecycler;
+
 
 
 
@@ -80,6 +82,24 @@ public class RecipieDescriptionFragment extends Fragment implements View.OnClick
 
     @Override
     public void onClick(View v) {
+
+        if (v==buttonDescriptionAdd){
+
+
+            final FirebaseDatabase database = FirebaseDatabase.getInstance();
+            DatabaseReference myRef = database.getReference("Recipe");
+            DatabaseReference otherRef = database.getReference("User");
+
+            //From Nevin's code: Not sure what to put in the set Value
+            //DatabaseReference newDatabaseReference = myRef.push();
+            //myRef.setValue(?);
+           // String recipeKey = myRef.getKey();
+
+            //How do I access the favorites child within the User class?? I've only done this with datasnapshot before and i don't think I want to add a newChildListener
+
+            //otherRef.Favorites.add(recipeKey);
+
+        }
 
     }
 }

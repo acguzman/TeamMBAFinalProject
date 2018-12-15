@@ -47,6 +47,7 @@ public class Register extends Activity implements View.OnClickListener {
         checkBoxGluten = findViewById(R.id.checkBoxGluten);
         checkBoxNut = findViewById(R.id.checkBoxNut);
 
+
         buttonRegisterNew.setOnClickListener(this);
 
         mAuth = FirebaseAuth.getInstance();

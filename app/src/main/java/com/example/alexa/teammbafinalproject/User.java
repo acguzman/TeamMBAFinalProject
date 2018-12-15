@@ -1,7 +1,11 @@
 package com.example.alexa.teammbafinalproject;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class User {
 
+    public List<String> Favorites;
     String name;
     String username;
     Boolean Veg;
@@ -10,6 +14,7 @@ public class User {
     Boolean Dairy;
     Boolean Nut;
     String email;
+
 
     public User(String name, String username, String email, Boolean veg, Boolean vegan, Boolean gluten, Boolean dairy, Boolean nut) {
         this.name = name;
@@ -20,6 +25,8 @@ public class User {
         Gluten = gluten;
         Dairy = dairy;
         Nut = nut;
+        Favorites = new ArrayList<>();
+
     }
 
     public User() {
