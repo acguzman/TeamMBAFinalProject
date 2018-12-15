@@ -12,6 +12,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -29,6 +31,8 @@ import java.util.ArrayList;
 public class RecipieDescriptionFragment extends Fragment implements View.OnClickListener{
     View inflateReviewRecycler;
     Button buttonDescriptionAdd;
+    TextView textViewDescriptionRecipeTitle, textViewDescriptionDescriptionText,textViewDescriptionIngredientsText;
+    String stringRecipieID = "-LTlv9k6gkszNJgHgXWB";
 
     public RecipieDescriptionFragment() {
         // Required empty public constructor
@@ -39,6 +43,7 @@ public class RecipieDescriptionFragment extends Fragment implements View.OnClick
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        getRecipieDescription();
         inflateReviewRecycler = inflater.inflate(R.layout.fragment_recipie_description, container, false);
         reviews = new ArrayList<>();
         initRecyclerView();
@@ -49,10 +54,35 @@ public class RecipieDescriptionFragment extends Fragment implements View.OnClick
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         buttonDescriptionAdd = getView().findViewById(R.id.buttonDescriptionAdd);
         buttonDescriptionAdd.setOnClickListener(this);
+        textViewDescriptionRecipeTitle = getView().findViewById(R.id.textViewDescriptionRecipeTitle);
+        textViewDescriptionDescriptionText = getView().findViewById(R.id.textViewDescriptionDescriptionText);
+        textViewDescriptionIngredientsText = getView().findViewById(R.id.textViewDescriptionIngredientsText);
+    }
+    private void getRecipieDescription() {
+        FirebaseDatabase databaseDescription = FirebaseDatabase.getInstance();
+        DatabaseReference recipeRef = databaseDescription.getReference("Recipe");
+        // Read from the database
+        recipeRef.child(stringRecipieID).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                //pull recipe information from Firebase
+                Recipe recipeCurrent;
+                recipeCurrent = dataSnapshot.getValue(Recipe.class);
+                textViewDescriptionRecipeTitle.setText(recipeCurrent.recipeName);
+                textViewDescriptionDescriptionText.setText(recipeCurrent.recipeDescription);
+                textViewDescriptionIngredientsText.setText(recipeCurrent.ingredientSummary);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                // Failed to read value
+                Toast.makeText(getActivity(), "Database Error", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
     private void getContacts() {  //use contactsRef.limitToLast(10).addChildEventListnener....
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference contactsRef = database.getReference("Review");
+        FirebaseDatabase databaseContacts = FirebaseDatabase.getInstance();
+        DatabaseReference contactsRef = databaseContacts.getReference("Review");
         // Read from the database
         contactsRef.limitToLast(10).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -69,6 +99,7 @@ public class RecipieDescriptionFragment extends Fragment implements View.OnClick
             @Override
             public void onCancelled(DatabaseError error) {
                 // Failed to read value
+                Toast.makeText(getActivity(), "Database Error", Toast.LENGTH_SHORT).show();
             }
         });
     }
