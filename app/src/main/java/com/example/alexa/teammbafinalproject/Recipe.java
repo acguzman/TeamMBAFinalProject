@@ -37,6 +37,7 @@ public class Recipe {
         this.isDairyFree = isDairyFree;
         this.isGlutenFree = isGlutenFree;
         this.isNutFree = isNutFree;
+        this.ingredientSummary = ingredientSummary;
         this.stepID = stepID;
         this.stepName = stepName;
         this.stepImage = stepImage;
