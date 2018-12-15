@@ -2,6 +2,7 @@ package com.example.alexa.teammbafinalproject;
 
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -30,9 +31,9 @@ import java.util.ArrayList;
  */
 public class RecipieDescriptionFragment extends Fragment implements View.OnClickListener{
     View inflateReviewRecycler;
-    Button buttonDescriptionAdd;
+    Button buttonDescriptionAdd, buttonDescriptionCook;
     TextView textViewDescriptionRecipeTitle, textViewDescriptionDescriptionText,textViewDescriptionIngredientsText;
-    String stringRecipieID = "-LTlv9k6gkszNJgHgXWB";
+    String stringRecipeName = "Avocado Fettuccine";
 
     public RecipieDescriptionFragment() {
         // Required empty public constructor
@@ -54,17 +55,19 @@ public class RecipieDescriptionFragment extends Fragment implements View.OnClick
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         buttonDescriptionAdd = getView().findViewById(R.id.buttonDescriptionAdd);
         buttonDescriptionAdd.setOnClickListener(this);
+        buttonDescriptionCook = getView().findViewById(R.id.buttonDescriptionCook);
+        buttonDescriptionCook.setOnClickListener(this);
         textViewDescriptionRecipeTitle = getView().findViewById(R.id.textViewDescriptionRecipeTitle);
         textViewDescriptionDescriptionText = getView().findViewById(R.id.textViewDescriptionDescriptionText);
         textViewDescriptionIngredientsText = getView().findViewById(R.id.textViewDescriptionIngredientsText);
     }
-    private void getRecipieDescription() {
+    private void getRecipieDescription() { //pull recipie description from firebase
         FirebaseDatabase databaseDescription = FirebaseDatabase.getInstance();
         DatabaseReference recipeRef = databaseDescription.getReference("Recipe");
         // Read from the database
-        recipeRef.child(stringRecipieID).addListenerForSingleValueEvent(new ValueEventListener() {
+        recipeRef.orderByChild("recipeName").equalTo(stringRecipeName).addChildEventListener(new ChildEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 //pull recipe information from Firebase
                 Recipe recipeCurrent;
                 recipeCurrent = dataSnapshot.getValue(Recipe.class);
@@ -74,13 +77,28 @@ public class RecipieDescriptionFragment extends Fragment implements View.OnClick
             }
 
             @Override
+            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                // Failed to read value
-                Toast.makeText(getActivity(), "Database Error", Toast.LENGTH_SHORT).show();
+
             }
         });
+
     }
-    private void getContacts() {  //use contactsRef.limitToLast(10).addChildEventListnener....
+    private void getContacts() {  //pulling reviews from firebase
         FirebaseDatabase databaseContacts = FirebaseDatabase.getInstance();
         DatabaseReference contactsRef = databaseContacts.getReference("Review");
         // Read from the database
@@ -129,6 +147,11 @@ public class RecipieDescriptionFragment extends Fragment implements View.OnClick
 
             //otherRef.Favorites.add(recipeKey);
 
+        }
+        else if (v==buttonDescriptionCook){
+            Intent intentRecipeStepBase = new Intent(getActivity(), RecipeStepBase.class);
+            intentRecipeStepBase.putExtra("passedRecipeName", stringRecipeName);
+            startActivity(intentRecipeStepBase);
         }
 
     }
