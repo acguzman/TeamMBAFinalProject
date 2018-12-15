@@ -39,23 +39,22 @@ public class RecipieDescriptionFragment extends Fragment implements View.OnClick
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        buttonDescriptionAdd = getView().findViewById(R.id.buttonDescriptionAdd);
-        buttonDescriptionAdd.setOnClickListener(this);
         inflateReviewRecycler = inflater.inflate(R.layout.fragment_recipie_description, container, false);
         reviews = new ArrayList<>();
         initRecyclerView();
         getContacts();
         return inflateReviewRecycler;
-
-
-
-
+    }
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        buttonDescriptionAdd = getView().findViewById(R.id.buttonDescriptionAdd);
+        buttonDescriptionAdd.setOnClickListener(this);
     }
     private void getContacts() {  //use contactsRef.limitToLast(10).addChildEventListnener....
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference contactsRef = database.getReference("Review");
         // Read from the database
-        contactsRef.addListenerForSingleValueEvent(new ValueEventListener() {
+        contactsRef.limitToLast(10).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // This method is called once with the initial value and again
