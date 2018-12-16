@@ -15,12 +15,9 @@
             android:id="@+id/textViewPastRecipes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="7dp"
-            android:layout_marginLeft="7dp"
-            android:layout_marginBottom="228dp"
+            android:layout_marginLeft="30dp"
+            android:layout_below="@id/textViewProfileLabel"
+            android:layout_marginTop="50dp"
             android:text="My Past Recipes"
             android:textSize="24sp" />
 
@@ -37,14 +34,10 @@
             android:textSize="12sp" />
 
         <TextView
-            android:id="@+id/textView12"
+            android:id="@+id/textViewProfileLabel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="53dp"
-            android:layout_marginLeft="53dp"
+            android:layout_marginLeft="30dp"
             android:layout_marginTop="46dp"
             android:text="Profile"
             android:textSize="30sp" />
@@ -53,50 +46,39 @@
             android:id="@+id/imageButton"
             android:layout_width="88dp"
             android:layout_height="82dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="35dp"
-            android:layout_marginLeft="35dp"
-            android:layout_marginBottom="116dp"
+            android:layout_below="@id/textViewPastRecipes"
+            android:layout_marginTop="20dp"
+            android:layout_toLeftOf="@id/imageButton2"
+            android:layout_marginRight="30dp"
             android:src="@drawable/avocado_fettucine_complete" />
 
         <ImageButton
             android:id="@+id/imageButton2"
             android:layout_width="88dp"
             android:layout_height="82dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="144dp"
-            android:layout_marginLeft="144dp"
-            android:layout_marginBottom="116dp"
+            android:layout_below="@id/textViewPastRecipes"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
             android:src="@drawable/korean_spicy_chicken_complete" />
 
         <ImageButton
             android:id="@+id/imageButton3"
             android:layout_width="88dp"
             android:layout_height="82dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="257dp"
-            android:layout_marginLeft="257dp"
-            android:layout_marginBottom="116dp"
+            android:layout_below="@id/textViewPastRecipes"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@id/imageButton2"
+            android:layout_marginLeft="30dp"
             android:src="@drawable/mushroom_frittata_complete" />
 
         <Button
             android:id="@+id/buttonUpdateProfile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="147dp"
-            android:layout_marginRight="147dp"
-            android:layout_marginBottom="28dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="400dp"
             android:background="@color/colorPrimaryDark"
-            android:text="Update"
+            android:text="Update Profile or Password"
             android:textSize="18sp" />
 
     </RelativeLayout>
