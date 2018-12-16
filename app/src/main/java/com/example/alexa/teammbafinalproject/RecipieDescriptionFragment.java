@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,11 +36,13 @@ public class RecipieDescriptionFragment extends Fragment implements View.OnClick
     Button buttonDescriptionAdd, buttonDescriptionCook;
     TextView textViewDescriptionRecipeTitle, textViewDescriptionDescriptionText,textViewDescriptionIngredientsText;
     String stringRecipeName = "Avocado Fettuccine";
+    RatingBar ratingDescriptionRating;
 
     public RecipieDescriptionFragment() {
         // Required empty public constructor
     }
     private ArrayList<Review> reviews;
+    private ArrayList<Review> reviews2;
     private RecyclerViewAdapter recyclerViewAdapter;
 
 
@@ -61,6 +64,8 @@ public class RecipieDescriptionFragment extends Fragment implements View.OnClick
         textViewDescriptionRecipeTitle = getView().findViewById(R.id.textViewDescriptionRecipeTitle);
         textViewDescriptionDescriptionText = getView().findViewById(R.id.textViewDescriptionDescriptionText);
         textViewDescriptionIngredientsText = getView().findViewById(R.id.textViewDescriptionIngredientsText);
+        ratingDescriptionRating = getView().findViewById(R.id.ratingDescriptionRating);
+        getTotalReviewScore();
     }
     private void getRecipieDescription() { //pull recipie description from firebase
         FirebaseDatabase databaseDescription = FirebaseDatabase.getInstance();
@@ -127,6 +132,37 @@ public class RecipieDescriptionFragment extends Fragment implements View.OnClick
         recyclerViewAdapter = new RecyclerViewAdapter(reviews);
         recyclerView.setAdapter(recyclerViewAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+    }
+    private void getTotalReviewScore() { //calculating and displaying average review score
+        reviews2 = new ArrayList<>();
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
+
+        Query query = reference.child("Review").orderByChild("recipeName").equalTo(stringRecipeName);
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                for(DataSnapshot child : dataSnapshot.getChildren()) {
+                    Review contact = child.getValue(Review.class);
+                    reviews2.add(contact);
+                }
+                int length = reviews2.size();
+                float sum = 0;
+                for( int i = 0; i < length; i++ ){
+                    sum += Float.parseFloat(reviews2.get(i).stars);
+                }
+                float avg = sum/length;
+                avg = Float.parseFloat(reviews2.get(0).stars);
+                ratingDescriptionRating.setRating(avg);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Toast.makeText(getActivity(), "Database Error", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
