@@ -21,6 +21,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -99,10 +100,10 @@ public class RecipieDescriptionFragment extends Fragment implements View.OnClick
 
     }
     private void getContacts() {  //pulling reviews from firebase
-        FirebaseDatabase databaseContacts = FirebaseDatabase.getInstance();
-        DatabaseReference contactsRef = databaseContacts.getReference("Review");
-        // Read from the database
-        contactsRef.limitToLast(10).addListenerForSingleValueEvent(new ValueEventListener() {
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
+
+        Query query = reference.child("Review").orderByChild("recipeName").equalTo(stringRecipeName);
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // This method is called once with the initial value and again
