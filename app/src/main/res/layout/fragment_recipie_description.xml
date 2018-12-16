@@ -82,7 +82,7 @@
                 android:background="@color/colorPrimaryDark"
                 android:isIndicator="true"
                 android:numStars="5"
-                android:rating="3"
+                android:rating="0"
                 android:stepSize="1"
                 android:visibility="visible" />
 

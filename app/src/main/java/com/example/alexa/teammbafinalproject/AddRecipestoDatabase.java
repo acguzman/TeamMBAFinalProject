@@ -1,6 +1,7 @@
 package com.example.alexa.teammbafinalproject;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Picture;
 import android.graphics.drawable.Drawable;
@@ -10,12 +11,17 @@ import android.graphics.BitmapFactory;
 import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -44,7 +50,7 @@ import java.util.List;
 import static android.support.constraint.Constraints.TAG;
 
 
-public class AddRecipestoDatabase extends Activity implements View.OnClickListener {
+public class AddRecipestoDatabase extends AppCompatActivity implements View.OnClickListener {
 
     EditText editTextRecipeName, editTextRecipeDescriptionEntry, editTextIngredientSummary, editTextNumberOfSteps;
     EditText editTextStepName1Entry, editTextStepIngredient1Entry;
@@ -195,4 +201,40 @@ public class AddRecipestoDatabase extends Activity implements View.OnClickListen
 
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater optionMenuInflater = getMenuInflater();
+        optionMenuInflater.inflate(R.menu.mainmenu,menu);
+
+        MenuItem addRecipe = menu.findItem(R.id.admin_add_recipe_menu_item);
+        if(FirebaseAuth.getInstance().getCurrentUser().getEmail().equalsIgnoreCase("admin@hc.com")) {
+            addRecipe.setVisible(true);
+        } else {
+            addRecipe.setVisible(false);
+        }
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.home_menu_item:
+                Intent homeintent = new Intent(AddRecipestoDatabase.this, BottomNav.class );
+                startActivity(homeintent);
+                return true;
+            case R.id.logout_menu_item:
+                Intent logoutintent = new Intent(AddRecipestoDatabase.this, MainActivity.class);
+                startActivity(logoutintent);
+                return true;
+            case R.id.admin_add_recipe_menu_item:
+                Intent intentRecipes = new Intent(this, AddRecipestoDatabase.class);
+                startActivity(intentRecipes);
+                return true;
+            default:
+                return false;
+        }
+
+
+    }
 }
