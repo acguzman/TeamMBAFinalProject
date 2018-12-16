@@ -27,7 +27,7 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
     Button buttonChatSend;
     EditText editTextChatInput;
     ListView listViewChat;
-    private FirebaseListAdapter<ChatMessage> adapter;
+    FirebaseListAdapter<ChatMessage> adapter;
 
     private static int clickCount = 0;
     private String chatUID = UUID.randomUUID().toString();
@@ -36,6 +36,7 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
+
         chatUID = UUID.randomUUID().toString();
 
         editTextChatInput = findViewById(R.id.editTextChatInput);
@@ -47,7 +48,9 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
 
         FirebaseListOptions<ChatMessage> fbListOptions = new FirebaseListOptions
                 .Builder<ChatMessage>().setQuery(FirebaseDatabase.getInstance().getReference
-                ("chat"), ChatMessage.class).setLayout(R.layout.layout_chat).build();
+                ("chat"), ChatMessage.class).setLayout(R.layout.layout_chat).
+                setLifecycleOwner(this).build();
+
         adapter = new FirebaseListAdapter<ChatMessage>(fbListOptions) {
             @Override
             protected void populateView(View v, ChatMessage model, int position) {
@@ -58,15 +61,27 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
                 message_user = (TextView) v.findViewById(R.id.message_user);
                 message_time = (TextView) v.findViewById(R.id.message_time);
 
-                message_text.setText(model.message);
-                message_user.setText(model.source);
-                message_time.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)", model.sentTime));
+                message_text.setText(model.getMessage());
+                message_user.setText(model.getSource());
+                message_time.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)", model.getSentTime()));
             }
         };
 
         listViewChat.setAdapter(adapter);
         listViewChat.forceLayout();
     }
+/*
+    @Override
+    protected void onStart(){
+        super.onStart();
+        adapter.startListening();
+    }
+
+    @Override
+    protected void onStop(){
+        super.onStop();
+        adapter.stopListening();
+    }*/
 
     /**
      * Called when a view has been clicked.
@@ -93,8 +108,9 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
 
         } else if (clickCount == 3) {
 
-        }
+        } else {
 
+        }
 
         listViewChat.forceLayout();
     }
@@ -132,8 +148,6 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
             default:
                 return false;
         }
-
-
     }
 }
 

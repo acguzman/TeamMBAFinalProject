@@ -28,7 +28,6 @@ public class GetCookingFragment extends Fragment implements View.OnClickListener
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         View currView = inflater.inflate(R.layout.fragment_get_cooking, container, false);
 
         buttonGetCookingAvocadoFettucine = currView.findViewById(R.id

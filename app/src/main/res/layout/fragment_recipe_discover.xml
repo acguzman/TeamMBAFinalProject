@@ -31,6 +31,7 @@
             android:layout_height="match_parent"
             android:layout_marginTop="0dp"
             android:orientation="horizontal">
+<!--
 
             <android.support.v7.widget.CardView
                 android:layout_width="wrap_content"
@@ -243,6 +244,7 @@
                         android:textStyle="bold" />
                 </RelativeLayout>
             </android.support.v7.widget.CardView>
+-->
 
         </LinearLayout>
     </HorizontalScrollView>
@@ -277,6 +279,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+<!--
 
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
@@ -291,7 +294,6 @@
                         android:id="@+id/imageButton11"
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
-                        android:layout_centerInParent="true"
                         android:layout_weight="1"
                         android:background="@android:color/transparent"
                         android:scaleType="centerCrop"
@@ -495,6 +497,7 @@
                         android:textStyle="bold" />
                 </RelativeLayout>
             </android.support.v7.widget.CardView>
+-->
 
         </LinearLayout>
 

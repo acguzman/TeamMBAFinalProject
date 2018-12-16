@@ -72,15 +72,16 @@ public class RecipeStepComplete extends AppCompatActivity {
 
             }
         });
-
     }
 
     @Override
     protected void onActivityResult(int requestCode,int resultCode, Intent data) {
         super.onActivityResult(requestCode,resultCode,data);
         //switches to camera and takes picture then sets it as imageButtonUploadPhoto
-        Bitmap bitmap = (Bitmap) data.getExtras().get("data");
-        imageButtonUploadPhoto.setImageBitmap(bitmap);
+        if (data != null) {
+            Bitmap bitmap = (Bitmap) data.getExtras().get("data");
+            imageButtonUploadPhoto.setImageBitmap(bitmap);
+        }
     }
 
     public void buttonSubmitReviewClicked() {

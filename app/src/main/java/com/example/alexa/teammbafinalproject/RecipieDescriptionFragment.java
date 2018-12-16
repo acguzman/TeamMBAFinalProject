@@ -1,22 +1,31 @@
 package com.example.alexa.teammbafinalproject;
 
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -24,8 +33,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
+
+import static android.content.ContentValues.TAG;
 
 
 /**
@@ -35,8 +48,9 @@ public class RecipieDescriptionFragment extends Fragment implements View.OnClick
     View inflateReviewRecycler;
     Button buttonDescriptionAdd, buttonDescriptionCook;
     TextView textViewDescriptionRecipeTitle, textViewDescriptionDescriptionText,textViewDescriptionIngredientsText;
-    String stringRecipeName = "Avocado Fettuccine";
+    String stringRecipeName; // = "Avocado Fettuccine";
     RatingBar ratingDescriptionRating;
+    ImageView imageViewDescription;
 
     public RecipieDescriptionFragment() {
         // Required empty public constructor
@@ -47,8 +61,12 @@ public class RecipieDescriptionFragment extends Fragment implements View.OnClick
 
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+        //Read data passed
+        stringRecipeName = getArguments().getString("passedRecipeName");
+
         getRecipieDescription();
+
+        // Inflate the layout for this fragment
         inflateReviewRecycler = inflater.inflate(R.layout.fragment_recipie_description, container, false);
         reviews = new ArrayList<>();
         initRecyclerView();
@@ -65,8 +83,10 @@ public class RecipieDescriptionFragment extends Fragment implements View.OnClick
         textViewDescriptionDescriptionText = getView().findViewById(R.id.textViewDescriptionDescriptionText);
         textViewDescriptionIngredientsText = getView().findViewById(R.id.textViewDescriptionIngredientsText);
         ratingDescriptionRating = getView().findViewById(R.id.ratingDescriptionRating);
+        imageViewDescription = getView().findViewById(R.id.imageViewDescription);
         getTotalReviewScore();
     }
+
     private void getRecipieDescription() { //pull recipie description from firebase
         FirebaseDatabase databaseDescription = FirebaseDatabase.getInstance();
         DatabaseReference recipeRef = databaseDescription.getReference("Recipe");
@@ -80,6 +100,7 @@ public class RecipieDescriptionFragment extends Fragment implements View.OnClick
                 textViewDescriptionRecipeTitle.setText(recipeCurrent.recipeName);
                 textViewDescriptionDescriptionText.setText(recipeCurrent.recipeDescription);
                 textViewDescriptionIngredientsText.setText(recipeCurrent.ingredientSummary);
+                LoadRecipeImage(imageViewDescription, recipeCurrent.picture);
             }
 
             @Override
@@ -104,6 +125,37 @@ public class RecipieDescriptionFragment extends Fragment implements View.OnClick
         });
 
     }
+
+    private void LoadRecipeImage(final ImageView imageViewDescription, String recipePicturePath) {
+        FirebaseStorage storage = FirebaseStorage.getInstance();
+        StorageReference storageRef = storage.getReference();
+        StorageReference pathReference = storageRef.child(recipePicturePath);
+
+        final long ONE_MEGABYTE = 1024 * 1024;
+        pathReference.getBytes(ONE_MEGABYTE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
+
+            @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
+            @Override
+            public void onSuccess(byte[] bytes) {
+                // Data for "images/island.jpg" is returns, use this as needed
+                Drawable src = new BitmapDrawable(getResources(),
+                        BitmapFactory.decodeByteArray(bytes, 0, bytes.length));
+                if(imageViewDescription==null) {
+                    Log.e(TAG, "onSuccess: Image not initialized.", null);
+                } else {
+                    imageViewDescription.setImageDrawable(src);
+                    imageViewDescription.setScaleType(ImageView.ScaleType.CENTER_CROP);
+                }
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception exception) {
+                // Handle any errors
+                Log.e(TAG, "onFailure: " + exception.getMessage(), exception);
+            }
+        });
+    }
+
     private void getContacts() {  //pulling reviews from firebase
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
 

@@ -15,7 +15,7 @@ public class Recipe {
 
     public String recipeDescription;
 
-    public Bitmap picture; //https://docs.oracle.com/javase/tutorial/2d/images/loadimage.html
+    public String picture; //https://docs.oracle.com/javase/tutorial/2d/images/loadimage.html
 
     public boolean isVegetarian;
     public boolean isVegan;
@@ -27,10 +27,10 @@ public class Recipe {
 
     public String numberOfSteps;
 
-    public Recipe(String recipeID, String recipeName, String recipeDescription, Bitmap picture,
+    public Recipe(String recipeID, String recipeName, String recipeDescription, String picture,
                   boolean isVegetarian, boolean isVegan, boolean isDairyFree, boolean
                           isGlutenFree, boolean isNutFree, String ingredientSummary, String numberOfSteps, List<String> stepID,
-                          List<String> stepName, List<Bitmap> stepImage, List<String> stepIngredients) {
+                          List<String> stepName, List<String> stepImage, List<String> stepIngredients) {
 
         this.recipeID = recipeID;
         this.recipeName = recipeName;
@@ -59,7 +59,7 @@ public class Recipe {
     public List<String> stepName;
 
     //Image associated with each step
-    public List<Bitmap> stepImage;
+    public List<String> stepImage;
 
     /**
      * A list of ingredients associated with each step.
@@ -86,5 +86,10 @@ public class Recipe {
     public String getStepIngredients(int stepNumber){
         return  stepIngredients.get(stepNumber);
     }
+
+    public String getStepImage(int stepNumber) {
+        return stepImage.get(stepNumber).toString();
+    }
+
 };
 
