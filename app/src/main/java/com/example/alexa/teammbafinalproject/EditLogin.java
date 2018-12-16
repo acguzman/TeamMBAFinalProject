@@ -26,7 +26,7 @@ import com.google.firebase.database.FirebaseDatabase;
  */
 public class EditLogin extends Fragment implements View.OnClickListener {
 
-    EditText editTextNameUpdate, editTextUsernameUpdate, editTextPasswordOld, editTextPasswordUpdate, editTextPasswordConfirm;
+    EditText editTextNameUpdate, editTextUsernameUpdate, editTextPasswordOld, editTextPasswordConfirm;
     Button buttonLoginUpdate, buttonPasswordUpdate;
     User user;
 
@@ -51,7 +51,6 @@ public class EditLogin extends Fragment implements View.OnClickListener {
         editTextPasswordConfirm = view.findViewById(R.id.editTextPasswordConfirm);
         editTextPasswordOld = view.findViewById(R.id.editTextPasswordOld);
         editTextUsernameUpdate = view.findViewById(R.id.editTextUsernameUpdate);
-        editTextPasswordUpdate = view.findViewById(R.id.editTextPasswordUpdate);
         buttonLoginUpdate = view.findViewById(R.id.buttonLoginUpdate);
         buttonPasswordUpdate = view.findViewById(R.id.buttonPasswordUpdate);
 
@@ -109,7 +108,7 @@ public class EditLogin extends Fragment implements View.OnClickListener {
 
         } else if (v == buttonPasswordUpdate) {
 
-            String newPassword = editTextPasswordUpdate.getText().toString();
+            String newPassword = editTextPasswordConfirm.getText().toString();
             String confirmPassword = editTextPasswordConfirm.getText().toString();
 
             if (newPassword.equals(confirmPassword)) {

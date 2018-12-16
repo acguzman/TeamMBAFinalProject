@@ -21,6 +21,9 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Register extends Activity implements View.OnClickListener {
 
    Button buttonRegisterNew;
@@ -61,7 +64,13 @@ public class Register extends Activity implements View.OnClickListener {
        FirebaseDatabase database = FirebaseDatabase.getInstance();
        final DatabaseReference myRef = database.getReference("Users");
 
-        if (v==buttonRegisterNew){
+       final List<String> favorites = new ArrayList<String>() {{
+           add ("Go to Discover Recipes to add more recipes!");
+           add("");
+           add("");
+        }};
+
+       if (v==buttonRegisterNew){
 
            final Intent intentNewUser = new Intent (this, BottomNav.class);
 
@@ -70,11 +79,14 @@ public class Register extends Activity implements View.OnClickListener {
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful()){
                         Toast.makeText(Register.this, "Welcome New User", Toast.LENGTH_SHORT).show();
-                       User newuser = new User (editTextUsernameNew.getText().toString(), editTextName.getText().toString(), editTextEmail.getText().toString(),checkBoxVeg.isChecked(), checkBoxVegan.isChecked(), checkBoxGluten.isChecked(), checkBoxDairy.isChecked(), checkBoxNut.isChecked());
+                        User newuser = new User (editTextUsernameNew.getText().toString(),
+                               editTextName.getText().toString(), editTextEmail.getText().toString(),
+                               checkBoxVeg.isChecked(), checkBoxVegan.isChecked(), checkBoxGluten.isChecked(),
+                               checkBoxDairy.isChecked(),checkBoxNut.isChecked(),favorites);
 
-                      myRef.push().setValue(newuser);
+                        myRef.push().setValue(newuser);
 
-                       startActivity(intentNewUser);
+                        startActivity(intentNewUser);
 
                     }else {
                         Toast.makeText(Register.this, "Registration Unsuccessful", Toast.LENGTH_SHORT).show();
