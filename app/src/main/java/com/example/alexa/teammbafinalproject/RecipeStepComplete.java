@@ -100,10 +100,9 @@ public class RecipeStepComplete extends AppCompatActivity {
         myReview.push().setValue(newReview);
 
         Toast.makeText(this, "Thank you for your feedback!", Toast.LENGTH_SHORT).show();
-        editTextCommentEntry.setText("");
-        ratingBarEntry.setRating(0);
-    //    imageButtonUploadPhoto.getDrawable(ic_uplooad_photo_item);
 
+        Intent intentHome = new Intent(this, BottomNav.class);
+        startActivity(intentHome);
     }
 
     public void imageButtonUploadPhotoClicked() {

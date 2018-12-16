@@ -78,7 +78,7 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="10dp"
                     android:background="@color/colorPrimaryDark"
-                    android:text="Submit Review" />
+                    android:text="Submit Review and Go Home" />
 
                 <TextView
                     android:id="@+id/textViewCongrats"
