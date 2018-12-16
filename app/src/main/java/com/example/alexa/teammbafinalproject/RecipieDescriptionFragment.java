@@ -107,7 +107,7 @@ public class RecipieDescriptionFragment extends Fragment implements View.OnClick
     private void getContacts() {  //pulling reviews from firebase
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
 
-        Query query = reference.child("Review").orderByChild("recipeName").equalTo(stringRecipeName);
+        Query query = reference.child("Review").orderByChild("recipeName").equalTo(stringRecipeName).limitToLast(10);
         query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {

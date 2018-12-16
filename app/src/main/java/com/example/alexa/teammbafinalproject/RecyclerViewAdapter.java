@@ -33,6 +33,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int i) {
         viewHolder.textViewReview1.setText(reviews.get(i).userID);
         viewHolder.textViewReview4.setText(reviews.get(i).comment);
+        viewHolder.ratingViewReview.setRating(Float.parseFloat(reviews.get(i).stars));
         //in the canvas video they add an onclicklistener here that displays toast, don't think that is nessesary for us
     }
 
