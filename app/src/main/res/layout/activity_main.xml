@@ -11,6 +11,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/button"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
         android:text="Login"
@@ -83,5 +84,18 @@
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="20dp"
+        android:text="Happy Cooking"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="20dp" />
 
 </RelativeLayout>
