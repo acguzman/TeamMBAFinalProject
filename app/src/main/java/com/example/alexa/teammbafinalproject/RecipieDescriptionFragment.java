@@ -26,6 +26,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -37,6 +38,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static android.content.ContentValues.TAG;
 
@@ -44,17 +46,20 @@ import static android.content.ContentValues.TAG;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class RecipieDescriptionFragment extends Fragment implements View.OnClickListener{
+public class RecipieDescriptionFragment extends Fragment implements View.OnClickListener {
     View inflateReviewRecycler;
     Button buttonDescriptionAdd, buttonDescriptionCook;
-    TextView textViewDescriptionRecipeTitle, textViewDescriptionDescriptionText,textViewDescriptionIngredientsText;
+    TextView textViewDescriptionRecipeTitle, textViewDescriptionDescriptionText, textViewDescriptionIngredientsText;
     String stringRecipeName; // = "Avocado Fettuccine";
     RatingBar ratingDescriptionRating;
     ImageView imageViewDescription;
 
+    private ArrayList<User> favorites;
+
     public RecipieDescriptionFragment() {
         // Required empty public constructor
     }
+
     private ArrayList<Review> reviews;
     private ArrayList<Review> reviews2;
     private RecyclerViewAdapter recyclerViewAdapter;
@@ -73,6 +78,7 @@ public class RecipieDescriptionFragment extends Fragment implements View.OnClick
         getContacts();
         return inflateReviewRecycler;
     }
+
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         buttonDescriptionAdd = getView().findViewById(R.id.buttonDescriptionAdd);
@@ -140,7 +146,7 @@ public class RecipieDescriptionFragment extends Fragment implements View.OnClick
                 // Data for "images/island.jpg" is returns, use this as needed
                 Drawable src = new BitmapDrawable(getResources(),
                         BitmapFactory.decodeByteArray(bytes, 0, bytes.length));
-                if(imageViewDescription==null) {
+                if (imageViewDescription == null) {
                     Log.e(TAG, "onSuccess: Image not initialized.", null);
                 } else {
                     imageViewDescription.setImageDrawable(src);
@@ -165,12 +171,12 @@ public class RecipieDescriptionFragment extends Fragment implements View.OnClick
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
-                for(DataSnapshot child : dataSnapshot.getChildren()) {
+                for (DataSnapshot child : dataSnapshot.getChildren()) {
                     Review contact = child.getValue(Review.class);
                     reviews.add(contact);
-                 }
-                 recyclerViewAdapter.notifyDataSetChanged();
                 }
+                recyclerViewAdapter.notifyDataSetChanged();
+            }
 
             @Override
             public void onCancelled(DatabaseError error) {
@@ -179,12 +185,14 @@ public class RecipieDescriptionFragment extends Fragment implements View.OnClick
             }
         });
     }
+
     private void initRecyclerView() {
         RecyclerView recyclerView = inflateReviewRecycler.findViewById(R.id.recycler_view_description);
         recyclerViewAdapter = new RecyclerViewAdapter(reviews);
         recyclerView.setAdapter(recyclerViewAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
     }
+
     private void getTotalReviewScore() { //calculating and displaying average review score
         reviews2 = new ArrayList<>();
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
@@ -195,16 +203,16 @@ public class RecipieDescriptionFragment extends Fragment implements View.OnClick
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
-                for(DataSnapshot child : dataSnapshot.getChildren()) {
+                for (DataSnapshot child : dataSnapshot.getChildren()) {
                     Review contact = child.getValue(Review.class);
                     reviews2.add(contact);
                 }
                 int length = reviews2.size();
                 float sum = 0;
-                for( int i = 0; i < length; i++ ){
+                for (int i = 0; i < length; i++) {
                     sum += Float.parseFloat(reviews2.get(i).stars);
                 }
-                float avg = sum/length;
+                float avg = sum / length;
                 avg = Float.parseFloat(reviews2.get(0).stars);
                 ratingDescriptionRating.setRating(avg);
             }
@@ -220,24 +228,53 @@ public class RecipieDescriptionFragment extends Fragment implements View.OnClick
     @Override
     public void onClick(View v) {
 
-        if (v==buttonDescriptionAdd){
+        if (v == buttonDescriptionAdd) {
 
 
             final FirebaseDatabase database = FirebaseDatabase.getInstance();
-            DatabaseReference myRef = database.getReference("Recipe");
-            DatabaseReference otherRef = database.getReference("User");
+            final DatabaseReference myRef = database.getReference("User");
+
+            String findUser = FirebaseAuth.getInstance().getCurrentUser().getEmail();
+
+            myRef.orderByChild("email").equalTo(findUser).limitToLast(1).addChildEventListener(new ChildEventListener() {
+                @Override
+                public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                    User findUserRecipe = dataSnapshot.getValue(User.class);
+                    findUserRecipe.favorites.add("test");
+                }
+
+                @Override
+                public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+                }
+
+                @Override
+                public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+
+                }
+
+                @Override
+                public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
+
 
             //From Nevin's code: Not sure what to put in the set Value
             //DatabaseReference newDatabaseReference = myRef.push();
             //myRef.setValue(?);
-           // String recipeKey = myRef.getKey();
+            // String recipeKey = myRef.getKey();
 
             //How do I access the favorites child within the User class?? I've only done this with datasnapshot before and i don't think I want to add a newChildListener
 
             //otherRef.Favorites.add(recipeKey);
 
-        }
-        else if (v==buttonDescriptionCook){
+        } else if (v == buttonDescriptionCook) {
             Intent intentRecipeStepBase = new Intent(getActivity(), RecipeStepBase.class);
             intentRecipeStepBase.putExtra("passedRecipeName", stringRecipeName);
             startActivity(intentRecipeStepBase);
