@@ -231,7 +231,6 @@ public class RecipieDescriptionFragment extends Fragment implements View.OnClick
 
         if (v == buttonDescriptionAdd) {
 
-
             final FirebaseDatabase database = FirebaseDatabase.getInstance();
             final DatabaseReference myRef = database.getReference("Users");
 
@@ -268,17 +267,11 @@ public class RecipieDescriptionFragment extends Fragment implements View.OnClick
                 public void onCancelled(@NonNull DatabaseError databaseError) {
                     Log.e(TAG, "onCancelled: " + databaseError.getMessage(), databaseError.toException() );
                 }
+
             });
 
+            Toast.makeText(getActivity(), "Recipe Added Successfully", Toast.LENGTH_SHORT).show();
 
-            //From Nevin's code: Not sure what to put in the set Value
-            //DatabaseReference newDatabaseReference = myRef.push();
-            //myRef.setValue(?);
-            // String recipeKey = myRef.getKey();
-
-            //How do I access the favorites child within the User class?? I've only done this with datasnapshot before and i don't think I want to add a newChildListener
-
-            //otherRef.Favorites.add(recipeKey);
 
         } else if (v == buttonDescriptionCook) {
             Intent intentRecipeStepBase = new Intent(getActivity(), RecipeStepBase.class);

@@ -64,11 +64,6 @@ public class Register extends Activity implements View.OnClickListener {
        FirebaseDatabase database = FirebaseDatabase.getInstance();
        final DatabaseReference myRef = database.getReference("Users");
 
-       final List<String> favorites = new ArrayList<String>() {{
-           add ("Go to Discover Recipes to add more recipes!");
-           add("");
-           add("");
-        }};
 
        if (v==buttonRegisterNew){
 
@@ -82,7 +77,7 @@ public class Register extends Activity implements View.OnClickListener {
                         User newuser = new User (editTextUsernameNew.getText().toString(),
                                editTextName.getText().toString(), editTextEmail.getText().toString(),
                                checkBoxVeg.isChecked(), checkBoxVegan.isChecked(), checkBoxGluten.isChecked(),
-                               checkBoxDairy.isChecked(),checkBoxNut.isChecked(),favorites);
+                               checkBoxDairy.isChecked(),checkBoxNut.isChecked(),null);
 
                         myRef.push().setValue(newuser);
 

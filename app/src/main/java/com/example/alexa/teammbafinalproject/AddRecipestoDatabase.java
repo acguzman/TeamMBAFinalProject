@@ -131,13 +131,13 @@ public class AddRecipestoDatabase extends AppCompatActivity implements View.OnCl
             Bitmap tempImage = BitmapFactory.decodeFile(temp.getAbsolutePath(), bmapOptions);
 
             final List<String> stepIDs = new ArrayList<String>() {{
-                add("1");
-                add("2");
-                add("3");
-                add("4");
-                add("5");
-                add("6");
-                add("7");
+                    add("1");
+                    add("2");
+                    add("3");
+                    add("4");
+                    add("5");
+                    add("6");
+                    add("7");
 
             }};
             final List<String> stepNames = new ArrayList<String>() {
