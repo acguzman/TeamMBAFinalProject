@@ -29,10 +29,16 @@ public class MyRecipesListFragment extends Fragment {
     private int mColumnCount = 3;
     private OnListFragmentInteractionListener mListener;
 
+
+//Code in progress to make the GetCookingFragment into a recycler view instead of hard coded buttons
+
+
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
+
+
     public MyRecipesListFragment() {
     }
 

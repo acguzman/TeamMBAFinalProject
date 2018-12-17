@@ -16,6 +16,10 @@ import java.util.List;
  * specified {@link OnListFragmentInteractionListener}.
  * TODO: Replace the implementation with code for your data type.
  */
+
+
+//Code in progress to make the GetCookingFragment into a recycler view instead of hard coded buttons
+
 public class MyMyRecipesListRecyclerViewAdapter extends RecyclerView.Adapter<MyMyRecipesListRecyclerViewAdapter.ViewHolder> {
 
     private final List<DummyItem> mValues;

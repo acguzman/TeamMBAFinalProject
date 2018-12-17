@@ -74,7 +74,7 @@ public class GetCookingFragment extends Fragment implements View.OnClickListener
             String findUser = FirebaseAuth.getInstance().getCurrentUser().getEmail();
 
             myRef.orderByChild("email").equalTo(findUser).addChildEventListener(new ChildEventListener() {
-
+//Can make into a loop in a later version
                 @Override
                 public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                     User findUserRecipe = dataSnapshot.getValue(User.class);
