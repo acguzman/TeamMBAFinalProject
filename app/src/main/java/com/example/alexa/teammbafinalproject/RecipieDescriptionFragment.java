@@ -214,7 +214,6 @@ public class RecipieDescriptionFragment extends Fragment implements View.OnClick
                     sum += Float.parseFloat(reviews2.get(i).stars);
                 }
                 float avg = sum / length;
-                avg = Float.parseFloat(reviews2.get(0).stars);
                 ratingDescriptionRating.setRating(avg);
             }
 
