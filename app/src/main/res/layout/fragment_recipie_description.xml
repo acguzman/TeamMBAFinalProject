@@ -11,10 +11,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:freezesText="true"
-        android:padding="5dp"
-        android:text="Recipe Description:"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="Recipe Description"
+        android:textSize="30sp" />
 
     <ScrollView
         android:id="@+id/descriptionscrollview"
@@ -30,13 +30,17 @@
                 android:id="@+id/imageViewDescription"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
-                android:layout_marginTop="25dp"
+                android:layout_below="@id/textViewDescriptionRecipeTitle"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
                 android:src="@drawable/avocado_fettucine_complete" />
 
             <TextView
                 android:id="@+id/textViewDescriptionRecipeTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 tools:text="Test Recipe Name" />
@@ -45,8 +49,9 @@
                 android:id="@+id/buttonDescriptionAdd"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/textViewDescriptionRecipeTitle"
                 android:layout_toRightOf="@id/imageViewDescription"
                 android:background="@color/colorPrimaryDark"
                 android:padding="10dp"
@@ -57,7 +62,7 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/buttonDescriptionAdd"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="30dp"
                 android:layout_marginTop="10dp"
                 android:layout_toRightOf="@id/imageViewDescription"
                 android:background="@color/colorPrimaryDark"
@@ -68,6 +73,8 @@
                 android:id="@+id/textViewDescriptionRating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
                 android:layout_below="@id/imageViewDescription"
                 android:layout_alignParentLeft="true"
                 android:text="Overall Rating:" />
@@ -79,6 +86,8 @@
                 android:layout_height="20dp"
                 android:layout_below="@id/textViewDescriptionRating"
                 android:layout_alignParentLeft="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
                 android:background="@color/colorPrimaryDark"
                 android:isIndicator="true"
                 android:numStars="5"
@@ -91,7 +100,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/ratingDescriptionRating"
-                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
                 android:text="Description:"
                 android:textSize="20sp" />
 
@@ -100,7 +110,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/textViewDescriptionDescriptionTitle"
-                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
                 android:padding="5dp"
                 tools:text="Test recipie description." />
 
@@ -109,7 +120,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/textViewDescriptionDescriptionText"
-                android:layout_alignParentLeft="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
                 android:text="Ingredients:"
                 android:textSize="20sp" />
 
@@ -118,7 +130,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/textViewDescriptionIngredientsTitle"
-                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
                 tools:text="Test Ingredients" />
         </RelativeLayout>
     </ScrollView>
@@ -135,9 +148,10 @@
         android:id="@+id/textViewReviewsTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
+        android:layout_marginTop="5dp"
         android:layout_below="@id/dividerdescription"
         android:padding="5dp"
+        android:layout_marginLeft="10dp"
         android:text="Reviews:"
         android:textSize="20sp"
         android:textStyle="bold" />
@@ -147,7 +161,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/textViewReviewsTitle"
-        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
         android:layout_alignParentBottom="true" />
 
 </RelativeLayout>

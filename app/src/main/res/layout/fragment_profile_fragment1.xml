@@ -7,77 +7,90 @@
     tools:context=".ProfileFragment1">
 
     <!-- TODO: Update blank fragment layout -->
-    <RelativeLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/textViewPastRecipes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_below="@id/textViewProfileFragment"
-            android:layout_marginTop="50dp"
-            android:text="My Past Recipes"
-            android:textSize="24sp" />
-
-        <TextView
-            android:id="@+id/textViewProfileFragment"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/textViewProfileLabel"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="30dp"
-            android:textSize="12sp" />
-
-        <TextView
-            android:id="@+id/textViewProfileLabel"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="46dp"
-            android:text="Profile"
-            android:textSize="30sp" />
+            android:orientation="vertical" >
 
-        <ImageButton
-            android:id="@+id/imageButton"
-            android:layout_width="88dp"
-            android:layout_height="82dp"
-            android:layout_below="@id/textViewPastRecipes"
-            android:layout_marginTop="20dp"
-            android:layout_toLeftOf="@id/imageButton2"
-            android:layout_marginRight="30dp"
-            android:src="@drawable/avocado_fettucine_complete" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-        <ImageButton
-            android:id="@+id/imageButton2"
-            android:layout_width="88dp"
-            android:layout_height="82dp"
-            android:layout_below="@id/textViewPastRecipes"
-            android:layout_marginTop="20dp"
-            android:layout_centerHorizontal="true"
-            android:src="@drawable/korean_spicy_chicken_complete" />
+                <TextView
+                    android:id="@+id/textViewPastRecipes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/textViewProfileFragment"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="20dp"
+                    android:text="My Past Recipes"
+                    android:textSize="24sp" />
 
-        <ImageButton
-            android:id="@+id/imageButton3"
-            android:layout_width="88dp"
-            android:layout_height="82dp"
-            android:layout_below="@id/textViewPastRecipes"
-            android:layout_marginTop="20dp"
-            android:layout_toRightOf="@id/imageButton2"
-            android:layout_marginLeft="30dp"
-            android:src="@drawable/mushroom_frittata_complete" />
+                <TextView
+                    android:id="@+id/textViewProfileFragment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/textViewProfileLabel"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="20dp"
+                    android:textSize="18sp" />
 
-        <Button
-            android:id="@+id/buttonUpdateProfile"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="400dp"
-            android:background="@color/colorPrimaryDark"
-            android:text="Update Profile or Password"
-            android:textSize="18sp" />
+                <TextView
+                    android:id="@+id/textViewProfileLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Profile"
+                    android:textSize="30sp" />
 
-    </RelativeLayout>
+                <ImageButton
+                    android:id="@+id/imageButton"
+                    android:layout_width="88dp"
+                    android:layout_height="82dp"
+                    android:layout_below="@id/textViewPastRecipes"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_toLeftOf="@id/imageButton2"
+                    android:src="@drawable/avocado_fettucine_complete" />
+
+                <ImageButton
+                    android:id="@+id/imageButton2"
+                    android:layout_width="88dp"
+                    android:layout_height="82dp"
+                    android:layout_below="@id/textViewPastRecipes"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/korean_spicy_chicken_complete" />
+
+                <ImageButton
+                    android:id="@+id/imageButton3"
+                    android:layout_width="88dp"
+                    android:layout_height="82dp"
+                    android:layout_below="@id/textViewPastRecipes"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_toRightOf="@id/imageButton2"
+                    android:src="@drawable/mushroom_frittata_complete" />
+
+                <Button
+                    android:id="@+id/buttonUpdateProfile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/imageButton2"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:text="Update Profile or Password"
+                    android:textSize="18sp" />
+
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
 
 </FrameLayout>

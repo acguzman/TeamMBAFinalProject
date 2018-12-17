@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:freezesText="true"
         android:text="New Recipes"
-        android:textSize="18sp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <HorizontalScrollView
@@ -264,8 +264,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="235dp"
         android:freezesText="true"
-        android:text="Previous Recipes"
-        android:textSize="18sp"
+        android:text="Past Recipes"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <ScrollView
