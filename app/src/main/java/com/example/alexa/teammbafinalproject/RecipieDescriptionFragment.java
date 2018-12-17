@@ -207,6 +207,7 @@ public class RecipieDescriptionFragment extends Fragment implements View.OnClick
                     Review contact = child.getValue(Review.class);
                     reviews2.add(contact);
                 }
+
                 int length = reviews2.size();
                 float sum = 0;
                 for (int i = 0; i < length; i++) {
@@ -232,35 +233,40 @@ public class RecipieDescriptionFragment extends Fragment implements View.OnClick
 
 
             final FirebaseDatabase database = FirebaseDatabase.getInstance();
-            final DatabaseReference myRef = database.getReference("User");
+            final DatabaseReference myRef = database.getReference("Users");
 
             String findUser = FirebaseAuth.getInstance().getCurrentUser().getEmail();
 
-            myRef.orderByChild("email").equalTo(findUser).limitToLast(1).addChildEventListener(new ChildEventListener() {
+            myRef.orderByChild("email").equalTo(findUser).addChildEventListener(new ChildEventListener() {
                 @Override
                 public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                     User findUserRecipe = dataSnapshot.getValue(User.class);
-                    findUserRecipe.favorites.add("test");
+                    if (findUserRecipe.favorites == null) {
+                        findUserRecipe.favorites = new ArrayList<String>();
+                    }
+                    findUserRecipe.favorites.add(stringRecipeName);
+                    String key = dataSnapshot.getKey();
+                    myRef.child(key).setValue(findUserRecipe);
                 }
 
                 @Override
                 public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
+                    Log.e(TAG, "onChildChanged: ", null);
                 }
 
                 @Override
                 public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
-
+                    Log.e(TAG, "onChildRemoved: ", null);
                 }
 
                 @Override
                 public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
+                    Log.e(TAG, "onChildMoved: ", null);
                 }
 
                 @Override
                 public void onCancelled(@NonNull DatabaseError databaseError) {
-
+                    Log.e(TAG, "onCancelled: " + databaseError.getMessage(), databaseError.toException() );
                 }
             });
 
