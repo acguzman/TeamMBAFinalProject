@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
@@ -80,6 +81,7 @@ public class GetCookingFragment extends Fragment implements View.OnClickListener
 
                     if (findUserRecipe.favorites == null) {
                         textViewDiscover.setVisibility(View.VISIBLE);
+                        findUserRecipe.favorites = new ArrayList<String>();
                     } else { }
 
                     if (findUserRecipe.favorites.contains(textViewRecipeAvocadoLabel.getText().toString())) {
