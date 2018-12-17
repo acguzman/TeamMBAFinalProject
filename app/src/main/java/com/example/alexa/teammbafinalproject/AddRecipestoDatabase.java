@@ -151,7 +151,7 @@ public class AddRecipestoDatabase extends AppCompatActivity implements View.OnCl
                     add("Step 7: " + editTextStepName7Entry.getText().toString());
                 }
             };
-            
+
 
 
             final List<String> stepIngredients = new ArrayList<String>() {
