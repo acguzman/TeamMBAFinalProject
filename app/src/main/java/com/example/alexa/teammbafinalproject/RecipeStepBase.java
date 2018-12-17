@@ -64,8 +64,6 @@ public class RecipeStepBase extends AppCompatActivity implements View.OnClickLis
         imageStepPhoto = (ImageView) findViewById(R.id.imageStepPhoto);
 
         textViewRecipeName.setText(getIntent().getExtras().getString("passedRecipeName"));
-        //Toast.makeText(this, textViewRecipeName.getText().toString(), Toast.LENGTH_SHORT).show();
-
 
         floatingActionButtonNext.setOnClickListener(this);
         floatingActionButtonNext2.setOnClickListener(this);

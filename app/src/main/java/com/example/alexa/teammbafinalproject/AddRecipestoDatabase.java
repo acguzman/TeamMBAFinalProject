@@ -151,28 +151,7 @@ public class AddRecipestoDatabase extends AppCompatActivity implements View.OnCl
                     add("Step 7: " + editTextStepName7Entry.getText().toString());
                 }
             };
-
- /*           final List<Bitmap> tempStepImages = new ArrayList<Bitmap>();//{{add("1"); add("2"); add("3");
-            Bitmap image1 = BitmapFactory.decodeFile(Environment.getExternalStoragePublicDirectory(Environment
-                    .DIRECTORY_DOWNLOADS).toString() + "/AvocadoFettucineStep1.jpg", bmapOptions);
-            tempStepImages.add(image1);
-            Bitmap image2 = BitmapFactory.decodeFile(Environment.getExternalStoragePublicDirectory(Environment
-                    .DIRECTORY_DOWNLOADS).toString() + "/AvocadoFettucineStep2.jpg", bmapOptions);
-            tempStepImages.add(image2);
-            Bitmap image3 = BitmapFactory.decodeFile(Environment.getExternalStoragePublicDirectory(Environment
-                    .DIRECTORY_DOWNLOADS).toString() + "/AvocadoFettucineStep3.jpg", bmapOptions);
-            tempStepImages.add(image3);
-
-//            ByteArrayOutputStream baos = new ByteArrayOutputStream();
-//            image1.compress(Bitmap.CompressFormat.JPEG, 100 , baos);
-//            byte[] b = baos.toByteArray();
-//            encImage = Base64.encodeToString(b, Base64.DEFAULT);
-            /*Bitmap image1 = MediaStore.Images.Media.getBitmap(getContentResolver(), new Uri()
-                    .fromFile(new File("file:D:\\umag_Drive\\Acads Ross\\18 Fall B\\TO 626 Mobile" +
-                    " " +
-                    "Innovation Development\\HappyCooking\\Meringue Banana Apple " +
-                    "Pie\\Recipes\\Avocado Fettucine\\AvocadoFettucineStep1.jpg")));*/
-            // }};
+            
 
 
             final List<String> stepIngredients = new ArrayList<String>() {

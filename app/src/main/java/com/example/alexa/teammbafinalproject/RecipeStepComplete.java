@@ -39,7 +39,6 @@ public class RecipeStepComplete extends AppCompatActivity {
     FirebaseDatabase fdb;
     private FirebaseAuth mAuth;
     Bitmap bitmap;
-  //  Drawable ic_uplooad_photo_item;
 
 
     @Override
